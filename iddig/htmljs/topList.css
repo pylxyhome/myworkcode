@@ -1,0 +1,1230 @@
+.body,.module div,.module img,.module ul,.module li,p,h1,.h2Title {
+	margin: 0;
+	padding: 0;
+	border: 0
+}
+
+input[type="checkbox"] {
+	margin: 0;
+	padding: 0
+}
+
+h1,.h2Title,h3,h4,h5 {
+	font-size: 100%
+}
+
+i,em {
+	font-style: normal
+}
+
+sup {
+	vertical-align: middle
+}
+
+li {
+	list-style-type: none
+}
+
+.module {
+	font: 14px Arial;
+	background: #fff
+}
+
+.clearfix_top_list:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden
+}
+
+.clearfix_top_list {
+	display: inline-block
+}
+
+.clearfix_top_list {
+	display: block
+}
+
+.hide {
+	display: none
+}
+
+.show {
+	display: block
+}
+
+a {
+	color: #0043bd
+}
+
+a:hover {
+	color: #f60
+}
+
+.red {
+	color: #ca0101
+}
+
+.bold {
+	font-weight: bold
+}
+
+.green {
+	color: #390
+}
+
+.orange {
+	color: #f60
+}
+
+.f16 {
+	font-size: 16px
+}
+
+.f14 {
+	font-size: 14px
+}
+
+.more {
+	font-family: \5b8b\4f53
+}
+
+.module .title {
+	background-image: url(mp3-index-x.gif);
+	background-repeat: repeat-x
+}
+
+.nav-lrou,.nav-rrou,.main-nav li,.main-nav .on a,.main-nav li a i,.mp3-index .main-nav li.home a,.rank .main-nav li.rank a,.singer .main-nav li.singer a,.music-cate .main-nav li.music-cate a,.zhangmen .main-nav li.zhangmen a,.topics-list-wrap,.play,.btn,.up,.down,.btn span,.champion-ico,.dividing-line,.secon-nav li a,.secon-nav li a i,.status-new,.search-btn,.top-list .special-line,.hot-tags-list-wrap,.hot,.new,.new1,.winners-list li,.opera-data-list,.ting-singer-ico
+	{
+	background-image: url(../images/mp3-global-png.png?ver=20110810);
+	background-repeat: no-repeat
+}
+
+.loading {
+	display: inline-block;
+	vertical-align: middle;
+	width: 16px;
+	height: 16px;
+	overflow: hidden;
+	font-size: 0;
+	line-height: 0;
+	-webkit-text-size-adjust: none;
+	background: url(loading.gif) no-repeat
+}
+
+.play-btn {
+	position: relative;
+	display: inline-block;
+	width: 21px;
+	height: 60px;
+	background: url(play-btn-png.png) no-repeat;
+	_background: 0;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='corp',
+		src='play-btn-png.png' )
+}
+
+.hot,.new {
+	display: inline-block;
+	width: 19px;
+	height: 15px;
+	overflow: hidden;
+	text-indent: -999px;
+	background-position: 0 -140px
+}
+
+.new1 {
+	display: inline-block;
+	width: 22px;
+	height: 12px;
+	overflow: hidden;
+	text-indent: -9999px;
+	background-position: -40px -160px
+}
+
+.hot {
+	background-position: -25px -140px
+}
+
+.play {
+	padding-left: 21px;
+	background-position: -115px -141px
+}
+
+.play-ico {
+	float: left;
+	width: 21px;
+	height: 19px;
+	margin-top: -1px;
+	background: url(../images/play-png.png) no-repeat;
+	_background: 0;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='corp',
+		src='../images/play-png.png' );
+	cursor: pointer
+}
+
+.btn {
+	display: inline-block;
+	height: 22px;
+	padding-left: 6px;
+	margin-right: 6px;
+	background-position: 0 -35px;
+	line-height: 21px;
+	line-height: 22px\0;
+	font-size: 12px;
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+	white-space: nowrap;
+	vertical-align: middle;
+	font-family: \5b8b\4f53
+}
+
+.btn span {
+	position: relative;
+	float: left;
+	margin-right: -1px;
+	padding-right: 6px;
+	background-position: 100% -35px
+}
+
+.btn:hover {
+	color: #000;
+	zoom: 1
+}
+
+.btn:hover span {
+	text-decoration: underline
+}
+
+.champion-ico {
+	display: none
+}
+
+.dividing-line {
+	height: 1px;
+	margin: 0 10px;
+	overflow: hidden;
+	background-position: 0 -200px;
+	background-repeat: repeat-x
+}
+
+.up,.down {
+	display: block;
+	width: 7px;
+	height: 7px;
+	overflow: hidden;
+	background-position: -80px -140px;
+	text-indent: -9999px
+}
+
+.down {
+	background-position: -80px -150px
+}
+
+.stability {
+	display: block;
+	width: 7px;
+	height: 3px;
+	border-bottom: 2px solid #666;
+	overflow: hidden;
+	text-indent: -9999px
+}
+
+.status-new {
+	display: block;
+	width: 9px;
+	height: 9px;
+	overflow: hidden;
+	background-position: -70px -140px;
+	text-indent: -9999px
+}
+
+.search-btn {
+	display: block;
+	width: 16px;
+	height: 16px;
+	overflow: hidden;
+	background-position: -90px -140px;
+	text-indent: -9999px
+}
+
+.first-release {
+	width: 33px;
+	height: 33px;
+	background: url(first-release-png.png) no-repeat;
+	_background: 0;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='corp',
+		src='first-release-png.png' );
+	text-indent: -99em;
+	overflow: hidden
+}
+
+.ting-singer-ico {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	margin-left: 2px;
+	overflow: hidden;
+	vertical-align: middle;
+	text-indent: -99em;
+	background-position: -70px -160px
+}
+
+.ting-singer-ico:hover {
+	background-position: -90px -160px
+}
+
+.wp {
+	width: 980px;
+	margin: 0 auto
+}
+
+.user-bar {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 8px 10px 0 0;
+	font-size: 12px
+}
+
+.hd {
+	height: 80px;
+	padding: 26px 0 0 0
+}
+
+.lg {
+	float: left;
+	width: 147px;
+	height: 62px;
+	padding-top: 7px
+}
+
+.search-wrap {
+	float: left
+}
+
+.lk {
+	padding-bottom: 8px;
+	font-size: 14px
+}
+
+.lk a,.lk span {
+	margin-right: 12px
+}
+
+.lk span {
+	font-weight: bold
+}
+
+.search {
+	position: relative;
+	z-index: 10
+}
+
+.search span {
+	font-size: 12px
+}
+
+.search td {
+	padding: 2px
+}
+
+.kw {
+	width: 358px;
+	margin: 0 3px 0 0;
+	padding: 3px 1px;
+	vertical-align: middle;
+	font-family: Arial;
+	font-size: 16px
+}
+
+.su {
+	width: 78px;
+	height: 28px;
+	margin: 0 7px 0 0;
+	line-height: 24px;
+	vertical-align: middle;
+	font-size: 14px
+}
+
+.cate {
+	font-size: 12px
+}
+
+#search {
+	padding: 20px 0 13px;
+	height: auto
+}
+
+#search {
+	width: 850px;
+	font: 12px arial
+}
+
+#search .lg {
+	width: auto;
+	height: auto;
+	padding-right: 15px
+}
+
+#search a {
+	color: #00c
+}
+
+#search form {
+	margin: 0;
+	clear: both;
+	position: relative;
+	z-index: 0
+}
+
+#search .s_btn_wr input,#search .s_ipt_wr input {
+	padding: 0;
+	border: 0
+}
+
+#search label {
+	margin-right: 15px;
+	*margin-right: 9px
+}
+
+#search label input {
+	margin-left: 0;
+	margin-top: 4px;
+	margin-top: 1px\9
+}
+
+#search-type {
+	margin-left: -4px\9
+}
+
+#search .s_nav {
+	height: 45px
+}
+
+#search .s_nav .s_logo {
+	margin-right: 20px;
+	float: left
+}
+
+#search .s_nav .s_logo img {
+	border: 0;
+	display: block
+}
+
+#search .s_nav .s_tab {
+	line-height: 18px;
+	padding: 20px 0 0;
+	float: left
+}
+
+#search .s_nav a {
+	font-size: 14px
+}
+
+#search .s_nav b {
+	font-size: 14px
+}
+
+#search .s_ipt_wr {
+	width: 408px;
+	height: 30px;
+	display: inline-block;
+	margin-right: 5px;
+	background: url(bg_search.png) no-repeat -304px 0;
+	border: 1px solid #b6b6b6;
+	border-color: #7b7b7b #b6b6b6 #b6b6b6 #7b7b7b;
+	vertical-align: top
+}
+
+#search .s_ipt {
+	width: 395px;
+	height: 22px;
+	font: 16px/22px arial;
+	margin: 5px 0 0 7px;
+	background: #fff;
+	outline: 0
+}
+
+#search .s_btn {
+	width: 95px;
+	height: 32px;
+	padding-top: 2px\9;
+	font-size: 14px;
+	background: #ddd url(bg_search.png);
+	cursor: pointer
+}
+
+#search .s_btn_h {
+	background-position: -100px 0
+}
+
+#search .s_btn_wr {
+	width: 97px;
+	height: 34px;
+	display: inline-block;
+	background: url(bg_search.png) no-repeat -202px 0;
+	*position: relative;
+	z-index: 0;
+	vertical-align: top
+}
+
+#search .s_tools {
+	color: #999;
+	padding: 8px 0 0 14px;
+	display: inline-block
+}
+
+#search .s_tools a {
+	margin: 0 8px;
+	zoom: 1
+}
+
+.tangram-suggestion {
+	cursor: default;
+	width: 408px;
+	position: absolute;
+	background: #fff;
+	border: 1px solid #817f82;
+	overflow: hidden
+}
+
+.tangram-suggestion table {
+	cursor: default;
+	width: 100%;
+	font-size: 14px
+}
+
+.tangram-suggestion td {
+	font: 14px arial;
+	height: 25px;
+	line-height: 25px;
+	padding: 0 8px;
+	font-weight: 700
+}
+
+.tangram-suggestion td b {
+	color: #333;
+	font-weight: 400
+}
+
+.tangram-suggestion-current {
+	background: #ebebeb
+}
+
+.tangram-suggestion-prepend {
+	padding: 0;
+	color: #c0c0c0;
+	font: 12px verdana
+}
+
+.tangram-suggestion-append {
+	height: 23px;
+	line-height: 23px;
+	text-align: right;
+	border-top: 1px solid #ebebeb;
+	padding: 0 8px;
+	color: #c0c0c0;
+	font: 12px verdana;
+	text-align: right
+}
+
+.tangram-suggestion-append a {
+	font-size: 12px;
+	text-decoration: underline;
+	color: #888;
+	line-height: 22px
+}
+
+.img {
+	border-bottom: 1px solid #eee
+}
+
+.img img {
+	display: block;
+	padding: 3px;
+	border: 1px solid #ccc;
+	background: #eee
+}
+
+.nav,.sub-nav,.sub-nav-wrap i,.sub-nav-wrap b {
+	background-image: url(mp3-index-x.gif);
+	background-repeat: repeat-x
+}
+
+.nav {
+	position: relative;
+	height: 33px;
+	margin-bottom: 10px;
+	background-color: #608be3
+}
+
+.nav-lrou,.nav-rrou {
+	float: left;
+	width: 2px;
+	height: 33px
+}
+
+.nav-rrou {
+	float: right;
+	background-position: -5px 0
+}
+
+.nav .feedback {
+	display: none;
+	position: absolute;
+	top: -30px;
+	right: -7px;
+	color: #ccc;
+	font-size: 12px
+}
+
+.nav .feedback a {
+	color: #999
+}
+
+.nav .feedback a:hover {
+	color: #f60
+}
+
+.main-nav-wrap {
+	position: relative;
+	float: left;
+	overflow: hidden
+}
+
+.main-nav {
+	position: relative;
+	float: left;
+	margin: 0 0 0 -2px;
+	padding-left: 0
+}
+
+.main-nav li {
+	float: left;
+	padding: 2px 17px 0 19px;
+	line-height: 30px;
+	background-position: -135px 0;
+	list-style-type: none;
+	font-size: 14px
+}
+
+.main-nav li a {
+	float: left;
+	position: relative;
+	color: #fff;
+	font-weight: 700;
+	text-decoration: none
+}
+
+.main-nav li a:hover {
+	color: #fff;
+	text-decoration: underline
+}
+
+.main-nav li a i {
+	display: none;
+	position: absolute;
+	top: 0;
+	right: -2px;
+	width: 2px;
+	height: 33px;
+	background-position: -129px 0
+}
+
+.mp3-index .main-nav li.home a,.rank .main-nav li.rank a,.singer .main-nav li.singer a,.music-cate .main-nav li.music-cate a,.zhangmen .main-nav li.zhangmen a
+	{
+	height: 31px;
+	padding: 0 9px 0 10px;
+	margin: 0 -10px;
+	background-position: -10px 0;
+	color: #000;
+	text-decoration: none
+}
+
+.mp3-index .main-nav li.home a i,.rank .main-nav li.rank a i,.singer .main-nav li.singer a i,.music-cate .main-nav li.music-cate a i,.zhangmen .main-nav li.zhangmen a i
+	{
+	display: block
+}
+
+.mp3-index .main-nav li.home a:hover,.rank .main-nav li.rank a:hover,.singer .main-nav li.singer a:hover,.music-cate .main-nav li.music-cate a:hover,.zhangmen .main-nav li.zhangmen a:hover
+	{
+	text-decoration: none
+}
+
+.sub-nav-wrap {
+	position: relative;
+	float: right;
+	margin: 2px 1px 0 0
+}
+
+.sub-nav-wrap i,.sub-nav-wrap b {
+	position: absolute;
+	width: 1px;
+	height: 26px;
+	top: 1px;
+	background-position: 0 -65px
+}
+
+.sub-nav-wrap i {
+	left: 0
+}
+
+.sub-nav-wrap b {
+	right: 0
+}
+
+.sub-nav {
+	float: left;
+	margin: 0;
+	padding: 0 12px 0 0;
+	background-color: #fff;
+	background-position: 0 -35px
+}
+
+.sub-nav li {
+	position: relative;
+	float: left;
+	height: 28px;
+	padding-left: 13px;
+	line-height: 28px;
+	font-size: 12px;
+	font-family: \5b8b\4f53;
+	white-space: nowrap;
+	list-style-type: none
+}
+
+.sub-nav li a:hover {
+	text-decoration: underline
+}
+
+.sub-nav li .hot,.sub-nav li .new {
+	position: absolute;
+	left: 15px;
+	top: -8px
+}
+
+.secon-nav {
+	padding-left: 9px;
+	margin-bottom: 10px
+}
+
+.secon-nav {
+	padding-bottom: 29px;
+	border-bottom: 1px solid #ccc
+}
+
+.secon-nav li {
+	float: left;
+	margin-right: 9px
+}
+
+.secon-nav li a {
+	position: relative;
+	float: left;
+	height: 30px;
+	padding: 0 9px 0 12px;
+	line-height: 30px;
+	background-position: 0 -100px;
+	text-decoration: none
+}
+
+.secon-nav li a i {
+	position: absolute;
+	right: -3px;
+	top: 0;
+	width: 3px;
+	height: 30px;
+	background-position: 100% -100px
+}
+
+.secon-nav li a:hover {
+	color: #0043bd;
+	text-decoration: underline
+}
+
+.rank-home li.home a,.rank-top100 li.top100 a,.rank-top500 li.top500 a,.rank-top200 li.top200 a,.rank-songs-list li.songs-list a
+	{
+	background-position: 0 -60px;
+	color: #000
+}
+
+.rank-home li.home a:hover,.rank-top100 li.top100 a:hover,.rank-top500 li.top500 a:hover,.rank-top200 li.top200 a:hover,.rank-songs-list li.songs-list a:hover
+	{
+	color: #000;
+	text-decoration: none
+}
+
+.rank-home li.home a i,.rank-top100 li.top100 a i,.rank-top500 li.top500 a i,.rank-top200 li.top200 a i,.rank-songs-list li.songs-list a i
+	{
+	background-position: 100% -60px
+}
+
+.module,.ad,.go-top {
+	margin-bottom: 10px;
+	border: 1px solid #eee;
+	background: #fff
+}
+
+.module .title {
+	position: relative;
+	height: 22px;
+	padding: 8px 8px 0;
+	border-bottom: 1px solid #eee;
+	background-position: 0 -95px;
+	background-color: #fefefe
+}
+
+.module .title .h2Title {
+	float: left
+}
+
+.module .title .h2Title .separ {
+	color: #ddd
+}
+
+.module .title .h2Title a {
+	color: #000;
+	font-weight: 700
+}
+
+.module .title .h2Title a:hover {
+	color: #000
+}
+
+.module .title .top-100 {
+	background-position: 
+}
+
+.module .title .more {
+	position: absolute;
+	top: 8px;
+	right: 8px
+}
+
+.module .title .more a:hover {
+	color: #f60
+}
+
+.module .title .opera {
+	position: absolute;
+	top: 5px;
+	right: 0
+}
+
+.module .title .listen {
+	float: left;
+	margin: -3px 0 0 10px
+}
+
+.module .title .update {
+	float: right;
+	color: #999;
+	font-size: 12px
+}
+
+.sidebar .module,.module-other {
+	border-top-width: 3px
+}
+
+.sidebar .module .title,.module-other .title {
+	background: 0;
+	border-bottom: 0
+}
+
+.ad img {
+	display: block
+}
+
+.banner-ad {
+	clear: both;
+	position: relative;
+	width: 984px;
+	margin-left: -2px;
+	margin-right: -2px;
+	border: 0
+}
+
+.main-col {
+	float: left;
+	width: 320px
+}
+
+.main-m {
+	display: inline;
+	float: left;
+	width: 320px;
+	margin: 0 10px
+}
+
+.main-sidebar {
+	float: right;
+	width: 320px
+}
+
+.more-info {
+	clear: both
+}
+
+.more-info .title {
+	float: left;
+	height: auto
+}
+
+.more-info ul {
+	padding-bottom: 6px
+}
+
+.more-info p {
+	float: left;
+	padding-top: 8px;
+	text-indent: -12px;
+	color: #ccc
+}
+
+.more-info p a {
+	margin: 0 12px
+}
+
+.more-info p sup {
+	margin: 0 12px 0 -8px
+}
+
+.go-top {
+	visibility: hidden;
+	position: fixed;
+	_position: absolute;
+	bottom: 95px;
+	left: 50%;
+	width: 18px;
+	height: 68px;
+	margin-left: 500px;
+	margin-bottom: 0;
+	text-align: center;
+	font-size: 12px;
+	line-height: 13px;
+	cursor: pointer;
+	color: #999
+}
+
+.go-top i {
+	position: relative;
+	_left: 2px;
+	display: block;
+	width: 12px;
+	margin: 0 auto;
+	line-height: 16px;
+	height: 14px;
+	overflow: hidden;
+	writing-mode: tb-rl;
+	transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	font-family: \5b8b\4f53;
+	font-weight: 700
+}
+
+.go-top a {
+	text-decoration: none;
+	color: #999;
+	outline: 0
+}
+
+.ft {
+	clear: both;
+	padding: 15px 0 10px;
+	text-align: center;
+	font-size: 12px;
+	line-height: 20px
+}
+
+.ft p {
+	color: #77c
+}
+
+#userbar {
+	position: absolute;
+	right: 10px;
+	top: 6px;
+	z-index: 10;
+	zoom: 1;
+	text-align: right;
+	font: 12px Arial;
+	color: #000;
+	line-height: 18px
+}
+
+#userbar img {
+	border: 0
+}
+
+#userbar a {
+	color: #00c;
+	margin-left: 6px
+}
+
+#userbar ul {
+	list-style-type: none
+}
+
+#userbar li {
+	float: left
+}
+
+#userbar .uname {
+	font-weight: 700
+}
+
+#userbar .line {
+	display: inline;
+	width: 1px;
+	height: 12px;
+	overflow: hidden;
+	background: #999;
+	margin: 3px 0 0 6px;
+	margin-top: 2px\9\0;
+	margin-top: 3px\0;
+	color: #999
+}
+
+@
+-moz-document url-prefix (){ #
+	userbar .line{margin-top: 4px
+}
+
+}
+#userbar .msgs {
+	color: #00c
+}
+
+#userbar .msgs span {
+	color: #f00
+}
+
+#userbar .mn-lk-w {
+	position: relative
+}
+
+#userbar .mn-lk {
+	padding-right: 11px;
+	background: url(mn.png) right 6px no-repeat
+}
+
+.mn-tip {
+	position: absolute;
+	z-index: 10;
+	top: 20px;
+	top: 21px\0;
+	*top: 21px;
+	background: #fff;
+	border: 1px solid #999;
+	font-weight: normal;
+	box-shadow: 1px 1px 2px #ccc;
+	-moz-box-shadow: 1px 1px 2px #ccc;
+	-webkit-box-shadow: 1px 1px 2px #ccc;
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=2, Direction=135,
+		Color="#cccccc" ) \9;
+	text-align: left;
+	color: #888
+}
+
+@
+-moz-document url-prefix (){ .
+	mn-tip {top: 22px
+}
+
+}
+#userbar .mn-tip a {
+	margin-left: 0
+}
+
+.mn-tip .mn li {
+	float: left;
+	width: 100%;
+	white-space: nowrap
+}
+
+.mn-tip .mn a {
+	display: block;
+	zoom: 1;
+	background: #fff;
+	padding: 3px 6px 3px;
+	*padding: 4px 6px 2px;
+	_padding-bottom: 1px;
+	text-decoration: none
+}
+
+.mn-tip .mn a:hover {
+	background: #ebebeb
+}
+
+.mn-tip .mn .my-info {
+	border-bottom: 1px solid #ebebeb
+}
+
+.mn-tip .mn .logout {
+	border-top: 1px solid #ebebeb
+}
+
+.mn-tip .split {
+	height: 1px;
+	overflow: hidden;
+	background: #ebebeb
+}
+
+.mn-tip .help {
+	padding: 6px;
+	line-height: 18px
+}
+/*update : 2012-03-15
+  update-detail :header UI
+*/
+/* 
+  	modules：core-rank mp3
+  	path: http://static.mp3.baidu.com/css/bXAzZ2xvYmFs/v2_0/core-rank.css
+	author: rochappy
+	update: 2011/04/12
+*/
+/*榜单排行基类*/
+.rank-top-info {
+	float: left;
+	width: 760px;
+}
+
+.rank-info {
+	padding: 5px;
+}
+
+.rank-statement {
+	padding: 3px;
+	color: #999999;
+	font-size: 12px;
+}
+
+.rank-info .dividing-line {
+	margin: 5px 0;
+}
+
+.rank-top-wrap {
+	width: 820px;
+	margin-right: -190px;
+}
+
+.rank-top-inner {
+	float: left;
+	width: 300px;
+	margin-right: 93px;
+}
+
+.rank-top-inner li {
+	float: left;
+	width: 100%;
+	padding: 5px 0;
+	overflow: hidden;
+	height: 16px;
+}
+
+.rank-top-inner .input {
+	float: left;
+	width: 20px;
+}
+
+.rank-top-inner .input input {
+	*margin: -4px 0 0 -4px;
+}
+
+.rank-top-inner .rank {
+	float: left;
+	width: 20px;
+	font-size: 10px;
+	text-align: center;
+	color: #666666;
+	-webkit-text-size-adjust: none;
+}
+
+.rank-top-inner .status {
+	float: left;
+	width: 40px;
+	font-size: 10px;
+	color: #666666;
+	-webkit-text-size-adjust: none;
+}
+
+.rank-top-inner .status i {
+	margin-top: 0px;
+}
+
+.rank-top-inner .status .status-new {
+	margin-top: 2px;
+}
+
+.rank-top-inner .music-info {
+	float: left;
+}
+
+.rank-top-inner .music-name {
+	float: left;
+	width: 180px;
+}
+
+.rank-top-inner .singer {
+	float: left;
+}
+
+.rank-top-inner .search {
+	float: right;
+}
+
+.rank-top-inner .stay-time {
+	float: right;
+	width: 40px;
+	text-align: center;
+	font-size: 10px;
+	color: #666666;
+}
+
+.rank-sidebar {
+	float: right;
+	width: 210px;
+}
+
+.rank-sidebar .ad {
+	border: none;
+}
+
+.rank-sidebar .ad img {
+	width: 210px;
+	height: 70px;
+}
+
+/*榜单右侧模块扩展*/
+.rank-sidebar .rank-info {
+	padding: 5px 1px 8px 0;
+}
+
+.col-rank-top {
+	float: none;
+	width: auto;
+	margin-right: 0;
+	font-size: 12px;
+}
+
+.col-rank-top .singer a {
+	display: inline-block;
+}
+
+.col-rank-top .music-name {
+	width: 170px;
+}
+
+.col-rank-top .status {
+	float: right;
+	width: 45px;
+}
+
+.col-rank-top .status i {
+	float: left;
+	margin-right: 3px;
+}

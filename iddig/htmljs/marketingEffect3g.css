@@ -1,0 +1,16 @@
+.reportBigButton{
+	display:none;
+	position:relative;
+	width: 100px; 
+	height: 100px; 
+	background-color: #DBCA70; 
+	margin-bottom: 4px;
+}
+.reportBigButton.active{
+	background-color: #308DAC;
+	color: white;
+}
+
+.reportBigButton:hover{
+	cursor:pointer;
+}
