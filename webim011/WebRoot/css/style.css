@@ -1,0 +1,99 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{font-size:12px; color:#666; font-family:Arial,sans-serif; padding:0; margin:0;}
+h1,h2,h3,h4,h5,h6,p,ul,li,hr{font-size:12px; font-weight:normal; padding:0; margin:0;} /* 重设部分css */
+input, select, button{vertical-align:middle;}
+li{display:block; list-style:none;}
+a{color:#666; text-decoration:none;}
+img{border:none;}
+.clear{clear:both;} /* 解决父层不随浮动子层拓展 */
+.clear_hr{clear:both;heihgt:0;font-size:0px;}
+
+/****************************   header  ****************************/
+#header{width:100%; height:76px; background:url(../img/top_bg.gif) bottom repeat-x;}
+#top{width:960px; height:72px; color:#FFF; margin:0 auto;}
+.logo{display:block; width:230px; height:72px; background:url(../img/logo.jpg) 0 10px no-repeat; float:left;}
+.logo:hover{background:url(../img/logo.jpg) 0 -70px no-repeat;}
+.top_control{line-height:26px; background:#9C0; padding:0 10px; float:right;}
+.top_control a{font-weight:bold; color:#FFF; margin-left:16px;}
+.top_control a, .top_control img{_margin:3px 4px 9px 0; _vertical-align:middle;}
+
+
+/****************************   content  ****************************/
+#content{width:960px; height:100%; margin:0 auto; padding:30px 0;}
+/*-------------- main -------------*/
+#main{width:620px; float:left;}
+.main_quesForm{margin-bottom:30px;}
+.main_quesForm_top{height:78px; border:1px #CCC solid; background:#EFEFEF;}
+.mqf_title{display:block; height:38px; color:#FFF; background:#9C0;}
+.mqf_title h1{font-size:16px; font-weight:bold; margin-left:10px; padding:11px 0 4px 25px; float:left; _display:inline;}
+.mqf_title a{color:#FFF; margin:13px 10px 0 0; float:right;}
+.main_quesForm_top ul{margin-left:10px;}
+.main_quesForm_top ul li{line-height:40px; float:left; position:relative;}
+.main_quesForm table{margin:10px 0 0 12px;}
+.main_quesForm tr{line-height:24px}
+.mqf_hotQuesTitle{background:url(../img/daxia_sprites.png) 0 6px no-repeat;}
+.mqf_noSolveQuesTitle{background:url(../img/daxia_sprites.png) -580px 6px no-repeat;}
+.mqf_solveQuesTitle{background:url(../img/daxia_sprites.png) 0 -29px no-repeat;}
+.mqf_answersTitle{background:url(../img/daxia_sprites.png) -580px -30px no-repeat;}
+.mqf_bestAnswerTitle{background:url(../img/daxia_sprites.png) 0 -70px no-repeat;}
+.mqf_questionSort{background:url(../img/daxia_sprites.png) -580px -70px no-repeat;}
+.mqf_searchList{background:url(../img/daxia_sprites.png) 0 -109px no-repeat;}
+
+.sortSignDown{width:8px; height:14px; background:url(../img/daxia_sprites.png) -85px -155px no-repeat; position:absolute; left:-10px; top:12px; display:none;}
+.sortSignUp{width:8px; height:14px; background:url(../img/daxia_sprites.png) -100px -155px no-repeat; position:absolute; left:-10px; top:12px; display:none;}
+.this_sortSign{display:block;}
+
+.main_issues, .main_answers{height:auto; margin-bottom:30px;}
+.main_issues_userInfo, .main_answers_userInfo{padding-left:20px; line-height:30px; border-top:1px #CCC solid; border-bottom:1px #CCC solid;}
+.main_issues_userInfo a:hover, .main_answers_userInfo a:hover{color:#FFF; background:#9C0;}
+.main_issues_content, .main_answers_content{height:100%; padding:20px; background:#FFF; position:relative;}
+.mic_contCorner, .mac_contCorner{display:block; width:11px; height:5px; background:url(../img/daxia_sprites.png) 0 -190px no-repeat; position:absolute; top:-5px;}
+.bestAnswear{display:block; width:70px; line-height:20px; text-align:right; position:absolute; top:-25px; right:10px; background:url(../img/daxia_sprites.png) -200px -153px no-repeat;}
+.bestAnswear:hover{background:url(../img/daxia_sprites.png) -120px -153px no-repeat;}
+
+.quesCorner_lt{top:-1px; left:-1px; background:url(../img/daxia_sprites.png) -40px -151px no-repeat;}
+.quesCorner_rt{top:-1px; right:-1px; background:url(../img/daxia_sprites.png) -57px -151px no-repeat;}
+.quesCorner_lb{bottom:-1px; left:-1px; background:url(../img/daxia_sprites.png) -40px -168px no-repeat;}
+.quesCorner_rb{bottom:-1px; right:-1px; background:url(../img/daxia_sprites.png) -57px -168px no-repeat;}
+
+.pageControl{height:22px; line-height:22px; padding-right:28px; margin-top:8px;}
+.pageControl span{float:right;}
+.pageControl a{display:block; padding:0 6px; margin:0 3px; float:left;}
+.pageControl a:hover, .pageControl a.thisListPage{color:#FFF; background:#AED821;}
+
+.mqf_quesSorting{width:160px; height:38px; float:right;}
+.mqf_quesSorting a{float:left;}
+
+.solveIcon{display:block; width:20px; height:20px; background:url(../img/daxia_sprites.png) -360px -159px no-repeat;}
+.nosolveIcon{display:block; width:20px; height:20px; background:url(../img/daxia_sprites.png) -390px -159px no-repeat;}
+
+/*-------------- sidebar -------------*/
+#sidebar{width:300px; margin-left:40px; float:left;}
+.sb_searchForm{margin-bottom:30px;}
+.sb_searchForm_left{width:179px; height:82px; line-height:16px; border:1px #CCC solid; border-right:none; padding:15px; background:#EFEFEF; float:left;}
+.sb_searchForm_left .text{width:177px; height:14px; padding:4px 2px; border:1px #CCC solid; margin-top:8px;}
+.sb_searchForm a{display:block; width:88px; _width:84px; height:65px; font-size:16px; font-weight:bold; color:#FFF; text-align:center; border:1px #8AAB1B solid; padding-top:47px; background:#9C0; float:left;}
+.sb_searchForm a:hover{background:#C1E34A;}
+
+.sb_quesSort{border:1px #CCC solid; margin-bottom:30px; background:#EFEFEF;}
+.sb_quesSort h1{height:27px; font-size:16px; font-weight:bold; color:#FFF;/* margin:1px;*/ padding:11px 0 0 35px; background:#9C0 url(../img/daxia_sprites.png) -568px -70px no-repeat;}
+.sb_quesSort h2{font-size:14px; font-weight:bold;}
+.sb_qsList{padding:10px 15px; border-top:1px #CCC solid;}
+.sb_quesSort a{line-height:24px; margin-right:10px;}
+.sb_quesSort a:hover{color:#FFF; background:#9C0;}
+
+.sb_top5User{height:380px; _height:370px; padding:10px 20px 20px 20px; _padding:20px; border:1px #8AAB1B solid; background:#9C0; position:relative;}
+.sb_top5User div{height:66px; margin-top:10px; background:#8AAB1B;}
+.sb_top5User div img{margin:1px; float:left;}
+.sb_top5User div ul{line-height:15px; color:#FFF; margin:10px 12px; float:left;}
+.corner{display:block; width:17px; height:17px; position:absolute;}
+.userCorner_lt{top:-2px; left:-2px; background:url(../img/daxia_sprites.png) -1px -151px no-repeat;}
+.userCorner_rt{top:-2px; right:-2px; background:url(../img/daxia_sprites.png) -18px -151px no-repeat;}
+.userCorner_lb{bottom:-2px; left:-2px; background:url(../img/daxia_sprites.png) -1px -168px no-repeat;}
+.userCorner_rb{bottom:-2px; right:-2px; background:url(../img/daxia_sprites.png) -18px -168px no-repeat;}
+
+/****************************   footer  ****************************/
+#footer{width:960px; font-size:10px; text-align:center; margin:0 auto;}
+#footer p{display:block; width:400px; text-align:center; padding:8px 0; margin:0 auto; border-top:1px dashed #cccccc; overflow:hidden;}

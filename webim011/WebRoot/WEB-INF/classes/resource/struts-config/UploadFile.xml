@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="im-uploadfile" extends="struts-default" namespace="/im" >
+    	<interceptors>
+			<interceptor-stack name="fileUploadStack">
+				 <interceptor-ref name="fileUpload">
+			              <!-- 配置允许上传的文件类型，多个用","分隔    
+			              <param name="allowedTypes"> 
+image/bmp,image/png,image/gif,image/jpeg,image/jpg,image/x-png,image/pjpeg,application/msword,application/powerpoint,application/vnd.ms-powerpoint,application/pdf,text/plain,application/x-shockwave-flash,application/vnd.ms-excel,application/zip,application/x-zip-compressed
+			              </param>  --> 
+			              <!-- 配置允许上传的文件大小，单位字节 2M,默认也慢2M  
+			              <param name="maximumSize">2097152</param> --> 
+			      </interceptor-ref>   
+			      <interceptor-ref name="defaultStack" />  
+			</interceptor-stack>
+		</interceptors>
+		<!-- 發送文件 -->
+        <action name="sendFile" class="uploadFileAction" method="sendFile">
+        	<interceptor-ref name="fileUploadStack" />
+        	<result name="input">/upload/uploadfail.jsp</result>
+        	<result name="success">/upload/uploadsuccess.jsp</result>
+        </action>
+        <!-- 发送文件 -->
+        <action name="uploadFile" class="uploadAction" method="uploadFile">
+       		<interceptor-ref name="fileUploadStack" />
+        	<result name="input">/upload/uploadfail.jsp</result>
+        	<result name="success">/upload/uploadsuccess.jsp</result>
+        </action>
+        <action name="uploadInput" class="uploadAction" method="uploadInput">
+        	<result name="success">/upload/upload2.jsp</result>
+        	<result name="input">/upload/uploadfail.jsp</result>
+        </action>
+    </package>
+</struts>

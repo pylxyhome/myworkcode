@@ -1,0 +1,128 @@
+/*
+var chatModule={
+	showChat:function(userId,name){
+		var chatId="chat_"+userId;
+		if($("#"+chatId).length>0){
+			util.getChat(userId).show();
+			util.getCurrentChatBtn(userId).show();
+			return;
+		}else{
+			this.createChat(userId,name);
+		}
+	},
+	createChat:function(userId,name){
+		util.getFriend(userId).find(".userHasMsg").hide();
+		var hasMsg=false;
+		$(".userHasMsg").each(function(){
+			if($(this).is(":hidden")==false){
+				hasMsg=true;
+			}
+		});
+		if(hasMsg){
+			$(".userbar_HasMsg").show();
+		}else{
+			$(".userbar_HasMsg").hide();
+		}
+		
+		var chatId="chat_"+userId;
+		if($("#"+chatId).length>0){
+			util.getChat(userId).toggle();
+			util.getCurrentChatBtn(userId).toggle();
+			return;
+		}
+		var chatTemplate=$("#chatTemplate").clone(true);
+		var loginUserId=util.getMainFrame().attr("loginUserId");
+		var loginUserName=util.getMainFrame().attr("loginUserName");
+		loginUserName=encodeURI(loginUserName);
+		var encodeName=encodeURI(name);
+		var targetId=userId.replace("user_","");
+		var basePath=util.getMainFrame().attr("basePath");
+		var chatFrameSrc=basePath+"talk/chat.jsp?loginUserId={loginUserId}&loginUserName={loginUserName}";
+		chatFrameSrc+="&targetId={targetId}&targetName={targetName}";
+		chatFrameSrc=chatFrameSrc.replace("{loginUserId}",loginUserId);
+		chatFrameSrc=chatFrameSrc.replace("{loginUserName}",loginUserName);
+		chatFrameSrc=chatFrameSrc.replace("{targetId}",targetId);
+		chatFrameSrc=chatFrameSrc.replace("{targetName}",encodeName);
+		chatTemplate.find("#chatFrame").attr("src",chatFrameSrc);
+		chatTemplate.find("#chat").attr("id",chatId);
+		chatTemplate.find("#chatTitle").html("与"+name+"聊天中");
+		chatTemplate.find("#hide").attr("user",userId);
+		util.getMainFrame().append(chatTemplate.html());
+		var chatBtnId=this.createChatBtn(userId,name);
+		util.getChat(userId).css("right",getBtnPosRight(chatBtnId));
+		util.getChat(userId).toggle();
+
+	},
+	createChatBtn:function(userId,name){
+		var chatBtnId="chatBtn_"+userId;
+		var barBtnTemplate=$("#barBtnTemplate").clone(true);
+		barBtnTemplate.find("#btnId").attr("user",userId);	
+		barBtnTemplate.find("#btnId").attr("id",chatBtnId);
+		barBtnTemplate.find(".barA").html(name);
+		util.getMainFrame().append(barBtnTemplate.html());
+		currentBtnEffect(chatBtnId);
+		return chatBtnId;
+	}
+}
+*/
+var effectModule={
+	userOver:function(userId){
+		$("#"+userId).addClass("current_user");
+	},
+	userOut:function(userId){
+		$("#"+userId).removeClass("current_user");
+	},
+	toggleChat:function(userId){
+		util.getChat(userId).toggle();
+		util.getCurrentChatBtn(userId).toggle();
+	}
+}
+var util={
+	getMainFrame:function(){
+		return $("#mainFrame");
+	},
+	getFriendList:function(){
+		return $("#friendList");
+	},
+	getFriend:function(userId){
+		return $("#friendList").find("#"+userId);
+	},
+	getChat:function(userId){
+		return $("#chat_"+userId);
+	},
+	getChatBtn:function(userId){
+		return $("#chatBtn_"+userId);
+	},
+	getCurrentChatBtn:function(userId){
+		return this.getChatBtn(userId).find(".currentButton");
+	}
+}
+
+
+function toggleFriendList(){
+	$("#friendList").css("right",getBtnPosRight("friendListButton"));
+	currentBtnEffect("friendListButton");
+	$("#friendList").toggle();
+}
+
+function showChatConfig(buttonId){
+	$("#chatConfig").css("right",getBtnPosRight(buttonId));
+	currentBtnEffect("chatConfigButton");
+	$("#chatConfig").toggle();
+}
+
+function currentBtnEffect(buttonId){
+	var currentBtn=$("#"+buttonId).find(".currentButton");
+	currentBtn.css("right",getBtnPosRight(buttonId));
+	currentBtn.width($("#"+buttonId).width());
+	currentBtn.height($("#"+buttonId).height());
+	currentBtn.toggle();
+}
+
+function getBtnPosRight(buttonId){
+	var btn=$("#"+buttonId);
+	var btnOffect=btn.offset();
+	var btnPosRight=eval(document.body.clientWidth-btnOffect.left-btn.width());	
+	return btnPosRight-2;
+	return 100;
+}

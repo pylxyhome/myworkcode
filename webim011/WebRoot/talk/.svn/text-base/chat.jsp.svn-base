@@ -1,0 +1,82 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+request.setAttribute("basePath",basePath);
+%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" " http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=" http://www.w3.org/1999/xhtml">
+	<script type="text/javascript">
+    document.domain="${domain}";
+    </script>
+  <head>
+    <base href="<%=basePath%>">
+     <link rel="stylesheet" href="${basePath}css/chat.css" type="text/css" />
+     <script type='text/javascript' src='dwr/engine.js'></script>
+    <script type='text/javascript' src='dwr/interface/DWRService.js'></script>
+  	<script type='text/javascript' src='dwr/interface/ChatService.js'></script>
+  	<script type='text/javascript' src='dwr/interface/StatisCacheProxy.js'></script>
+    <script type="text/javascript" src="${basePath}script/constant.js"></script> 
+    <script type="text/javascript" src="${basePath}script/jquery/jquery.js"></script>
+    <script type="text/javascript" src="${basePath}talk/chat.js"></script>
+    <title>My JSP 'index.jsp' starting page</title>
+  <style type="">
+   body{
+   	padding:0px;
+   	border:0px;
+}
+  </style>
+  </head>
+  <%
+	String loginUserName=request.getParameter("loginUserName");
+	String targetName=request.getParameter("targetName");
+  	if(loginUserName!=null && !loginUserName.equals("")){
+  		loginUserName=new String(loginUserName.getBytes(), "gbk");
+  	}
+	if(targetName!=null && !targetName.equals("")){
+		targetName=new String(targetName.getBytes(), "gbk");
+  	}
+					
+   %>
+  <body style="height:300px;">
+
+	 <div class="chatContentDiv" id="chatContentDiv">
+
+	 </div>
+	 <div style="clear:both"></div>
+	 <div class="chateditdiv">
+	 	<a class="uploadpic" href="#" >
+	 		<div class="uploadpicpattern"></div>
+	 		<div class="uploadpicdiv">上传图片</div>
+	 	</a>
+	 	<a class="dialogrecorddiv" href="javascript:void(0)" onclick="window.top.openWin('${basePath}message/listMsg.action?senderID=${param.loginUserId}&receiverID=${param.targetId}&targetId=${param.targetId}','我的聊天统计',750,400,1)">
+	 		<div class="talkabout"></div>
+	 		<div class="dialogrecord">聊天记录</div>
+	 	</a>
+	 </div>
+	 <div class="chatInput">
+		 <textarea class="contentInput" id="contentInput"></textarea>
+	 </div> 
+	 <div class="bottommenudiv">
+		 <input type="button" id="enterBtn" value="发送" class="closethewindow"></input>
+	</div>
+	 
+	 <div id="contentTemplate" style="display: none;">
+	 <div class="contentTitle">
+	 	<div id="who" class="who"></div><div id="senddate" class="senddate"></div>
+	 	</div>
+	 	<div id="content" style="padding: 5px;" class="content"></div>
+	 </div>
+	 <div style="display: none;">
+			loginId:
+			<input type="text" id="loginUserId" name="loginUserId" value="${param.loginUserId}"/><br/>
+			loginUserName:
+			<input type="text" id="loginUserName" name="loginUserName" value="<%=loginUserName%>"/><br/>
+			targetId:
+			<input type="text" id="targetId" name="targetId" value="${param.targetId}" /><br/>
+			targetName:
+			<input type="text" id="targetName" name="targetName" value="<%=targetName%>"/><br/>
+	</div>
+  </body>
+</html>

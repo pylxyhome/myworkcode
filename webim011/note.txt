@@ -1,0 +1,179 @@
+在IChatService接口里增加发送信息方法send
+<convert converter="bean" match="com.im.bean.message.Message"/>有意漏后补
+
+增加ChatScript类
+
+在chat.js里增加接收消息的方法receiveMessage
+
+不出现滚动条问题
+
+显示组下上线人数及总人数(未完成)
+
+在ChatService增加getAllUnreadMsg方法
+
+在talk.js增加msgInit方法.
+
+
+005--->用户上线提示( 1.右下角显示用户上线通知),用户退出处理
+
+
+005-006--》2将在线的用户显示到组的最前面
+
+
+
+006--》2将在线的用户显示到组的最前面
+
+三点： 初始化列表顺序、有用户登陆时、用户退出时(难点) 、上线时名字闪烁几下 
+
+
+
+
+1,要定时检测，加入quartz包
+
+2，添加一个保存当前在线用户的集合变量,要选择哪一个变量比较合适呢? ArrayList LinkedList比较
+改用Map
+
+3 编写ILogoutService接口及实现
+  1、注销用户
+  ScriptSession session = super.getScriptSessionByID(userid);  
+		if(session!=null){
+			IMLog.info("用户"+userid+"退出");        
+			session.removeAttribute("userid");
+			session.invalidate();
+		}
+  2 从在线列表里移除用户removeUser
+
+4 编写ICheckTimeOutService接口   ,CheckTimeOutScript
+
+5 在js增加checkTimeOut
+
+6 定义dwr-->CheckTimeOutService
+//FIXME java.util.ConcurrentModificationException
+移除mapUser-->ConcurrentHashMap
+private void removeMapUser(int userId){
+		if(mapUsers.get(userId)!=null){
+			super.mapUsers.remove(userId);
+		}
+	}
+		mapUsers.remove(userId);
+			mapUsers.remove(44444);
+			IMLog.info("mapUsers大小："+mapUsers.size());
+			
+			
+java.util.ConcurrentModificationException
+	at java.util.HashMap$HashIterator.nextEntry(Unknown Source)
+	at java.util.HashMap$KeyIterator.next(Unknown Source)
+	at com.im.task.CheckOnlineUserJob.execute(CheckOnlineUserJob.java:29)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.util.MethodInvoker.invoke(MethodInvoker.java:276)
+	at org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean$MethodInvokingJob.executeInternal(MethodInvokingJobDetailFactoryBean.java:260)
+	at org.springframework.scheduling.quartz.QuartzJobBean.execute(QuartzJobBean.java:86)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:525)
+下线通知
+
+006--隐藏与显示聊天工具
+
+
+007--再一次完善信息提示(标题显示消息)
+/**消息提醒**/
+function blink_info(msg) {
+  var oldTitle = window.top.document.title;
+  if (typeof(g_timeout_id) != "undefined" && g_timeout_id) {
+    clearInterval(g_timeout_id);
+  }
+  g_timeout_id = setInterval(function() {
+      window.top.document.title = window.top.document.title == msg ? ' ' : msg;
+    }, 1000);
+  window.top.document.onmousemove = function() { clear_blink(oldTitle); };
+  window.top.document.onkeydown = function() { clear_blink(oldTitle); };
+}
+function clear_blink(oldTitle) {
+  clearInterval(g_timeout_id);
+  g_timeout_id = null;
+  window.top.document.title = oldTitle;
+  window.top.document.onmousemove = null;
+  window.top.document.onkeydown = null;
+}
+,
+	//添加
+	shakeUserItemName:function(userId){
+		userItemNameArray[userId]=setInterval(function(){
+				//用户图标项
+				$("#userItem_"+userId).find("#chatingDisplayName").css("color","red");
+				setTimeout(function(){
+					$("#userItem_"+userId).find("#chatingDisplayName").css("color","#f47920");
+				},300);
+		},600);	
+	}
+008--消息盒子  -->加Tree
+		            <div id="newMsgPanel" class="subpanel">
+		            <h3 id="msgcount"><span class="min"> &ndash;</span>消息盒子</h3>     
+		            <ul  id="newMsgList" style="overflow: scroll;">
+		         
+		            </ul>
+		            </div>
+		            
+		            blink_info(targetName+"发来消息�啦");
+		var userItme="<li id=\"li2_"+userId+"\"><a href=\"javascript:void(0);\" id=\"userItem2_"+userId+"\" loginId=\""+loginUserId+"\" loginName=\""+loginUserName+"\" targetName=\""+targetName+"\" targetId=\""+targetId+"\">"+$("#userItem_"+userId).clone(true).html()+"</a></li>";
+		$("#customerUserList2").append(userItme);
+			stillUserItem:function(userId){
+		window.clearInterval(userShakeArray[userId]);
+		$("li").remove("#li2_"+userId);
+	}
+	抽取openChatWin方法
+		
+		
+	***点击页面时隐藏所有面板
+
+009--聊天记录----   引入dtree 编写用户树  <body style="overflow:scroll;overflow-x:hidden">解决滚动问题
+
+var loginUserId=parent.frames['right'].document.getElementById('loginUserId').value;
+
+<form action="${basePath}im/listRightMsg.action" method="post" name="myform" target="right">
+
+缓存问题解决 query=false
+
+右边初始化与当前用户的聊天记录
+
+010--显示与隐藏聊天工具栏
+/**显示与隐藏聊天im**/
+function rightBottomAd(){
+ var abc = window.top.document.getElementById("ad");
+ abc.style.top = top.document.documentElement.scrollTop+top.document.documentElement.clientHeight-20+"px"; 
+ setTimeout(function(){rightBottomAd();},1000);  
+}
+  <!-- im的显示与隐藏 -->
+  	<div id="adTemplate">
+		<div style="position:absolute;border:1px solid #000;right:0;" title="close IM" id="ad">-</div>
+	</div>	
+	initClick:function
+	
+	createMainFrame:function(){  }
+	
+	在init方法里添加:
+	$(window.top.document).click(function(){
+			effect.hideAll();
+			}	
+		);
+		
+011--发送文件与接收文件
+第一次上传失败后再上传正常的也上传不了的问题
+
+[ERROR] [2010十月25 09:48:22] Data truncation: Data too long for column 'message' at row 1 
+ org.hibernate.util.JDBCExceptionReporter.logExceptions(JDBCExceptionReporter.java:101) 
+
+先drop table
+
+无法上传zip文件-->application/zip,application/x-zip-compressed
+
+java.lang.IllegalStateException: 已获取输出流
+
+buttonText ： 浏览按钮的文本，默认值：BROWSE 。
+
+　　buttonImg ： 浏览按钮的图片的路径 。
+
+

@@ -1,0 +1,130 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+request.setAttribute("basePath",basePath);
+%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" " http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=" http://www.w3.org/1999/xhtml">
+  <head>
+    <base href="<%=basePath%>">
+    <title>My JSP 'index.jsp' starting page</title>
+    <script type="text/javascript">
+    document.domain="127.0.0.1";
+    </script>
+   <script type='text/javascript' src='dwr/interface/DWRService.js'></script>
+   <script type='text/javascript' src='dwr/interface/LoginService.js'></script>
+   <script type='text/javascript' src='dwr/interface/ChatService.js'></script>
+   <script type='text/javascript' src='dwr/interface/CheckTimeOutService.js'></script>
+   
+   <script type='text/javascript' src='dwr/engine.js'></script>
+   <script type="text/javascript" src="script/util.js"></script> 
+   <script type="text/javascript" src="script/constant.js"></script>
+   
+   <script type="text/javascript" src="talk/talk.js"></script>
+   <script type="text/javascript" src="script/jquery/jquery.js"></script>
+
+  </head>
+  <body>
+  	<script type="text/javascript">
+  		window.onload=function(){
+  			sleep();
+  		}
+  	 	function sleep(){
+  	 		if(top.document.readyState!="complete"){
+  				setTimeout("sleep()",300);  			  				
+  			}else{
+  				ui.init("${basePath}");
+  			}
+  	 	}
+  	 
+  	</script>
+  	
+  	<input type="text" value="${param.loginUserPwd}" id="loginUserPwd"/>
+  	<input type="hidden" value="" id="loginUserId"/>
+	<input type="hidden" value="" id="loginUserName"/>
+	<input type="hidden" value="${param.loginUserAccount}" id="loginUserAccount"/>
+  	
+  	<div id="friendListTemplate">
+  		<div class="friendList" id="friendList">
+  			<ul class="list_head">  				
+  				<a>好友列表</a>
+  				<div class="hide"></div>
+  			</ul>
+  			<ul class="list_body">
+  				<!-- 
+  				<c:forEach begin="0" end="3" varStatus="status">
+  					<li class="user" id="user_${status.count}" userName="nofeng${status.count}" onclick="chatModule.showChat(this.id,this.userName);" onmouseover="effectModule.userOver(this.id);" onmouseout="effectModule.userOut(this.id);">
+					  <div class="userHead">
+					  <img class="img" width="30px" height="30px;" src="${basePath}images/talk/head/default_head.gif"/>
+					  </div>
+					  <a id="name">nofeng${status.count}</a>
+					</li>
+  				</c:forEach>
+  				 -->
+  			</ul>
+		</div>
+  	</div>
+  	
+  	<div id="userTemplate">
+  		<li class="user" id="user" onclick="chatModule.showChat(this.id,$(this).find('#name').html());" onmouseover="effectModule.userOver(this.id);" onmouseout="effectModule.userOut(this.id);">
+			  <div class="userHead">
+			  <img class="img" width="30px" height="30px;" src="${basePath}images/talk/head/default_head.gif"/>
+			  </div>
+			  <a id="name"></a><br/>
+			  <a><img class="userHasMsg" src="${basePath}images/talk/user_oncall.gif"/></a>
+		</li>
+  	</div>
+
+  	<div id="chatConfigTemplate">
+  		<div class="chatConfig" id="chatConfig">
+  			<ul class="list_head">  				
+  				<a>系统配置</a>
+  				<div class="hide"></div>
+  			</ul>
+  			<ul class="list_body"> 
+  			</ul>
+		</div>
+  	</div>
+  	  		  	
+  	<div id="mainFrameTemplate">
+  		<ul  id="mainFrame" class="mainFrame" style="height:25px;">
+  			<span id="debug" style="float: left;"></span>
+  			<li onclick="toggleFriendList();" id="friendListButton">
+  			<div class="currentButton" style="display:none;">
+  				<img class="userbar_HasMsg" src="${basePath}images/talk/user_oncall.gif"/>
+  				<a class="barA">在线好友</a>
+  			</div>
+  			<img class="userbar_HasMsg"src="${basePath}images/talk/user_oncall.gif"/>
+  			<a class="barA">在线好友</a>
+  			</li>
+  			<li onclick="showChatConfig(this.id);" id="chatConfigButton"><div  class="currentButton" style="display:none;"><a class="barA">系统配置</a></div><a class="barA">系统配置</a></li>
+  			<!-- <li class="chatBtn" id="btnId"><div class="currentButton" style="display:none;"><a class="barA">123</a></div><a class="barA">123</a></li>-->
+  			<!-- <li class="thickbox" href="chat.jsp?width=400&height=200">123123</li> -->
+  		</ul>
+  	</div>
+  
+  	<div id="template">	
+  	 <div id="chatTemplate" style="display:none;">
+  		<div class="chat" id="chat">
+  			<ul class="list_head">  				
+  				<a id="chatTitle">聊天</a>
+  				<div class="hide" id="hide" onclick="effectModule.toggleChat(this.user);" format="hide_user_{id}"></div>
+  			</ul>
+  			<ul class="list_body"> 
+  				<iframe id="chatFrame" frameborder="0" width="200px;" height="270px;" scrolling="auto" src=""></iframe>
+  			</ul>
+		</div>
+  	</div>
+  	<div id="barBtnTemplate" style="display:none;">
+  		<li class="chatBtn" id="btnId" onclick="effectModule.toggleChat(this.user);">
+  		<div class="currentButton" style="display:none;">
+  			<div class="barClose" onclick="alert('close');"></div><a class="barA"></a>
+  		</div>
+  			<div class="barClose" onclick="alert('close');"></div><a class="barA"></a>
+  		</li>
+  	</div>
+  	</div>
+  </body>
+</html>

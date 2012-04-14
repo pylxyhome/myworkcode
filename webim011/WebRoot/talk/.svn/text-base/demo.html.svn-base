@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Facebook Style Footer Admin Panel w/ CSS &amp; jQuery- Tutorial by Soh Tanaka</title>
+<style type="text/css">
+
+</style>
+<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.talkpanel.plugin.js"></script>
+<script type="text/javascript" src="js/talk-effect.js"></script>
+<link rel="stylesheet" media="screen" href="css/foot_panelstyle.css" />
+<script type="text/javascript"> 
+$(document).ready(function(){	
+	effect.init();
+});
+</script>
+</head>
+
+<body>
+<h1><a href="http://www.sohtanaka.com/web-design/facebook-style-footer-admin-panel-part-1/">Facebook Style Footer Admin Panel w/ CSS &amp; jQuery- <span>Tutorial by <a href="http://www.SohTanaka.com">Soh Tanaka</a></span></h1>
+<div id="footpanel">
+	<ul id="mainpanel">    	
+        <li><a href="http://www.designbombs.com" class="home">Inspiration <small>Design Bombs</small></a></li>
+        <li><a href="http://www.designbombs.com" class="profile">View Profile <small>View Profile</small></a></li>
+        <li><a href="http://www.designbombs.com" class="editprofile">Edit Profile <small>Edit Profile</small></a></li>
+        <li><a href="http://www.designbombs.com" class="contacts">Contacts <small>Contacts</small></a></li>
+        <li><a href="http://www.designbombs.com" class="messages">Messages (10) <small>Messages</small></a></li>
+        <li><a href="http://www.designbombs.com" class="playlist">Play List <small>Play List</small></a></li>
+        <li><a href="http://www.designbombs.com" class="videos">Videos <small>Videos</small></a></li>
+        <li id="alertpanel">
+        	<a href="#" class="alerts">Alerts</a>
+            <div class="subpanel">
+            <h3><span  class="min"> &ndash; </span>Notifications</h3>
+            <ul>
+            	<li class="view"><a href="#">View All</a></li>
+            	<li><a href="#" class="delete">X</a><p><a href="#">Antehabeo</a> abico quod duis odio tation luctus eu ad <a href="#">lobortis facilisis</a>.</p></li>
+                <li><a href="#" class="delete">X</a><p><a href="#">Et voco </a> Duis vel quis at metuo obruo, turpis quadrum nostrud <a href="#">lobortis facilisis</a>.</p></li>
+                <li><a href="#" class="delete">X</a><p><a href="#">Tego</a> nulla eum probo metuo nullus indoles os consequat commoveo os<a href="#">lobortis facilisis</a>.</p></li>
+                <li><a href="#" class="delete">X</a><p><a href="#">Antehabeo</a> abico quod duis odio tation luctus eu ad <a href="#">lobortis facilisis</a>.</p></li>
+                <li><a href="#" class="delete">X</a><p><a href="#">Nonummy</a> nulla eum probo metuo nullus indoles os consequat commoveo <a href="#">lobortis facilisis</a>.</p></li>
+                <li><a href="#" class="delete">X</a><p><a href="#">Tego</a> minim autem aptent et jumentum metuo uxor nibh euismod si <a href="#">lobortis facilisis</a>.</p></li>
+                <li><a href="#" class="delete">X</a><p><a href="#">Antehabeo</a> abico quod duis odio tation luctus eu ad <a href="#">lobortis facilisis</a>.</p></li>
+            </ul>
+            </div>
+        </li>
+        <li id="chatpanel">
+        	<a href="#" class="chat">Friends (<strong>18</strong>) </a>
+            <div class="subpanel">
+            <h3><span class="min"> &ndash; </span>Friends Online</h3>
+            <ul id="userList">
+            	<li><span>Family Members</span></li>
+            	<li><a href="#" onclick="effect.addChat(1,2);"><img src="images/chat-thumb.gif" alt="" /> Your Friend</a></li>
+                <li><a href="#" onclick="effect.addChat(2,3);"><img src="images/chat-thumb.gif" alt="" /> Your Friend</a></li>
+                <li><a href="#" onclick="effect.addUserItem();"><img src="images/chat-thumb.gif" alt="" /> Your Friend</a></li>
+                <li><a href="#"><img src="images/chat-thumb.gif" alt="" /> Your Friend</a></li>
+                <li><a href="#"><img src="images/chat-thumb.gif" alt="" /> Your Friend</a></li>
+            </ul>
+            </div>
+        </li>        
+	</ul>
+	
+		<!-- 用户列表模块 -->
+		<div id="userItemTemplate" style="display:none;">
+	  		<li><a href="javascript:void(0);" id="userItem_[Id]" class="menber" targetId="[targetId]" targetName="[targetName]" loginId="1" loginName="nofeng"><img src="${basePath}talk/images/chat-thumb.gif" alt="" />[displayName]</a></li>
+	  	</div>
+	  	
+		<!-- 聊天模板 -->
+		<div id="chatingpanelTemplate" style="display:none;">
+		  <li id="chatingpanel" class="chatingpanel">
+        	<a href="#" class="chat">Friends (<strong>18</strong>) </a>
+            <div class="subchatpanel">
+            	<h3><span id="chatMin" class="chatMin"> &ndash; </span><span id="chatClose"> close </span>Chating Online</h3>
+		        <ul id="chatFramePanel">
+		            <iframe id="chatFrame" frameborder="0" width="200px;" height="270px;" scrolling="auto" src=""></iframe>
+		         </ul>
+            </div>
+        </li>
+</div>
+
+
+
+</body>
+</html>

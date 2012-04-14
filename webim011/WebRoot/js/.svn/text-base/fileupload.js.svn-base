@@ -1,0 +1,33 @@
+function ajaxFileUpload(){
+	 with(document.myform){
+ 
+		  $("#loading").ajaxStart(function(){
+   		 $(this).show();
+   })
+   .ajaxComplete(function(){
+   		 $(this).hide();
+   });
+   $.ajaxFileUpload  
+   (
+    {
+     url:'im/sendFile.action',//上传调用的Action,即是上传提交的页面url
+     secureuri:false,
+     fileElementId:'upload',//与页面处理代码中file相对应的ID值
+     dataType: 'text',//返回数据类型，有text，xml，json，html,scritp,jsonp五种  
+     success: function (data, status)
+     { 
+    		
+     },
+     error: function (data, status, e)
+     {
+      alert(dat[0]);//显示错误信息
+     }
+    }
+   )	
+
+ }
+}
+function deleted() {
+	alert("此版本暂时不提供删除功能");
+	return;
+}

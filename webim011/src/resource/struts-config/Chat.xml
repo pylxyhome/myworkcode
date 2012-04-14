@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="im-chat" extends="struts-default" namespace="/im" >
+        <action name="leaveChat" class="chatAction" method="leaveChat">
+        </action>
+        <action name="getRecordMsg" class="messageAction" method="getRecordMsg">
+        	<result name="success">/msgrecord/index.jsp</result>
+        </action>
+        <action name="getLeftTree" class="messageAction" method="getLeftTree">
+        	<result name="success">/msgrecord/left.jsp</result>
+        </action>
+         <action name="listRightMsg" class="messageAction" method="listRightMsg">
+        	<result name="success">/msgrecord/right.jsp</result>
+        </action>
+    </package>
+</struts>

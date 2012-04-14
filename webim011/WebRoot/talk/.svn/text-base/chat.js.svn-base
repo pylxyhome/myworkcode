@@ -1,0 +1,125 @@
+/*聊天*/
+$(function(){
+	setTimeout(function(){
+		chatModule.init();
+	},1000);	
+});
+
+function openWin(f,n,w,h,s){
+			sb = s == "1" ? "1" : "0";
+			l = (screen.width - w)/2;
+			t = (screen.height - h)/2;
+			sFeatures = "left="+ l +",top="+ t +",height="+ h +",width="+ w
+					+ ",center=1,scrollbars=" + sb + ",status=0,directories=0,channelmode=0";
+			openwin = window.open(f , n , sFeatures );
+			if (!openwin.opener)
+				openwin.opener = self;
+			openwin.focus();
+			return openwin;
+       }		
+//显示未读的信息
+var  hasMsgs=false;
+var chatModule={
+	init:function(){
+		this.constantInit();
+		this.keyPressInit();
+		this.activeReverseAjax(loginUserId,targetId);
+		this.initUnReadMsg();
+		this.btnInit();
+	},
+	activeReverseAjax:function(loginId,targetId){
+		dwr.engine.setActiveReverseAjax(true);
+		ChatService.setChatScriptSession(loginId,targetId);
+	},
+	initUnReadMsg:function(){
+		ChatService.getUnreadMsg(loginUserId,targetId,function(msgList){
+			for (var index = 0; index < msgList.length; index++) {
+				var msg=msgList[index];
+				receiveMessage(msg,targetName);
+				//修改信息状态为已读
+				ChatService.readMsg(msg.id);
+			}
+			if(msgList.length>0)hasMsgs=true;
+		});
+	},
+	btnInit:function(){
+		$("#enterBtn").click(function(){
+			sendMessage(loginUserId,loginUserName);
+		});
+	},
+	constantInit:function(){
+		loginUserId=util.getLoginUserId();
+		loginUserName=util.getLoginUserName();
+		targetId=util.getTargetId();
+		targetName=util.getTargetName();
+	},
+	keyPressInit:function(){
+		$("#contentInput").keydown(function(event){ 
+			if(event.keyCode == 13){
+				sendMessage(loginUserId,loginUserName);
+				return false;
+			}  
+		})
+	}
+}
+
+
+var util={
+	getLoginUserId:function(){
+		return $("#loginUserId").val();
+	},
+	getLoginUserName:function(){
+		return $("#loginUserName").val();
+	},
+	getTargetId:function(){
+		return $("#targetId").val();
+	},
+	getTargetName:function(){
+		return $("#targetName").val();
+	},
+	getContent:function(){
+		return $("#contentInput").val();
+	}
+}
+function receiveMessage(message, senderName){
+	var senddate = new Date(message.senddate); 
+	var senddateStr = senddate.getFullYear()+"-"+(senddate.getMonth()+1)+"- "+senddate.getDate()+"   "+senddate.getHours()+":"+senddate.getMinutes()+":"+senddate.getSeconds(); 
+	var chatTemplate=$("#contentTemplate").clone(true);
+	chatTemplate.find("#senddate").html(senddateStr);
+	chatTemplate.find("#who").html(senderName);
+	chatTemplate.find("#content").html(message.message);
+	$("#chatContentDiv").append(chatTemplate.html());
+	$("#chatContentDiv").scrollTop(document.getElementById("chatContentDiv").scrollHeight);
+	//window.parent.chatModule.showChat("user_"+message.senderid,senderName);
+}
+
+function sendMessage(id, userName){
+	if($.trim(util.getContent())==""){
+		alert("发送内容不能为空!");
+		return ;
+	}
+	if(!hasMsgs){
+		//更新主动聊天次数
+		StatisCacheProxy.addOrUpdateTalkTime(util.getLoginUserId());
+		//更新主动聊天客户数
+		StatisCacheProxy.updateTalkToCustomerNumber(util.getLoginUserId(),
+		util.getTargetId());
+	}
+
+	var nowDate = new Date();
+	var nowDateStr = nowDate.getFullYear()+"-"+(nowDate.getMonth()+1)+"- "+nowDate.getDate()+"   "+nowDate.getHours()+":"+nowDate.getMinutes()+":"+nowDate.getSeconds();
+	var chatTemplate=$("#contentTemplate").clone(true);
+	chatTemplate.find("#senddate").html(nowDateStr);
+	chatTemplate.find("#who").html(userName);
+	chatTemplate.find("#content").html(util.getContent());
+	$("#chatContentDiv").append(chatTemplate.html());
+	$("#chatContentDiv").scrollTop(document.getElementById("chatContentDiv").scrollHeight);
+	$("#contentInput").focus();
+	ChatService.send(util.getLoginUserId(), util.getLoginUserName(), util.getTargetId(),util.getContent());
+	$("#contentInput").val("");
+	
+}
+
+function postMsgToSNS(sendId,receiveId){
+	
+}

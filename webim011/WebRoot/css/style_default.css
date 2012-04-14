@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* CSS Document */
+/****************************   header  ****************************/
+#header{background:url(../img/top_bg.gif) bottom repeat-x;}
+.top_control{background:#9C0;}
+.top_control a{color:#FFF;}
+
+/****************************   content  ****************************/
+#left{ position:relative; top:-1px;}
+.left_userInfo{border:1px #93B61D solid; border-top:none; background:#9C0;}
+.left_menu{border:1px #CCC solid; border-top:none;}
+.left_menu li a{color:#666;}
+.left_menu li a:hover{color:#FFF;}
+
+.right_nav{/*background:#C1E34A;*/}
+.right_nav li a{color:#666;}
+.right_nav li a:hover{border:1px #8AAB1B solid;}
+.right_nav li a.right_nav_this{color:#FFF; border:1px #8AAB1B solid; background:#9C0;}
+
+.right_btn a{color:#FFF; border:1px #8AAB1B solid; background:#9C0;/* border:1px #CCC solid; background:#E1E1E1;*/}
+.right_btn a:hover{color:#FFF; background:#C1E34A;}
+.sBtn{border:1px #8AAB1B solid; background:#9C0;}
+
+.col_last a:hover, .right_table_collection a:hover{color:#FFF; background:#9C0;}  /* 添加链接高亮背景 */
+
+/****************************   footer  ****************************/

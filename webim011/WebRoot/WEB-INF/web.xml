@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  	<!--  <session-config>
+	 session失效时间
+		<session-timeout>30</session-timeout>    
+	</session-config>
+	<listener>
+		<listener-class>com.im.listener.HttpSessionListenerWithDWR</listener-class>
+	</listener> -->
+	 <!-- ScriptSession监听器
+  <listener>
+    <listener-class>com.im.listener.UserScriptSessionListener</listener-class>
+  </listener> -->
+<!-- 指定spring的配置文件，默认从web根目录寻找配置文件，我们可以通过spring提供的classpath:前缀指定从类路径下寻找 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:beans.xml</param-value>
+	</context-param>
+	<!-- 对Spring容器进行实例化,放在application范围 -->
+	<listener>
+		<listener-class>
+			org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
+  <listener>
+    <listener-class>org.directwebremoting.servlet.DwrListener</listener-class>
+  </listener>
+ 	<!-- 设置basepath-->
+	<filter>
+		<filter-name>SetBasePathFilter</filter-name>
+		<filter-class>com.im.web.filter.SetBasePathFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>SetBasePathFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- config struts2 filter -->
+	 <filter>
+        <filter-name>struts2</filter-name>
+        <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>struts2</filter-name>
+        <url-pattern>/*</url-pattern>
+   </filter-mapping>
+  <servlet>
+    <servlet-name>dwr-invoker</servlet-name>
+    <servlet-class>org.directwebremoting.servlet.DwrServlet</servlet-class>
+    <!-- This should NEVER be present in live -->
+    <init-param>
+      <param-name>debug</param-name>
+      <param-value>true</param-value>
+    </init-param>
+		<init-param>
+	<!-- 改变ScriptSessionManager的默认实现类 -->
+		<param-name>org.directwebremoting.extend.ScriptSessionManager</param-name>
+		<param-value>com.im.listener.UserScriptSessionManager</param-value>
+	</init-param>
+    <!-- Remove this unless you want to use active reverse ajax -->
+    <init-param>
+      <param-name>activeReverseAjaxEnabled</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <!-- By default DWR creates application scope objects when they are first
+    used. This creates them when the app-server is started -->
+    <init-param>
+      <param-name>initApplicationScopeCreatorsAtStartup</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <!--WARNING: allowing JSON-RPC connections bypasses much of the security
+    protection that DWR gives you. Take this out if security is important -->
+    <init-param>
+      <param-name>jsonRpcEnabled</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <!-- WARNING: allowing JSONP connections bypasses much of the security
+    protection that DWR gives you. Take this out if security is important -->
+    <init-param>
+      <param-name>jsonpEnabled</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <!-- data: URLs are good for small images, but are slower, and could OOM for
+    larger images. Leave this out (or keep 'false') for anything but small images -->
+    <init-param>
+      <param-name>preferDataUrlSchema</param-name>
+      <param-value>false</param-value>
+    </init-param>
+    <init-param>
+      <param-name>maxWaitAfterWrite</param-name>
+      <param-value>-1</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+	<context-param>
+		<param-name>checkJobExpression</param-name>
+		<param-value>0/10 * * * * ?</param-value>
+	</context-param>
+  <servlet-mapping>
+    <servlet-name>dwr-invoker</servlet-name>
+    <url-pattern>/dwr/*</url-pattern>
+  </servlet-mapping>
+
+</web-app>

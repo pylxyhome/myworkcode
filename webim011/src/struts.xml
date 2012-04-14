@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <!-- 
+    <constant name="struts.multipart.maxSize" value="10240000000" /> -->
+    <constant name="struts.devMode" value="false" />
+	<constant name="struts.objectFactory" value="spring"/>
+		<!-- Im相关树action -->
+  		<include file="resource/struts-config/ImTree.xml"/>
+  		<!-- 与聊天相关的action -->
+  		<include file="resource/struts-config/Chat.xml"/>
+  		<!-- 與文件上傳相關的action -->
+  		<include file="resource/struts-config/UploadFile.xml"/>
+  		<!-- 與文件下載相關的action -->
+  		<include file="resource/struts-config/DownLoadFile.xml"/>
+</struts>

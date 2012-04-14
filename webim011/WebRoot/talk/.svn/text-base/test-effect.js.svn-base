@@ -1,0 +1,81 @@
+var effectModule={
+	userOver:function(userId){
+		$("#"+userId).addClass("current_user");
+	},
+	userOut:function(userId){
+		$("#"+userId).removeClass("current_user");
+	},
+	toggleChat:function(userId){
+		util.getChat(userId).toggle();
+		util.getCurrentChatBtn(userId).toggle();
+	}
+}
+var util={
+	getMainFrame:function(){
+		return $("#mainFrame");
+	},
+	getFriendList:function(){
+		return $("#friendList");
+	},
+	getFriend:function(userId){
+		return $("#friendList").find("#"+userId);
+	},
+	getChat:function(userId){
+		return $("#chat_"+userId);
+	},
+	getChatBtn:function(userId){
+		return $("#chatBtn_"+userId);
+	},
+	getCurrentChatBtn:function(userId){
+		return this.getChatBtn(userId).find(".currentButton");
+	}
+}
+
+var util={
+	getMainFrame:function(){
+		return $("#mainFrame");
+	},
+	getFriendList:function(){
+		return $("#friendList");
+	},
+	getFriend:function(userId){
+		return $("#friendList").find("#"+userId);
+	},
+	getChat:function(userId){
+		return $("#chat_"+userId);
+	},
+	getChatBtn:function(userId){
+		return $("#chatBtn_"+userId);
+	},
+	getCurrentChatBtn:function(userId){
+		return this.getChatBtn(userId).find(".currentButton");
+	}
+}
+
+function toggleFriendList(){
+	$("#friendList").css("right",getBtnPosRight("friendListButton"));
+	currentBtnEffect("friendListButton");
+	$("#friendList").toggle();
+}
+
+function showChatConfig(buttonId){
+	$("#chatConfig").css("right",getBtnPosRight(buttonId));
+	currentBtnEffect("chatConfigButton");
+	$("#chatConfig").toggle();
+}
+
+function currentBtnEffect(buttonId){
+	var currentBtn=$("#"+buttonId).find(".currentButton");
+	currentBtn.css("right",getBtnPosRight(buttonId));
+	currentBtn.width($("#"+buttonId).width());
+	currentBtn.height($("#"+buttonId).height());
+	currentBtn.toggle();
+}
+
+function getBtnPosRight(buttonId){
+	var btn=$("#"+buttonId);
+	var btnOffect=btn.offset();
+	var btnPosRight=eval(document.body.clientWidth-btnOffect.left-btn.width());	
+	return btnPosRight-2;
+	return 100;
+}

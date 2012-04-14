@@ -1,0 +1,300 @@
+﻿var mainFrameId="mainFrame";
+var mainFrameClass="mainFrame";
+
+var debugId="debug";
+var scrollHeight;
+var ui={
+	initCss:function(){
+		var defaultCssPath=basePath+"talk/css/foot_panelstyle.css";
+		this.createCss(defaultCssPath);
+	},
+	initJs:function(){
+		var jqueryJsPath=basePath+"talk/js/jquery-1.3.2.min.js";
+		this.createJs(jqueryJsPath);
+		var mapJsPath=basePath+"talk/js/map.js";
+		this.createJs(mapJsPath);
+		var effectJsPath=basePath+"talk/js/talk-effect.js";
+		alert("欢迎您登录报价系统,大家在使用报价系统及客服系统的过程中，如有问题，请联系：020-85686804，谢谢大家的支持！");
+		this.createJs(effectJsPath);
+		var panelJsPath=basePath+"talk/js/jquery.talkpanel.plugin.js";
+		this.createJs(panelJsPath);
+	},
+	initConstant:function(){
+		if(top.document.documentElement.scrollHeight<top.document.documentElement.clientHeight){
+			scrollHeight=top.document.documentElement.clientHeight;
+		}else{
+			scrollHeight=top.document.documentElement.scrollHeight;
+		}
+	},
+	init:function(path){
+		basePath=path;	
+		this.initCss();
+		this.initJs();
+		this.initConstant();
+		//this.initClick();
+		im.createIM();	
+		//window.top.effect.initBasePath(path);
+		
+		/*alert($(top.document).find("head").html());*/
+	},
+	formatCss:function(path){
+		 return "<link rel=\"stylesheet\" type=\"text/css\" href=\""+path+"\">";
+	},
+	createCss:function(path){
+		$(window.top.document).find("head").append(this.formatCss(path));
+	},
+	createJs:function(path){
+		var scriptVar=window.top.document.createElement("script");
+		scriptVar.src=path;
+		scriptVar.type ='text/javascript';
+		window.top.document.getElementsByTagName("HEAD")[0].appendChild(scriptVar);
+	}
+};
+
+var im = {
+	mainFrameId:mainFrameId, 
+	mainFrameClass:mainFrameClass,
+	updateScroll:function(){
+		mainFram=window.top.document.getElementById(this.mainFrameId);
+		mainFram.style.top=eval(top.document.documentElement.clientHeight+top.document.documentElement.scrollTop+top.document.body.scrollTop-mainFram.offsetHeight);
+		mainFramTop=mainFram.style.top.replace("px","");
+		if(eval(scrollHeight-mainFramTop)<0){
+			mainFram.style.top=eval(scrollHeight-mainFram.offsetHeight);
+		}
+		util.getDebug().html(top.document.documentElement.clientHeight+"+"+top.document.documentElement.scrollTop+"+"+top.document.body.scrollTop+"-"+$(mainFram).height()); 		
+	},
+	createIM:function(){
+		loginModule.login();
+		if(loginModule.isLogin){
+			this.createMainFrame();
+			setTimeout("im.addEffect()",1000);  
+			userModule.initUserList();
+		}
+	},
+	createMainFrame:function(){
+		var mainFrameTemplate=$("#mainFrameTemplate").clone(true);
+		/*alert(mainFrameTemplate.html());*/
+		mainFrameTemplate.find("#chatTitle").html("服务人员");
+		
+		$(window.top.document).find("body").append(mainFrameTemplate.html());
+		//$(window.top.document).find("div:eq(1)").css("display","none");
+		util.getMainFrame().attr("loginUserId",loginUserId);
+		util.getMainFrame().attr("loginUserName",loginUserName);	
+		util.getMainFrame().attr("basePath",basePath);
+	},
+	createFriendList:function(){
+		var friendListTemplate=$("#friendListTemplate").clone(true);
+		util.getMainFrame().find("#friendList").remove();
+		util.getMainFrame().append(friendListTemplate.html());
+	},
+	createChatConfig:function(){
+		var chatConfigTemplate=$("#chatConfigTemplate").clone(true);
+		util.getMainFrame().append(chatConfigTemplate.html());
+	},
+	createTemplate:function(){
+		var template=$("#template").clone(true);
+		util.getMainFrame().append(template.html());
+	},
+	addEffect:function(){
+		if(window.top.document.readyState!="undefined"){
+  	 			setTimeout(function(){
+  	 				window.top.effect.init();
+  	 			},3000);
+  	 			return;
+  	 	}
+  	 	if(top.document.readyState!="complete"){
+  			setTimeout("im.addEffect()",1000);  			  				
+  		}else{
+  			window.top.effect.init();
+  		}
+	}
+
+};
+var imModule={
+	
+}
+
+var userModule={
+	initUserList:function(){
+		var url=basePath+'/im/getGroupTree.action?id='+loginUserId;
+		url+="&temp="+Math.random();
+		$.ajax({
+			url:url, dataType:"json", 
+			cache:false, success:function (json) {
+				$.each(json,function(i,group){
+					//过滤组
+					if(group.id.substring(0,13)=="onLine_region" || group.id=="temp_group"){
+						window.top.effect.addUserGroup(group,"customerUserList");
+						$.each(group.children,function(j,user){
+						window.top.effect.addUserItem(user,group,"customerUserList");
+					});
+					}else{
+					window.top.effect.addUserGroup(group,"userList");
+					$.each(group.children,function(j,user){
+						window.top.effect.addUserItem(user,group,"userList");
+					});
+					}	
+				});	
+				
+				msgInit(loginUserId);
+			}
+		});
+		userModule.refreshUserList();
+	},
+	refreshUserList:function(){
+		setInterval(function(){
+			var url=basePath+'/im/getGroupTree.action?id='+loginUserId+"&temp="+Math.random();
+			$.ajax({
+				url:url, dataType:"json", 
+				cache:false, 
+				success:function (json) {
+					window.top.effect.refreshUserList(json);
+				}
+			});
+		},5000);
+	},
+	addUser:function(user){
+		var userTemplate=$("#userTemplate").clone(true);
+		var userId="user_"+user.id;
+		userTemplate.find("#name").html(user.text);
+		userTemplate.find("#user").attr("id",userId);
+		util.getFriendList().find(".list_body").append(userTemplate.html());
+	}
+}
+
+var loginModule={
+	isLogin:false,
+	login:function(){
+		dwr.engine.setAsync(false);   
+		loginUserAccount=$("#loginUserAccount").val();
+		loginUserPassword=$("#loginUserPwd").val();
+		loginUserId=$("#loginUserId").val();
+//alert(loginUserId);
+		LoginService.login(loginUserId,loginUserPassword,loginCallBack);
+		dwr.engine.setAsync(true); 
+		function loginCallBack(loginUser){
+			if(loginUser){
+				if(loginUser.userid=="-100"){
+					loginModule.loginFail_doubleLogin();
+					return;
+				}
+				loginModule.loginSuccess(loginUser);
+			}else{
+				loginModule.loginFail();
+			}
+		}
+	},
+	loginSuccess:function(loginUser){
+		loginUserId=loginUser.userid;
+		loginUserAccount=loginUser.accounts;
+		loginUserName=loginUser.username;
+		loginUserPassword=loginUser.password;
+		dwr.engine.setAsync(false);
+		//判断是否是服务人员
+		if(!ImUserService.isServer(loginUserId)){
+			$("#customerChatpanel").css("display","none");
+			$("#alertpanel").css("display","none");
+		}
+		dwr.engine.setAsync(true);
+		/*util.getDebug().html(loginUserName+"登录成功");*/
+		$("#loginUserId").val(loginUserId);
+		$("#loginUserName").val(loginUserName);
+		$("#loginUserAccount").val(loginUserAccount);
+		$("#loginUserPassword").val(loginUserPassword);
+		dwr.engine.setActiveReverseAjax(true); // 激活反转 重要
+		CheckTimeOutService.checkTimeOutCallBack(loginUserId)
+	    setInterval(function(){
+	   	   // 
+			CheckTimeOutService.checkTimeOutCallBack(loginUserId);
+		},3500);	
+		this.isLogin=true;
+	},
+	loginFail:function(){
+		util.getDebug().html("登录失败");
+	},
+	loginFail_doubleLogin:function(){
+		util.getDebug().html("用户重复登录");
+	}
+}
+var util={
+	getMainFrame:function(){
+		return $(window.top.document).find("#"+mainFrameId);
+	},
+	getFriendList:function(){
+		return $(window.top.document).find("#friendList");
+	},
+	getFriend:function(userId){
+		return $(window.top.document).find("#friendList").find("#user_"+userId);
+	},
+	getDebug:function(){
+		return $(window.top.document).find("#"+debugId);
+	}
+}
+
+//查询用户
+function seachUser(userName,resultListId){
+	$("#"+resultListId).html("");
+	var isServerPanel=1;
+	if(resultListId=="seachCustomerResultItem"){
+		isServerPanel=0;
+	}
+	if(userName!=null && $.trim(userName)!=""){
+		window.top.effect.cleanSeachUserResult(resultListId);
+		userName=encodeURI(encodeURI(userName));
+		var url=basePath+"im/UserAction!findUserByName.action?userName="+userName+"&isServerPanel="+isServerPanel;
+			$.ajax({
+				url:url, dataType:"json", 
+				cache:false, success:function (json) {
+					var users=json.findUserResult;
+					for(i=0;i<users.length;i++){
+						window.top.effect.addSeachUserResult(users[i],resultListId);
+					}
+				}
+			});
+			CheckTimeOutService.checkTimeOutCallBack(loginUserId);
+	}
+}
+
+function msgInit(loginUserId){	
+	//alert(loginUserId);
+	//显示未读的信息
+	var idsArray = new Array();
+	var isExist = false;
+	ChatService.getAllUnreadMsg(loginUserId,function(msgList){
+			for (var index = 0; index < msgList.length; index++) {
+				var msg=msgList[index];
+				for ( var i=0 ; i < idsArray.length ; ++i ){
+					if(idsArray[i]==msg.senderid)isExist=true;
+				}
+				if(!isExist){
+					idsArray.push(msg.senderid);
+				}
+			}
+			for ( var i=0 ; i < idsArray.length ; ++i ){
+				shakeUserIconOffLine(idsArray[i]);
+			}
+	});
+}
+
+function shakeChat(userId){
+	 window.top.effect.shakeChat(userId);
+}
+function shakeUserIcon(userId){
+	ChatService.getUnreadMsg(loginUserId,userId,function(msgList){
+			if (msgList.length==1) {
+				window.top.effect.shakeUserItem(userId);
+			}
+		});
+	//window.top.effect.shakeUserItem(userId);
+}
+function shakeUserIconOffLine(userId){
+	window.top.effect.shakeUserItem(userId);
+}
+function stillUserIcon(userId){
+	window.top.effect.stillUserItem(userId);
+}
+
+//检测连线情况
+function checkTimeOut(){
+	CheckTimeOutService.checkTimeOutCallBack(loginUserId);
+}

@@ -1,0 +1,165 @@
+@CHARSET "UTF-8";
+body{
+	margin: 0px;
+	overflow: hidden;
+}
+.contentTitle{
+	float: left;
+	width:100%;
+	border: none;
+	border-top: 1px solid #EFEFEF;
+	padding: 5px;
+	}
+.who{
+	width:80px;
+	float: left;
+	}
+.senddate{
+	font-size:10px;
+	float:right;
+	padding-right: 10px;
+	}
+
+.contnet{
+	float: left;
+	width:100%;
+	padding: 5px;
+}
+.chatContentDiv{
+	width:100%;
+	overflow:auto;
+	overflow-x: hidden;
+	font-size:12px;
+	height: 200px;  
+	max-height: 200px;
+}
+.chatInput{
+	border:0px;
+	padding:5px;
+	height:50px;
+	width:388px;
+	overflow:hidden;
+}
+.contentInput{
+	width:100%;
+	border:1px solid #e3e3e3;
+	padding:0px;
+	float:left;
+	height:50px;
+}
+.chateditdiv{
+	width:388px;
+	height:22px;
+	padding-left:5px;
+	padding-right:5px;
+	padding-top:1px;
+	padding-bottom:1px;
+	overflow:hidden;
+	background:url(../talk/images/line_bg.jpg);
+	background-repeat:repeat-x;
+}
+.bottommenudiv{
+	width:100%;
+	height:21px;
+	line-height:21px;
+	padding-top:5px;
+	padding-bottom:5px;
+	overflow:hidden;
+	background:url(../talk/images/linebg.jpg);
+	background-repeat:repeat-x;
+}
+.dialogrecorddiv{
+	width:84px;
+	height:20px;
+	float:left;
+	margin-left:10px;
+	border:0px;
+	padding:0px;
+	overflow:hidden;
+	text-decoration:none;
+}
+a.dialogrecorddiv:hover{
+	background:url(../talk/images/dialogrecord.gif);
+	background-repeat:no-repeat;
+	border:0px;
+}
+.talkabout{
+	width:16px;
+	height:16px;
+	float:left;
+	margin-left:3px;
+	border:0px;
+	padding:0px;
+	overflow:hidden;
+	background:url(../talk/images/talkabout.gif);
+	overflow:hidden;
+	display:inline;
+	margin-top:2px;
+}
+.dialogrecord{
+	width:55px;
+	height:20px;
+	line-height:20px;
+	float:left;
+	margin-left:2px;
+	border:0px;
+	padding:0px;
+	font-size:12px;
+	text-align:center;
+	vertical-align:middle;
+	color:#454545;
+	overflow:hidden;
+	text-decoration:none;
+}
+.uploadpic{
+	width:84px;
+	height:20px;
+	float:left;
+	margin-left:10px;
+	border:0px;
+	padding:0px;
+	overflow:hidden;
+	text-decoration:none;
+}
+a.uploadpic:hover{
+	background:url(../talk/images/dialogrecord.gif);
+	background-repeat:no-repeat;
+	border:0px;
+}
+.uploadpicpattern{
+	width:16px;
+	height:16px;
+	float:left;
+	margin-left:3px;
+	border:0px;
+	padding:0px;
+	overflow:hidden;
+	background:url(../talk/images/upload.gif);
+	overflow:hidden;
+	display:inline;
+	margin-top:2px;
+}
+.uploadpicdiv{
+	width:55px;
+	height:20px;
+	line-height:20px;
+	float:left;
+	margin-left:2px;
+	border:0px;
+	padding:0px;
+	font-size:12px;
+	text-align:center;
+	vertical-align:middle;
+	color:#454545;
+	overflow:hidden;
+	text-decoration:none;
+}
+.closethewindow{
+	width:55px;
+	height:21px;
+	background:url(../talk/images/close.jpg);
+	border:0px;
+	padding:0px;
+	float:right;
+	margin-right:10px;
+}

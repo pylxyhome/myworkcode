@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN" "http://getahead.org/dwr/dwr20.dtd">
+<dwr>
+	<allow>
+		<convert converter="bean" match="com.im.bean.user.*"/>
+		<convert converter="bean" match="com.im.bean.message.Message"/>
+		<create creator="new" javascript="SendPushService">
+			 <param name="class" value="com.im.service.SendPushService"/>
+		</create>  
+		<!-- im登陆服务接口 -->
+		<create creator="spring" javascript="LoginService">      
+			 <param name="beanName" value="loginService"/>
+		</create>   
+		<!-- 聊天服务接口 -->
+		<create creator="spring" javascript="ChatService">   
+			 <param name="beanName" value="chatService"/>
+		</create> 
+		<!-- 服务接口 -->
+		<create creator="spring" javascript="CheckTimeOutService">   
+			 <param name="beanName" value="checkTimeOutService"/>
+		</create> 
+	</allow>
+</dwr>

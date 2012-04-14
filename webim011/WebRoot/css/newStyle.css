@@ -1,0 +1,21 @@
+#titlebg{
+	 background:url(../images/title_middle.gif);
+}
+
+#toolbarbg{
+	 background:url(../images/topbg.jpg);
+}
+
+A:active,A:visited,A:link {
+	COLOR: #0629FD;
+	TEXT-DECORATION: none
+}
+
+A:hover {
+	COLOR: #FF6600;
+	TEXT-DECORATION: none
+}
+td {
+	font-size: 14px;
+	color: #003366;
+}

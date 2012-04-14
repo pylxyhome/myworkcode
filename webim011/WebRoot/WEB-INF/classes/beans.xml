@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+	<!--注册bean扫描器,启用注解能力 -->
+   	<context:component-scan base-package="com.im"/>
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+	<property name="driverClass" value="com.mysql.jdbc.Driver"/>
+	<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/webim?useUnicode=true&amp;characterEncoding=UTF-8"/>
+	<property name="user" value="root"/>
+	<property name="password" value="root"/>
+	<!--初始化时获取的连接数，取值应在minPoolSize与maxPoolSize之间。Default: 3 -->
+	<property name="initialPoolSize" value="1"/>
+	<!--连接池中保留的最小连接数。-->
+	<property name="minPoolSize" value="1"/>	
+	<!--连接池中保留的最大连接数。Default: 15 -->
+	<property name="maxPoolSize" value="300"/>
+	<!--最大空闲时间,60秒内未使用则连接被丢弃。若为0则永不丢弃。默认0 -->
+	<property name="maxIdleTime" value="60"/>	
+	<!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。默认3 -->
+	<property name="acquireIncrement" value="5"/>	
+	<!--每60秒检查所有连接池中的空闲连接。默认0 -->
+	<property name="idleConnectionTestPeriod" value="60"/>
+	</bean>
+	<!-- LocalSessionFactoryBean接管一些額外的工作 -->
+	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="persistenceXmlLocation" value="classpath:META-INF/persistence.xml" />
+			<property name="loadTimeWeaver">
+	          <bean class="org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver"/>
+	       </property>
+	</bean>
+   <!-- 注册事务管理器 ,spring容器管理事务-->   
+   <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+   </bean>
+ 	<!-- 第一步: 配置好要定时调用的业务类 -->
+	<bean id="checkOnline" class="com.im.task.CheckOnlineUserJob" />
+	<!-- 第二步: 定义好具体要使用类的哪一个业务方法 -->
+	<bean id="workDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<!-- 目标bean -->
+  		<property name="targetObject" ref="checkOnline"/>
+  		<!-- 要执行目标bean的哪一个业务方法 -->
+  		<property name="targetMethod" value="execute"/>
+  		<!-- 是否并发 -->
+  		<property name="concurrent" value="false"/>
+	</bean>
+	<!-- 第三步: 定义好调用模式: 如每隔10秒钟调用一次或每天的哪个时间调用一次等 -->
+	<bean id="msgTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+  		<property name="jobDetail" ref="workDetail"/>
+  		<property name="cronExpression" value="0/15 * * * * ?"/>
+	</bean>
+	<!--第四步 把定义好的任务放到调度（Scheduler）工厂里面,注意这里的ref bean -->
+    <bean  class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+  		<property name="triggers">
+    		<list>
+      			<ref bean="msgTrigger"/>
+    		</list>
+  		</property>
+	</bean>
+   <!-- 开启事务注解能力 -->
+   <tx:annotation-driven transaction-manager="transactionManager"/>
+   
+</beans>

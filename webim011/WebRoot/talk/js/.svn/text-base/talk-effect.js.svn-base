@@ -1,0 +1,300 @@
+var basePath="";
+
+var loginUserId="";
+var loginUserName="";
+
+var userShakeArray=new Object();
+var chatShakeArray=new Object();
+
+function killErrors() { 
+	return true; 
+} 
+window.onerror = killErrors;
+var effect={
+	chatIdFormat:"chatingTemplate_[loginId]_[targetId]",
+	chatFrameFormat:"chatFrame_[loginId]_[targetId]",
+	addChat:function(loginId,targetId,targetName,src){
+		effect.hideAll();
+		//still user
+		effect.stillUserItem(targetId);
+		var chatingTemplate=$("#chatingpanelTemplate").clone(true);
+		var chatId=effect.chatIdFormat.replace("[loginId]",loginId).replace("[targetId]",targetId);
+		var chatFrame=effect.chatFrameFormat.replace("[loginId]",loginId).replace("[targetId]",targetId);
+		if($("#"+chatId).length>0){
+			this.showCurrentChat(chatId);
+			return;
+		}
+		var userTitle=chatingTemplate.find("h3").html();
+		userTitle=userTitle.replace("[userTitle]",targetName);
+		chatingTemplate.find("h3").html(userTitle);
+		chatingTemplate.find("#chatingTitle").html("(<strong>"+targetName+"</strong>)");
+		chatingTemplate.find("#chatFrame").attr("id",chatFrame);
+		chatingTemplate.find("#chatingpanel").attr("id",chatId);		
+		$("#mainpanel").append(chatingTemplate.html());
+		setTimeout(function(){
+			$("#"+chatFrame).attr("src",src);		
+			effect.initChat(chatId,targetId);	
+			effect.showCurrentChat(chatId);
+		},300);	
+	},
+	showCurrentChat:function(chatId){
+		var charFrame=$("#"+chatId);
+		$(".subchatpanel").hide(); //Hide all subpanels
+		charFrame.find(".chat").next(".subchatpanel").show(); //Toggle the subpanel to make active
+		$("#footpanel li a").removeClass('active'); //Remove active class on all subpanel trigger
+		charFrame.find(".chat").addClass('active'); //Toggle the active class on the subpanel trigger
+	},
+	hideAll:function(){
+		$(".subpanel").hide(); //hide subpanel
+		$(".subchatpanel").hide();
+		$("#footpanel li a").removeClass('active');
+	},
+	initBasePath:function(imbasePath){
+		alert("init base path");
+		basePath=imbasePath;
+	},
+	initChat:function(chatId,targetId){
+		var charFrame=$("#"+chatId);
+		var chatFrameId=effect.chatFrameFormat.replace("[loginId]",loginUserId).replace("[targetId]",targetId);
+		charFrame.talkPanel();
+		$(window).resize(function () { 
+			charFrame.talkPanel();
+		});	
+		charFrame.find(".chat").click(function() { //If clicked on the first link of #chatpanel and #alertpanel...
+			effect.stillChat(targetId);
+			$(".subpanel").hide();
+			if($(this).next(".subchatpanel").is(':visible')){ //If subpanel is already active...
+				$("#"+chatId).find("#chatingTitle").css("background-color","#e3e2e2");
+				$(this).next(".subchatpanel").hide(); //Hide active subpanel
+				$("#footpanel li a").removeClass('active'); //Remove active class on the subpanel trigger
+			}
+			else { //if subpanel is not active...
+				$("#"+chatId).find("#chatingTitle").css("background-color","#FFFFFF");
+				$(".subchatpanel").hide(); //Hide all subpanels
+				$(this).next(".subchatpanel").toggle(); //Toggle the subpanel to make active
+				$("#footpanel li a").removeClass('active'); //Remove active class on all subpanel trigger
+				$(this).toggleClass('active'); //Toggle the active class on the subpanel trigger
+			}
+			return false; //Prevent browser jump to link anchor
+		});
+		charFrame.find("#chatMin").click(function() { //Click anywhere and...
+			$(".subpanel").hide(); //hide subpanel
+			$(".subchatpanel").hide();
+			$("#footpanel li a").removeClass('active'); //remove active class on subpanel trigger
+		});
+		charFrame.find("#chatClose").click(function() { //Click anywhere and...
+			var url=basePath+"/im/leaveChat.action?loginId=";
+			url+=loginUserId;
+			url+="&targetId=";
+			url+=targetId;
+			url+="&temp="
+			url+=Math.random();
+			$("#"+chatFrameId).attr("src",url);
+			setTimeout(function(){charFrame.remove();},300);
+			 //hide subpanel
+		});		
+	},
+	addUserGroup:function(group){
+		$("#userList").append("<li id="+group.id+"><span>"+group.text+"</span></li>");
+	},
+	addUserItem:function(user,group){
+		//user.id lise groupname_userId ex:online_1
+		var userId=user.id;
+		var isTemp=user.isTemp;
+		var group=$("#userList").find("#"+group.id);
+		
+		var isOnline=(userId.split("_")[0]=="online");
+		userId=userId.split("_")[1];
+		var userName=user.text;
+		var userItemTemplate=$("#userItemTemplate").clone(true);		
+		if(isOnline){
+			userItemTemplate.find("#chatingDisplayName").html(userName+"[<font color='green'>在线</font>]");			
+		}else{
+			userItemTemplate.find("#chatingDisplayName").html(userName+"<font color='red'>离线</font>]");
+		}
+		var userItemTemplateHTML=userItemTemplate.html();
+		userItemTemplateHTML=userItemTemplateHTML.replace("[targetName]",userName);
+		userItemTemplateHTML=userItemTemplateHTML.replace("[targetId]",userId);
+		userItemTemplateHTML=userItemTemplateHTML.replace("[Id]",userId);
+		group.after(userItemTemplateHTML);
+		$("#debug").val($("#userList").html());
+		effect.initCurrentUserItemClick(userId);		
+	},
+	shakeChat:function(userId){
+		var chatId=effect.chatIdFormat.replace("[loginId]",loginUserId).replace("[targetId]",userId);
+		var isHidden=$("#"+chatId).find(".chat").next(".subchatpanel").is(":hidden");
+		if(isHidden){
+			chatShakeArray[userId]=setInterval(function(){
+					$("#"+chatId).find("#chatingTitle").css("background-color","#FFCC00");
+					setTimeout(function(){
+						$("#"+chatId).find("#chatingTitle").css("background-color","#FFFFFF");
+					},300);
+				},600);	
+		}
+	},
+	stillChat:function(userId){
+		window.clearInterval(chatShakeArray[userId]);
+	},
+	shakeUserItem:function(userId){
+		userShakeArray[userId]=setInterval(function(){
+				$("#userItem_"+userId).css("background-color","#FFCC00");
+				$("#chatTitle").css("background-color","#FFCC00");
+				setTimeout(function(){
+					$("#userItem_"+userId).css("background-color","#FFFFFF");
+					$("#chatTitle").css("background-color","#e3e2e2");
+				},300);
+			},600);	
+	},
+	stillUserItem:function(userId){
+		window.clearInterval(userShakeArray[userId]);
+	},
+	refreshUserList:function(json){
+			$(".menber").hide();
+			$.each(json,function(i,group){
+				$.each(group.children,function(j,user){
+					/*window.top.effect.addUserItem(user);*/
+					var id=user.id.split("_")[1];
+					if($("#userItem_"+id).length>0){
+						var isOnline=(user.id.split("_")[0]=="online");
+						if(isOnline){
+							$("#userItem_"+id).find("#chatingDisplayName").html(user.text+"[<font color='green'>在线</font>]");							
+						}else{
+							$("#userItem_"+id).find("#chatingDisplayName").html(user.text+"[<font color='red'>离线</font>]");
+						}
+						$("#userItem_"+id).show();
+					}else{
+						effect.addUserItem(user,group);
+					}
+				});
+			});	
+				
+	},
+	initCurrentUserItemClick:function(targetId){
+		$("#userItem_"+targetId).attr("style","DISPLAY: block");
+		$("#userItem_"+targetId).click(function(even){
+				var targetId=$(this).attr("targetId");
+				var targetName=$(this).attr("targetName");
+				var chatFrameSrc=basePath+"/talk/chat.jsp?loginUserId={loginUserId}&loginUserName={loginUserName}";
+				chatFrameSrc+="&targetId={targetId}&targetName={targetName}&temp={temp}";
+				chatFrameSrc=chatFrameSrc.replace("{temp}",Math.random());
+				chatFrameSrc=chatFrameSrc.replace("{loginUserId}",loginUserId);
+				chatFrameSrc=chatFrameSrc.replace("{loginUserName}",loginUserName);
+				chatFrameSrc=chatFrameSrc.replace("{targetId}",targetId);
+				chatFrameSrc=chatFrameSrc.replace("{targetName}",targetName);		
+				effect.addChat(loginUserId,targetId,targetName,encodeURI(chatFrameSrc));
+		});		
+	},
+	/*
+	initUserItemClick:function(){
+		$(".menber").click(function(){
+			var targetId=$(this).attr("targetId");
+			var targetName=$(this).attr("targetName");
+			var chatFrameSrc=basePath+"/talk/chat.jsp?loginUserId={loginUserId}&loginUserName={loginUserName}";
+			chatFrameSrc+="&targetId={targetId}&targetName={targetName}&temp={temp}";
+			chatFrameSrc=chatFrameSrc.replace("{temp}",Math.random());
+			chatFrameSrc=chatFrameSrc.replace("{loginUserId}",loginUserId);
+			chatFrameSrc=chatFrameSrc.replace("{loginUserName}",loginUserName);
+			chatFrameSrc=chatFrameSrc.replace("{targetId}",targetId);
+			chatFrameSrc=chatFrameSrc.replace("{targetName}",targetName);		
+			effect.addChat(loginUserId,targetId,targetName,encodeURI(chatFrameSrc));			
+		});
+	},
+	*/
+	init:function(){
+		basePath=$("#basePath").val();
+		loginUserId=$("#loginUserId").val();
+		loginUserName=$("#loginUserName").val();
+		$(".chatingpanel").talkPanel();
+		$("#chatpanel").talkPanel(); //Run the talkPanel function on #chatpanel
+		$("#alertpanel").talkPanel(); //Run the talkPanel function on #alertpanel
+		//Each time the viewport is adjusted/resized, execute the function
+		$(window).resize(function () { 
+			$("#chatpanel").talkPanel();
+			$("#alertpanel").talkPanel();
+			$(".chatingpanel").talkPanel();
+		});
+		
+		$("#chatpanel a:first, #alertpanel a:first , #chatingpanel a:first").click(function() { //If clicked on the first link of #chatpanel and #alertpanel...
+			$(".subchatpanel").hide();
+			if($(this).next(".subpanel").is(':visible')){ //If subpanel is already active...
+				$(this).next(".subpanel").hide(); //Hide active subpanel
+				$("#footpanel li a").removeClass('active'); //Remove active class on the subpanel trigger
+			}
+			else { //if subpanel is not active...
+				$(".subpanel").hide(); //Hide all subpanels
+				$(this).next(".subpanel").toggle(); //Toggle the subpanel to make active
+				$("#footpanel li a").removeClass('active'); //Remove active class on all subpanel trigger
+				$(this).toggleClass('active'); //Toggle the active class on the subpanel trigger
+			}
+			return false; //Prevent browser jump to link anchor
+		});		
+		
+		$(".menber").each(function(){
+			var targetId=$(this).attr("targetId");
+			effect.initCurrentUserItemClick(targetId);
+		});
+		
+		/*this.initUserItemClick();*/
+		//Click event outside of subpanel
+
+		$(".min").click(function() { //Click anywhere and...
+			$(this).find("#chatingTitle").css("background-color","#e3e2e2");
+			$(".subpanel").hide(); //hide subpanel
+			$(".subchatpanel").hide();
+			$("#footpanel li a").removeClass('active'); //remove active class on subpanel trigger
+		});
+	
+		$('.subpanel ul').click(function(e) { 
+			e.stopPropagation(); //Prevents the subpanel ul from closing on click
+		});
+		
+		//Delete icons on Alert Panel
+		$("#alertpanel li").hover(function() {
+			$(this).find("a.delete").css({'visibility': 'visible'}); //Show delete icon on hover
+		},function() {
+			$(this).find("a.delete").css({'visibility': 'hidden'}); //Hide delete icon on hover out
+		});
+		//初始化查询
+		effect.seachInit();
+	},
+	seachInit:function(){
+		$("#seachInput").keyup(function(event){
+			effect.seachUser($("#seachInput").val());
+			$("#seachResultDiv").show("slow");
+		});
+		
+		$("#closeSeachResultHref").click(function(event){
+			$("#seachInput").val("");
+			$("#seachResultDiv").hide("slow");
+		});
+	},
+	seachUser:function(userName){
+		document.getElementById("imframe").contentWindow.seachUser(userName);
+	},
+	cleanSeachUserResult:function(){	
+		$("#seachResultItem").html("");
+	},
+	addSeachUserResult:function(user){	
+		var seachUserItem=$("#seachUserItemTemplate").clone(true);		
+		var seachUserItemHTML=seachUserItem.html();
+		seachUserItemHTML=seachUserItemHTML.replace("[displayName]",user.username);
+		seachUserItemHTML=seachUserItemHTML.replace("[targetName]",user.username);
+		seachUserItemHTML=seachUserItemHTML.replace("[targetId]",user.userid);
+		seachUserItemHTML=seachUserItemHTML.replace("[Id]",user.userid);
+		$("#seachResultItem").append(seachUserItemHTML);
+		
+		$("#seachUserItem_"+user.userid).click(function(even){
+				var targetId=$(this).attr("targetId");
+				var targetName=$(this).attr("targetName");
+				var chatFrameSrc=basePath+"/talk/chat.jsp?loginUserId={loginUserId}&loginUserName={loginUserName}";
+				chatFrameSrc+="&targetId={targetId}&targetName={targetName}&temp={temp}";
+				chatFrameSrc=chatFrameSrc.replace("{temp}",Math.random());
+				chatFrameSrc=chatFrameSrc.replace("{loginUserId}",loginUserId);
+				chatFrameSrc=chatFrameSrc.replace("{loginUserName}",loginUserName);
+				chatFrameSrc=chatFrameSrc.replace("{targetId}",targetId);
+				chatFrameSrc=chatFrameSrc.replace("{targetName}",targetName);		
+				effect.addChat(loginUserId,targetId,targetName,encodeURI(chatFrameSrc));
+		});		
+	}
+}
+

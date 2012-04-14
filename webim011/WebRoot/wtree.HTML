@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>用户组菜单</title>
+<script type="text/javascript" src="js/wtree.js"></script>
+<link href="css/dtree.css" rel="stylesheet" type="text/css"></link>
+</head>
+<body>
+<div id="treearea"></div>
+<script type="text/javascript">
+	var d = new dTree('d','images/system/dept/');
+	d.config.folderLinks=true;
+	
+		d.add(0,-1,'系统菜单',"javascript:;");
+	
+		d.add(100,0,'系统管理',"javascript:;");
+	
+		d.add(790,100,'菜单管理',"javascript:;");
+	
+		d.add(800,100,'组织机构',"javascript:;");
+	
+		d.add(810,100,'用户管理',"javascript:;");
+		
+		d.add(102,0,'系统机构',"javascript:;");
+	
+		d.add(300,102,'人员管理',"javascript:;");
+	
+		d.add(301,102,'部门管理',"javascript:;");
+	
+		d.add(302,102,'机构管理',"javascript:;");
+	
+		d.add(103,0,'权限管理',"#");
+	
+		d.add(400,103,'角色维护',"#");
+	
+		d.add(401,103,'功能分配',"#");
+	
+		d.add(402,103,'角色分配',"#");
+	 
+	document.getElementById('treearea').innerHTML = d;
+</script>
+</body>
+</html>

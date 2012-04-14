@@ -1,0 +1,144 @@
+﻿<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+request.setAttribute("basePath",basePath);
+%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" " http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=" http://www.w3.org/1999/xhtml">
+  <head>
+   <base href="<%=basePath%>" />  
+   <title>IM template</title>
+   <script type='text/javascript' src='dwr/interface/DWRService.js'></script>
+   <script type='text/javascript' src='dwr/interface/LoginService.js'></script>
+   <script type='text/javascript' src='dwr/interface/ChatService.js'></script>
+   <script type='text/javascript' src='dwr/interface/CheckTimeOutService.js'></script>
+   <script type='text/javascript' src='dwr/interface/ImUserService.js'></script>
+   <script type='text/javascript' src='dwr/engine.js'></script>
+   <script type="text/javascript" src="script/jquery/jquery.js"></script>
+   <script type="text/javascript" src="script/util.js"></script> 
+   <script type="text/javascript" src="script/constant.js"></script>
+   <script type="text/javascript" src="talk/js/talk.js"></script>
+
+  </head>
+  <body>
+  	<script type="text/javascript">  
+  		document.domain="${domain}";
+  		$(function(){
+  			sleep();
+  		});
+  	 	function sleep(){
+  	 		if(window.top.document.readyState!="undefined"){
+  	 			setTimeout(function(){
+  	 				ui.init("${basePath}");
+  	 			},1000);
+  	 			return;
+  	 		}
+  	 		if(window.top.document.readyState!="complete"){
+  				setTimeout("sleep()",1000);  			  				
+  			}else{
+  				ui.init("${basePath}");
+  			}
+  	 	}
+
+  	</script>
+  	<div id="mainFrameTemplate">  		
+	  	<div id="footpanel">
+			<ul id="mainpanel">    				 
+		         <li id="alertpanel">
+		        	<a href="javascript:void(0);" class="alerts">Alerts</a>
+		            <div class="subpanel">
+		            <h3><span class="min"> &ndash; </span>特殊功能</h3>
+		            <ul>
+		            	<li><a href="javascript:void(0);" 
+		            	onclick="window.top.effect.openWin('${basePath}regionmanage/listRegion.action','区域管理',600,300,1)">区域管理</a>
+		            	</li>
+		                <li><a href="javascript:void(0);">人员管理</a></li>
+		                <li><a href="javascript:void(0);"
+		                onclick="window.top.effect.openWin('${basePath}statismanage/listStatis.action?userId=${param.userid}','我的聊天统计',700,350,1)">我的聊天统计</a></li>
+		                <li><a href="javascript:void(0);" 
+<<<<<<< .mine
+		                onclick="window.top.effect.openWin('statismanage/listImStatis.action?userId=${param.userid}','聊天信息统计',750,400,1)">聊天统计</a></li>
+=======
+		                onclick="window.top.effect.openWin('${basePath}statismanage/listImStatis.action?userId=${param.userid}','我的聊天统计',750,400,1)">聊天统计</a></li>
+>>>>>>> .r52
+		            </ul>
+		            </div>
+		        </li>
+				<!-- 客服窗口 -->
+		        <li id="chatpanel">
+		        	<a href="javascript:void(0);" class="chat" id="chatTitle" title="点击打开在线客服">客户人员(<strong>18</strong>) </a>
+		            <div class="subpanel">
+		            <h3><span class="min" title="最小化"> &ndash; </span>惠海在线客服</h3>
+		            <!-- 查询输入框-->
+		            <input id="seachInput" type="text" value="" style="width:180px;margin:4px;"/>
+		             <div id="seachResultDiv" style='z-index: 100; position:relative;left:-10;top:-10;width:30;float:left;display: none;' >
+		             <a id="closeSeachResultHref" href="javascript:void(0);" style="margin-left:170px;">x</a>
+		             <hr/>
+		             <div id="seachResultItem" style="height:100%;">
+		             		
+		             </div>
+		             <hr/> 
+		             </div>
+		            <ul id="userList" style="overflow: scroll;">
+		            	
+		            </ul>
+		            </div>
+		        </li> 
+		       <!--客户窗口 -->
+		       <li id="customerChatpanel">
+		        	<a href="javascript:void(0);" class="chat" id="customerChatTitle">客户</a>
+		            <div class="subpanel">
+		            <h3><span class="min"> &ndash; </span>客户窗口</h3>
+		             <!-- 客户查询输入框-->
+		            <input id="seachCustomerInput" type="text" value="" style="width:180px;margin:4px;"/>
+		             <div id="seachCustomerResultDiv" style='z-index: 100; position:relative;left:-10;top:-10;width:30;float:left;display: none;' >
+		             <a id="closeCustomerResultHref" href="javascript:void(0);" style="margin-left:170px;">x</a>
+		             <hr/>
+		             <div id="seachCustomerResultItem" style="height:100%;">
+		             		
+		             </div>
+		             <hr/> 
+		             </div>
+		             
+		            <ul id="customerUserList" style="overflow: scroll;">
+		            	
+		            </ul>
+		            </div>
+		       </li> 
+		       
+			</ul>
+		</div>
+		
+		<!-- 数据传递模块 -->
+  		<input type="hidden" value="${param.loginUserPwd}" id="loginUserPwd"/>
+  		<input type="hidden" value="${param.userid}" id="loginUserId"/>
+		<input type="hidden" value="" id="loginUserName"/>
+		<input type="hidden" value="${param.loginUserAccount}" id="loginUserAccount"/>
+  		<input type="hidden"  value="${basePath}" id="basePath"/>
+		<!-- 用户列表模块 -->
+		<div id="userItemTemplate" style="display:none;">
+	  		<li><a href="javascript:void(0);" id="userItem_[Id]" class="menber" targetId="[targetId]" targetName="[targetName]" loginId="[loginId]" loginName="[loginName]"><img src="${basePath}[userimg]" width="24" height="24" alt="" style="DISPLAY: block"/><div id="chatingDisplayName">[displayName]</div></a></li>
+	  	</div>  
+	  	<!-- 用户查询结果模块 -->
+		<div id="seachUserItemTemplate" style="display:none;">
+	  		<a href="javascript:void(0);" class="seachmenber" id="seachUserItem_[Id]" targetId="[targetId]" targetName="[targetName]" loginId="[loginId]" loginName="[loginName]"><img src="${basePath}[userimg]" width="24" height="24" alt="" />[displayName]</a>
+	  	</div>
+	  	
+		<!-- 聊天模板 -->
+		<div id="chatingpanelTemplate" style="display:none;">
+		  <li id="chatingpanel" class="chatingpanel">
+        	<a href="#" class="chat" id="chatingTitle">Friends (<strong>18</strong>) </a>
+            <div class="subchatpanel">
+            	<h3><span id="chatMin" class="chatMin" title="最小化"> &ndash; </span><span id="chatClose" title="关闭">x</span>正在与[userTitle]聊天</h3>
+		        <ul id="chatFramePanel">
+		            <iframe id="chatFrame" frameborder="0" width="398px;" height="270px;" scrolling="auto" src=""></iframe>
+		         </ul>
+            </div>
+        </li>
+	</div>
+	
+  	</div>
+  </body>
+</html>

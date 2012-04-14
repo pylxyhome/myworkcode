@@ -1,0 +1,108 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+body{font-size:12px; color:#666; font-family:Arial,sans-serif; padding:0; margin:0;}
+h1,h2,h3,h4,h5,h6,p,ul,li{font-size:12px; font-weight:normal; padding:0; margin:0;} /* 重设部分css */
+input, select, button{vertical-align:middle;}
+li{display:block; list-style:none;}
+a{color:#666; text-decoration:none;}
+img{border:none;}
+.clear{clear:both;} /* 解决父层不随浮动子层拓展 */
+.clear_hr{clear:both;heihgt:0;font-size:0px;}
+
+/****************************   header  ****************************/
+#header{width:100%; height:76px;}
+#top{width:960px; height:72px; color:#FFF; margin:0 auto;}
+.logo{display:block; width:230px; height:72px; background:url(../img/logo.jpg) 0 10px no-repeat; float:left;}
+.logo:hover{background:url(../img/logo.jpg) 0 -70px no-repeat;}
+.top_control{line-height:26px; padding:0 10px; float:right;}
+.top_control a{font-weight:bold; color:#FFF; margin-left:16px;}
+.top_control a, .top_control img{_margin:3px 4px 9px 0; _vertical-align:middle;}
+
+/****************************   content  ****************************/
+#content{width:960px; height:100%; margin:0 auto;}
+/*-------------- left -------------*/
+#left{width:180px; height:100%; float:left;}
+
+.left_userInfo{height:168px;}
+.left_userFace{display:block; width:64px; height:64px; margin:0 auto; padding:13px; background:url(../img/admin_default_sprites.png) -210px 0 no-repeat scroll;}
+.left_menu{height:100%;}
+.left_menu li{height:38px; margin-bottom:1px; text-align:center;} /* margin-bottom使每一个菜单留出1px的间隙 */
+ /* 短信选项样式 */
+.left_menu li a{display:block; height:16px; padding:11px 2px; font-size:16px; font-weight:bold; background:url(../img/admin_default_sprites.png) 0 -95px no-repeat scroll;}
+.left_menu li a:hover, .left_menu li a.this_note{color:#FFF; background:#C1E34A url(../img/admin_default_sprites.png) -240px -95px no-repeat scroll;}
+ /* 问答选项样式 */
+.left_menu li a.question{background:url(../img/admin_default_sprites.png) 0 -144px no-repeat scroll;}
+.left_menu li a.question:hover, .left_menu li a.this_question{color:#FFF; background:#C1E34A url(../img/admin_default_sprites.png) -240px -144px no-repeat scroll;}
+ /* 收藏夹选项样式 */
+.left_menu li a.collection{background:url(../img/admin_default_sprites.png) 0 -197px no-repeat scroll;}
+.left_menu li a.collection:hover, .left_menu li a.this_collection{color:#FFF; background:#C1E34A url(../img/admin_default_sprites.png) -240px -197px no-repeat scroll;}
+ /* 记事本选项样式 */
+.left_menu li a.notebook{background:url(../img/admin_default_sprites.png) 0 -246px no-repeat scroll;}
+.left_menu li a.notebook:hover, .left_menu li a.this_notebook{color:#FFF; background:#C1E34A url(../img/admin_default_sprites.png) -240px -246px no-repeat scroll;}
+ /* 通讯录选项样式 */
+.left_menu li a.addressList{background:url(../img/admin_default_sprites.png) 0 -295px no-repeat scroll;}
+.left_menu li a.addressList:hover, .left_menu li a.this_addressList{color:#FFF; background:#C1E34A url(../img/admin_default_sprites.png) -240px -295px no-repeat scroll;}
+ /* 用户信选项息样式 */
+.left_menu li a.userInfo{background:url(../img/admin_default_sprites.png) 0 -344px no-repeat scroll;}
+.left_menu li a.userInfo:hover, .left_menu li a.this_userInfo{color:#FFF; background:#C1E34A url(../img/admin_default_sprites.png) -240px -344px no-repeat scroll;}
+.left_menu li.userInfo_li{margin-bottom:0} /* 清除最后一个li的border-bottom */
+
+/*-------------- right -------------*/
+#right{width:750px; height:100%; margin-top:20px; float:right;}
+
+.right_sendNote_icon, .right_quiz_icon, .right_editNotebook_icon{width:30px; height:24px; background:url(../img/admin_default_sprites.png) -3px -400px no-repeat scroll; float:left;}
+.right_quiz_icon{background:url(../img/admin_default_sprites.png) -47px -397px no-repeat scroll;}
+.right_editNotebook_icon{background:url(../img/admin_default_sprites.png) -84px -397px no-repeat scroll;}
+.right_sendNote a, .right_sendNote span, .right_quizQues a, .right_quizQues span{display:block; height:20px; font-size:14px; font-weight:bold; padding:4px 0 0 0; margin-bottom:12px; float:left;}
+.right_sendNote a:hover, .right_quizQues a:hover{color:#FFF; background:#C1E34A;}
+.right_sendNote span, .right_quizQues span{color:#AED821; padding-left:4px; background:none;}
+
+.right_nav{width:100%; height:38px; margin-bottom:16px;} /* ul */
+.right_nav li{width:128px; margin-right:4px; text-align:center; float:left;}  /* margin-right使收信箱、发信箱、收藏箱和垃圾箱留出4px的间隔 */
+.right_nav li a{display:block; height:12px; font-size:14px; font-weight:bold; padding:12px 2px;}
+.right_nav li a:hover{height:14px;  padding:11px 2px;}
+.right_nav li a.right_nav_this{height:14px; padding:11px 2px;}
+
+.right_table{width:698px; height:100%; padding:25px; color:#666; border:1px #CCC solid;}
+.right_editTable{border:none;}
+.right_table td{height:20px;}  /* 定义table每一行的高 */
+.col_first{font-weight:bold;}
+.col_last a{margin:5px 5px 0 0;}
+.listControl{display:block; float:left;}
+.pageControl{display:block; float:right;}
+
+.right_note, .right_quiz{height:100%; border:1px #CCC solid;}
+.right_noteEdit_top, .right_noteSingle_top, .right_quizEdit_top, .right_quizSingle_top, .right_questionSingle_top, .right_notebookWrite_top, .right_notebookSingle_top{height:100%; border-bottom:1px #CCC solid; padding:15px; background:#EFEFEF;}
+
+.right_addCollection li, .right_addAddress li, .right_quizEdit_top li, .right_noteEdit_top li, .right_notebookWrite_top li{height:28px; margin-bottom:4px;}
+.right_addCollection .lab, .right_addAddress .lab, .right_quizEdit_top .lab, .right_noteEdit_top .lab, .right_notebookWrite_top .lab{display:block; width:60px; height:12px; font-weight:bold; margin:5px 8px 0 0; float:left;}
+.right_addCollection .text, .right_addAddress .text, .right_quizEdit_top .text, .right_noteEdit_top .text, .right_notebookWrite_top .text, .right_table_userInfo .text{width:250px; height:14px; padding:4px 2px; /*border:1px #CCC solid;*/ float:left;}
+.right_addCollection .collecSort, .right_addAddress .addressSort{width:108px; height:24px; margin-left:6px;}
+.right_noteEdit_bottom, .right_quizEdit_bottom, .right_notebookWrite_bottom, .right_userInfo_bottom{border:1px #CCC solid; border-top:none; padding-bottom:15px; background:#EFEFEF;}
+.right_btn{margin:0 auto; text-align:center;}
+.right_btn a{display:block; width:118px; line-height:36px; font-weight:bold; margin-top:10px; float:left;}
+.right_btn a:hover{}
+/*#send, #cancel{width:118px; height:36px; font-size:14px; font-weight:bold; color:#666; border:1px #CCC solid; background:#E1E1E1; cursor:pointer;}
+#send:hover, #cancel:hover{color:#FFF; border:1px #8AAB1B solid; background:#AED821;}*/
+
+.right_noteSingle_top h1, .right_questionSingle_top h1, .right_notebookSingle_top h1{font-size:16px; font-weight:bold; margin-bottom:4px;}
+.right_noteSingle_top span, .right_questionSingle_top span, .right_notebookSingle_top span{display:block; margin-bottom:2px;}
+.right_noteSingle_content, .right_questionSingle_content, .right_notebookSingle_content{display:block; margin:15px;}
+
+.right_addCollection, .right_addAddress{width:718px;_width:720px; height:100%; padding:15px 15px 5px 15px; border:1px #CCC solid; background:#EFEFEF;}
+.right_table_collection, .right_table_address{width:698px; border-top:none;}
+ 
+.right_question_content{margin:10px 0; padding:15px 10px; border:1px #CCC solid;}
+.right_questionSingle_content li{margin:10px 0; padding:10px; border-bottom:1px #CCC solid;}
+
+.right_userInfo{width:748px; height:100%; border:1px #CCC solid;}
+.right_table_userInfo{pwidth:698px; height:100%; padding:15px;}
+.right_table_userInfo td{height:30px;}
+.right_table_userInfo select{height:26px; padding:4px 0;}
+.userInfo_row_1{font-weight:bold;}
+
+/****************************   footer  ****************************/
+#footer{width:960px; font-size:10px; text-align:center; padding-top:40px; margin:0 auto;}
+#footer p{display:block; width:400px; text-align:center; padding:8px 0; margin:0 auto; border-top:1px dashed #cccccc; overflow:hidden;}

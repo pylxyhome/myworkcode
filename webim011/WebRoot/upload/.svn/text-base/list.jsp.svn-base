@@ -1,0 +1,84 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+request.setAttribute("basePath",basePath);
+%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <base href="<%=basePath%>">
+    <title>跟${targetName}的聊天记录</title> 
+    <link rel="stylesheet" href="css/region.css" type="text/css">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+<script language="JavaScript">
+<!--
+	//到指定的分页页面
+	function topage(page){
+		var form = document.forms[0];
+		form.page.value=page;
+		form.submit();
+	}
+//-->
+</script>
+  </head>
+ <body bgcolor="#FFFFFF" text="#000000" marginwidth="0" marginheight="0">
+ <form action="message/listMsg.action" method="post">
+ <input type="hidden" name="page">
+ <input type="hidden" name="senderID" value="${senderID}">
+ <input type="hidden" name="receiverID" value="${receiverID}">
+ <input type="hidden" name="targetId" value="${targetId}">
+ <table width="95%" border="0" cellspacing="1" cellpadding="2" align="center">
+ <tr ><td colspan="6"  bgcolor="6f8ac4" align="right">
+  	  <%@ include file="/WEB-INF/page/share/fenye.jsp" %>
+   </td></tr>
+    <tr>
+      <td width="8%" bgcolor="6f8ac4"> <div align="center"><font color="#FFFFFF">发送者</font></div></td>
+      <td width="8%" nowrap bgcolor="6f8ac4"> <div align="center"><font color="#FFFFFF">接收者</font></div></td>
+      <td width="60%" bgcolor="6f8ac4"> <div align="center"><font color="#FFFFFF">内容</font></div></td>
+      <td width="12%" bgcolor="6f8ac4"> <div align="center"><font color="#FFFFFF">发送时间</font></div></td>
+    </tr>
+<!---------------------------LOOP START------------------------------>
+<c:forEach items="${pageView.records}" var="msg">
+  <tr>
+  	 <td bgcolor="f5f5f5" align="center">${msg.sendName }</td>
+	  <td bgcolor="f5f5f5" align="center">${msg.receiverName }</td>
+	  
+	  <td bgcolor="f5f5f5" align="left">
+	  <c:if test="${msg.senderid==senderID}">
+		 <font color="blue"> ${msg.message }</font>
+	   </c:if>
+	   <c:if test="${msg.senderid!=senderID}">
+	 	 <font color="green">  ${msg.message }</font>
+	   </c:if>
+	  </td>
+	 
+      <td bgcolor="f5f5f5"><div align="center">
+      <fmt:formatDate value="${msg.senddate }" pattern="yyyy年MM月dd日 HH小时mm分ss秒"/></div></td>
+	</tr>
+</c:forEach>
+ <tr ><td colspan="6"  bgcolor="6f8ac4" align="right">
+  	  <%@ include file="/WEB-INF/page/share/fenye.jsp" %>
+   </td></tr>
+    <!----------------------LOOP END------------------------------->
+    <tr> 
+      <td bgcolor="f5f5f5" colspan="6" align="center"><table width="100%" border="0" cellspacing="1" cellpadding="3">
+          <tr> 
+            <td width="5%"></td>
+              <td width="85%">
+             
+            </td>
+          </tr>
+        </table></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

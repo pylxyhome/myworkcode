@@ -1,0 +1,487 @@
+var basePath="";
+
+var loginUserId="";
+var loginUserName="";
+
+var userShakeArray=new Object();    
+var chatShakeArray=new Object();
+var groupids = new Object();
+var  m = new Map();
+
+
+var old_menu = ""; 
+var old_cell = ""; 
+
+function killErrors() {      
+	return true; 
+} 
+window.onerror = killErrors;
+
+var effect={
+	chatIdFormat:"chatingTemplate_[loginId]_[targetId]",
+	chatFrameFormat:"chatFrame_[loginId]_[targetId]",
+	addChat:function(loginId,targetId,targetName,src){
+		effect.hideAll();
+		//still user（消除了闪烁�?
+		effect.stillUserItem(targetId);
+		var chatingTemplate=$("#chatingpanelTemplate").clone(true);
+		var chatId=effect.chatIdFormat.replace("[loginId]",loginId).replace("[targetId]",targetId);
+		var chatFrame=effect.chatFrameFormat.replace("[loginId]",loginId).replace("[targetId]",targetId);
+		if($("#"+chatId).length>0){
+			this.showCurrentChat(chatId);
+			return;
+		}
+		var userTitle=chatingTemplate.find("h3").html();
+		userTitle=userTitle.replace("[userTitle]",targetName);
+		chatingTemplate.find("h3").html(userTitle);
+		chatingTemplate.find("#chatingTitle").html("(<strong>"+targetName+"</strong>)");
+		chatingTemplate.find("#chatFrame").attr("id",chatFrame);
+		chatingTemplate.find("#chatingpanel").attr("id",chatId);		
+		$("#mainpanel").append(chatingTemplate.html());
+		setTimeout(function(){
+			$("#"+chatFrame).attr("src",src);		
+			effect.initChat(chatId,targetId);	
+			effect.showCurrentChat(chatId);
+		},300);	
+	},
+	
+	 openWin:function(f,n,w,h,s){
+			sb = s == "1" ? "1" : "0";
+			l = (screen.width - w)/2;
+			t = (screen.height - h)/2;
+			sFeatures = "left="+ l +",top="+ t +",height="+ h +",width="+ w
+					+ ",center=1,scrollbars=" + sb + ",status=0,directories=0,channelmode=0";
+			openwin = window.open(f , n , sFeatures );
+			if (!openwin.opener)
+				openwin.opener = self;
+			openwin.focus();
+			return openwin;
+       },
+	showCurrentChat:function(chatId){
+		var charFrame=$("#"+chatId);
+		$(".subchatpanel").hide(); //Hide all subpanels
+		charFrame.find(".chat").next(".subchatpanel").show(); //Toggle the subpanel to make active
+		$("#footpanel li a").removeClass('active'); //Remove active class on all subpanel trigger
+		charFrame.find(".chat").addClass('active'); //Toggle the active class on the subpanel trigger
+	},
+	hideAll:function(){
+		$(".subpanel").hide(); //hide subpanel
+		$(".subchatpanel").hide();
+		$("#footpanel li a").removeClass('active');
+	},
+	initBasePath:function(imbasePath){
+		alert("init base path");
+		basePath=imbasePath;
+	},
+	initChat:function(chatId,targetId){
+		var charFrame=$("#"+chatId);
+		var chatFrameId=effect.chatFrameFormat.replace("[loginId]",loginUserId).replace("[targetId]",targetId);
+		charFrame.talkPanel();
+		$(window).resize(function () { 
+			charFrame.talkPanel();
+		});	
+		charFrame.find(".chat").click(function() { //If clicked on the first link of #chatpanel and #alertpanel...
+			effect.stillChat(targetId);
+			$(".subpanel").hide();
+			if($(this).next(".subchatpanel").is(':visible')){ //If subpanel is already active...
+				$("#"+chatId).find("#chatingTitle").css("background-color","#e3e2e2");
+				$(this).next(".subchatpanel").hide(); //Hide active subpanel
+				$("#footpanel li a").removeClass('active'); //Remove active class on the subpanel trigger
+			}
+			else { //if subpanel is not active...
+				$("#"+chatId).find("#chatingTitle").css("background-color","#FFFFFF");
+				$(".subchatpanel").hide(); //Hide all subpanels
+				$(this).next(".subchatpanel").toggle(); //Toggle the subpanel to make active
+				$("#footpanel li a").removeClass('active'); //Remove active class on all subpanel trigger
+				$(this).toggleClass('active'); //Toggle the active class on the subpanel trigger
+			}
+			return false; //Prevent browser jump to link anchor
+		});
+		charFrame.find("#chatMin").click(function() { //Click anywhere and...
+			$(".subpanel").hide(); //hide subpanel
+			$(".subchatpanel").hide();
+			$("#footpanel li a").removeClass('active'); //remove active class on subpanel trigger
+		});
+		charFrame.find("#chatClose").click(function() { //Click anywhere and...
+			var url=basePath+"/im/leaveChat.action?loginId=";
+			url+=loginUserId;
+			url+="&targetId=";
+			url+=targetId;
+			url+="&temp="
+			url+=Math.random();
+			$("#"+chatFrameId).attr("src",url);
+			setTimeout(function(){charFrame.remove();},300);
+			 //hide subpanel
+		});		
+	},
+	/*-----------------点击客户组进行收�?----------------*/ 
+	 menuclick:function( submenu ,cellbar) 
+{ 
+if( old_menu != submenu ){ 
+if( old_menu !='' ){ 
+old_menu.style.display = 'none'; 
+old_cell.src= 'plus.gif'; 
+} 
+submenu.style.display = 'block'; 
+cellbar.src = 'plus.gif'; 
+old_menu = submenu; 
+old_cell = cellbar; 
+
+}else{ 
+submenu.style.display = 'none'; 
+cellbar.src= 'plus.gif'; 
+old_menu = ''; 
+old_cell = ''; 
+} 
+} ,
+RemoteWindow:function( url ) 
+{ 
+window.open( url, 'PreviewWin1','width=740,height=450,resizable=yes,scrollbars=yes,status=0,location=no') 
+}, 
+RemoteWindow2:function( url ) 
+{ 
+window.open( url, 'PreviewWin2','width=700,height=300,resizable=yes,scrollbars=yes,status=0,fullscreen=yes') 
+} ,
+RemoteWindow3:function( url ) 
+{ 
+window.open( url, 'sub','width=740,height=300,resizable=yes,scrollbars=yes,status=0,location=no') 
+}, 
+
+MM_preloadImages:function(){//v3.0 
+var d=document; if(d.images){if(!d.MM_p) d.MM_p=new Array(); 
+var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++) 
+if (a[i].indexOf("#")!=0){d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}} 
+}, 
+
+MM_findObj:function(n, d){//v3.0 
+var p,i,x; if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length){ 
+d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);} 
+if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n]; 
+for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document); return x; 
+}, 
+
+MM_nbGroup:function(event, grpName){//v3.0 
+var i,img,nbArr,args=MM_nbGroup.arguments; 
+if (event == "init" && args.length > 2){ 
+if ((img = MM_findObj(args[2])) != null && !img.MM_init){ 
+img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src; 
+if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array(); 
+nbArr[nbArr.length] = img; 
+for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null){ 
+if (!img.MM_up) img.MM_up = img.src; 
+img.src = img.MM_dn = args[i+1]; 
+nbArr[nbArr.length] = img; 
+}} 
+}else if (event == "over"){ 
+document.MM_nbOver = nbArr = new Array(); 
+for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null){ 
+if (!img.MM_up) img.MM_up = img.src; 
+img.src = (img.MM_dn && args[i+2]) ? args[i+2] : args[i+1]; 
+nbArr[nbArr.length] = img; 
+} 
+}else if (event == "out" ){ 
+for (i=0; i < document.MM_nbOver.length; i++){ 
+img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up;} 
+}else if (event == "down"){ 
+if ((nbArr = document[grpName]) != null) 
+for (i=0; i < nbArr.length; i++){img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0;} 
+document[grpName] = nbArr = new Array(); 
+for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null){ 
+if (!img.MM_up) img.MM_up = img.src; 
+img.src = img.MM_dn = args[i+1]; 
+nbArr[nbArr.length] = img; 
+}} 
+} ,
+   /*----------------------------------*/
+	
+	
+	addUserGroup:function(group,userlistid){
+		//列出组名
+		$("#"+userlistid).append("<li id="+group.id+" style='width:100%;text-decoration:none; margin-top:5px;cursor:hand'><img src='"+basePath+"talk/images/maintitle.gif' style='float:left;width:16px;height:16px;margin-left:4px;margin-top:2px;' onclick='showhidediv(seachUserItemTemplate)'><span class='chatpanel_spanfont'>"+group.text+"</span></li>"); /*<span style='font-size:12px;color:#3887c7;'>("+在线人数+"/"+该组总共人数")</span> -------放在</li>左边*/
+	},                                                                                                                                                         /*点击后小图标为maintitleopen.gif*/
+	addUserItem:function(user,group,userlistid){
+		//user.id lise groupname_userId ex:online_1
+		var userId=user.id;
+		var isTemp=user.isTemp;
+		var group=$("#"+userlistid).find("#"+group.id);
+		var isOnline=(userId.split("_")[0]=="online");
+		userId=userId.split("_")[1];
+		var userName=user.text;
+		var userimg=user.iconCls;
+		var userItemTemplate=$("#userItemTemplate").clone(true);	
+		/*----------用户列表的文字样�?--------*/	
+		if(isOnline){
+			userItemTemplate.find("#chatingDisplayName").css("color","red").html(userName);	
+			userItemTemplate.find("#chatingDisplayName").css("font-size","12").html(userName);			
+		}else{
+			userItemTemplate.find("#chatingDisplayName").css("color","gray").html(userName);
+			userItemTemplate.find("#chatingDisplayName").css("font-size","12").html(userName);	
+		}
+		/*-------------------*/
+		var userItemTemplateHTML=userItemTemplate.html();
+		userItemTemplateHTML=userItemTemplateHTML.replace("[targetName]",userName);
+		userItemTemplateHTML=userItemTemplateHTML.replace("[targetId]",userId);
+		userItemTemplateHTML=userItemTemplateHTML.replace("[Id]",userId);
+		if(userimg=="" || userimg==null){
+			userimg='talk/images/chat-thumb.gif';
+		}
+		userItemTemplateHTML=userItemTemplateHTML.replace("[userimg]",userimg);
+		//userItemTemplateHTML=userItemTemplateHTML.replace("[groupId]",group.attr("id"));
+		//添加到当前组�?
+		groupids[userId]=group.attr("id");
+		group.after(userItemTemplateHTML);
+		$("#debug").val($("#"+userlistid).html());
+		effect.initCurrentUserItemClick(userId);		
+	},
+	//弹出对话窗口
+	openChatWin:function(userId){
+		var targetId=$("#userItem_"+userId).attr("targetId");
+		var targetName=$("#userItem_"+userId).attr("targetName");
+		var chatFrameSrc=basePath+"/talk/chat.jsp?loginUserId={loginUserId}&loginUserName={loginUserName}";
+		chatFrameSrc+="&targetId={targetId}&targetName={targetName}&temp={temp}";
+		chatFrameSrc=chatFrameSrc.replace("{temp}",Math.random());
+		chatFrameSrc=chatFrameSrc.replace("{loginUserId}",loginUserId);
+		chatFrameSrc=chatFrameSrc.replace("{loginUserName}",loginUserName);
+		chatFrameSrc=chatFrameSrc.replace("{targetId}",targetId);
+		chatFrameSrc=chatFrameSrc.replace("{targetName}",targetName);
+		//alert(chatFrameSrc);	
+		effect.addChat(loginUserId,targetId,targetName,encodeURI(chatFrameSrc));
+	},
+	shakeChat:function(userId){
+		//effect.openChatWin(userId);
+		var chatId=effect.chatIdFormat.replace("[loginId]",loginUserId).replace("[targetId]",userId);
+		var isHidden=$("#"+chatId).find(".chat").next(".subchatpanel").is(":hidden");
+		//var targetName=$("#userItem_"+userId).attr("targetName");
+		//blink_info("发来消息啦!");
+		if(isHidden){
+			chatShakeArray[userId]=setInterval(function(){
+					$("#"+chatId).find("#chatingTitle").css("background-color","#FFCC00");
+					setTimeout(function(){
+						$("#"+chatId).find("#chatingTitle").css("background-color","#FFFFFF");
+					},300);
+				},600);	      
+				m.puts(userId,chatShakeArray[userId]); 
+		}
+		//blink_info("发来消息啦!");
+	},
+	stillChat:function(userId){
+		var ShakeArray = m.gets(userId);
+		if(ShakeArray!=null){
+		for(var i=0;i<ShakeArray.length;i++){
+		window.clearInterval(ShakeArray[i]);
+		}
+		ShakeArray.remove(userId);
+		}
+	},
+	//闪动
+	shakeUserItem:function(userId){
+		
+		var chatTitle="chatTitle";
+		var targetId=$("#userItem_"+userId).attr("targetId");
+		var targetName=$("#userItem_"+userId).attr("targetName");
+		
+		//判断用户属于哪一窗口(客户/服务)
+		if(groupids[userId].substring(0,13)=="onLine_region" || groupids[userId]=="temp_group"){
+				chatTitle="customerChatTitle";
+		}
+		userShakeArray[userId]=setInterval(function(){
+				$("#userItem_"+userId).css("background-color","#FFCC00");
+				$("#"+chatTitle).css("background-color","#FFCC00");
+				setTimeout(function(){
+					$("#userItem_"+userId).css("background-color","#FFFFFF");
+					$("#"+chatTitle).css("background-color","#e3e2e2");
+				},300);
+			},600);	
+		blink_info(targetName+"发来消息�?");
+		var userItme="<li id=\"li2_"+userId+"\"><a href=\"javascript:void(0);\" id=\"userItem2_"+userId+"\" loginId=\""+loginUserId+"\" loginName=\""+loginUserName+"\" targetName=\""+targetName+"\" targetId=\""+targetId+"\">"+$("#userItem_"+userId).clone(true).html()+"</a></li>";
+		$("#customerUserList2").append(userItme);
+		//alert(userItme);
+		
+		effect.initCurrentUserItem2Click(userId);
+	},
+	stillUserItem:function(userId){
+		window.clearInterval(userShakeArray[userId]);
+		$("li").remove("#li2_"+userId);   
+	},
+	//刷新用户列表
+	refreshUserList:function(json){
+			$(".menber").hide();
+			$.each(json,function(i,group){
+				$.each(group.children,function(j,user){
+					/*window.top.effect.addUserItem(user);*/
+					var id=user.id.split("_")[1];
+					if($("#userItem_"+id).length>0){
+						var isOnline=(user.id.split("_")[0]=="online");
+						if(isOnline){
+							$("#userItem_"+id).find("#chatingDisplayName").css("color","red").html(user.text);							
+						}else{
+							$("#userItem_"+id).find("#chatingDisplayName").css("color","gray").html(user.text);
+						}
+						$("#userItem_"+id).show();
+					}else{
+						if(group.id.substring(0,13)=="onLine_region" || group.id=="temp_group"){
+							effect.addUserItem(user,group,"customerUserList");
+						}else{
+							effect.addUserItem(user,group,"userList");
+						}
+					}
+				});
+			});			
+	},
+	//初始化聊天窗�?
+	initCurrentUserItemClick:function(targetId){
+		$("#userItem_"+targetId).attr("style","DISPLAY: block");
+		//点出列表中某一个用�?
+		$("#userItem_"+targetId).click(function(even){
+				effect.openChatWin(targetId);
+		});		
+	},
+	//新消息窗�?
+	initCurrentUserItem2Click:function(targetId){
+		$("#userItem2_"+targetId).attr("style","DISPLAY: block");
+		//点出列表中某一个用�?
+		$("#userItem2_"+targetId).click(function(even){
+				effect.openChatWin(targetId);
+		});		
+	},
+	init:function(){
+		basePath=$("#basePath").val();
+		loginUserId=$("#loginUserId").val();
+		loginUserName=$("#loginUserName").val();
+		$(".chatingpanel").talkPanel();
+		$("#chatpanel").talkPanel(); //Run the talkPanel function on #chatpanel
+		$("#customerChatpanel").talkPanel();
+		$("#alertpanel").talkPanel(); //Run the talkPanel function on #alertpanel
+		//Each time the viewport is adjusted/resized, execute the function
+		$(window).resize(function () { 
+			$("#chatpanel").talkPanel();
+			$("#customerChatpanel").talkPanel();
+			$("#alertpanel").talkPanel();
+			$(".chatingpanel").talkPanel();
+		});
+		
+		$("#chatpanel a:first,#customerChatpanel a:first, #alertpanel a:first , #chatingpanel a:first").click(function() { //If clicked on the first link of #chatpanel and #alertpanel...
+			$(".subchatpanel").hide();
+			if($(this).next(".subpanel").is(':visible')){ //If subpanel is already active...
+				$(this).next(".subpanel").hide(); //Hide active subpanel
+				$("#footpanel li a").removeClass('active'); //Remove active class on the subpanel trigger
+			}
+			else { //if subpanel is not active...
+				$(".subpanel").hide(); //Hide all subpanels
+				$(this).next(".subpanel").toggle(); //Toggle the subpanel to make active
+				$("#footpanel li a").removeClass('active'); //Remove active class on all subpanel trigger
+				$(this).toggleClass('active'); //Toggle the active class on the subpanel trigger
+			}
+			return false; //Prevent browser jump to link anchor
+		});	
+		//新消息窗口鼠标移入事�?
+		$("#customerChatTitle").dblclick(function(){
+			$(".subchatpanel").hide();
+			$(".subpanel").hide(); //Hide all subpanels
+			$(this).next(".subpanel").next(".subpanel").toggle(); //Toggle the subpanel to make active
+			$("#footpanel li a").removeClass('active'); //Remove active class on all subpanel trigger
+			$(this).toggleClass('active'); //Toggle the active class on the subpanel trigger
+			return false; //Prevent browser jump to link anchor
+		});
+		//新消息窗口鼠标移入事�?
+		$("#newMsgPanel").mouseout(function(){
+			//$("#newMsgPanel").hide();
+			//$("#footpanel li a").removeClass('active');
+		});
+		
+	  	$(window.top.document).find("script")
+		$(".menber").each(function(){
+			var targetId=$(this).attr("targetId");
+			effect.initCurrentUserItemClick(targetId);
+		});
+		
+		/*this.initUserItemClick();*/
+		//Click event outside of subpanel
+
+		$(".min").click(function() { //Click anywhere and...
+			$(this).find("#chatingTitle").css("background-color","#e3e2e2");
+			$(".subpanel").hide(); //hide subpanel
+			$(".subchatpanel").hide();
+			$("#footpanel li a").removeClass('active'); //remove active class on subpanel trigger
+		});
+	
+		$('.subpanel ul').click(function(e) { 
+			e.stopPropagation(); //Prevents the subpanel ul from closing on click
+		});
+		
+		//Delete icons on Alert Panel
+		$("#alertpanel li").hover(function() {
+			$(this).find("a.delete").css({'visibility': 'visible'}); //Show delete icon on hover
+		},function() {
+			$(this).find("a.delete").css({'visibility': 'hidden'}); //Hide delete icon on hover out
+		});
+		//初始化查�?
+		effect.seachInit();
+	},
+	seachInit:function(){
+		$("#seachInput").keyup(function(event){
+			effect.seachUser($("#seachInput").val(),"seachResultItem");
+			$("#seachResultDiv").show("slow");
+		});
+		$("#seachCustomerInput").keyup(function(event){
+			effect.seachUser($("#seachCustomerInput").val(),"seachCustomerResultItem");
+			$("#seachCustomerResultDiv").show("slow");
+		});
+		$("#closeSeachResultHref").click(function(event){
+			$("#seachInput").val("");
+			$("#seachResultDiv").hide("slow");
+		});
+		$("#closeCustomerResultHref").click(function(event){
+			$("#seachCustomerInput").val("");
+			$("#seachCustomerResultDiv").hide("slow");
+		});
+	},
+	seachUser:function(userName,resultListId){
+		document.getElementById("imframe").contentWindow.seachUser(userName,resultListId);
+	},		
+	cleanSeachUserResult:function(resultListId){	
+		$("#"+resultListId).html("");
+	},
+	addSeachUserResult:function(user,resultListId){	
+		
+		var seachUserItem=$("#seachUserItemTemplate").clone(true);		
+		var seachUserItemHTML=seachUserItem.html();
+		seachUserItemHTML=seachUserItemHTML.replace("[displayName]",user.username);
+		seachUserItemHTML=seachUserItemHTML.replace("[targetName]",user.username);
+		seachUserItemHTML=seachUserItemHTML.replace("[targetId]",user.userid);
+		seachUserItemHTML=seachUserItemHTML.replace("[Id]",user.userid);
+		seachUserItemHTML=seachUserItemHTML.replace("[userimg]","talk/images/chat-thumb.gif");
+		$("#"+resultListId).append(seachUserItemHTML).append("<br/>");
+		$("#seachUserItem_"+user.userid).click(function(even){
+				var targetId=$(this).attr("targetId");
+				var targetName=$(this).attr("targetName");
+				var chatFrameSrc=basePath+"/talk/chat.jsp?loginUserId={loginUserId}&loginUserName={loginUserName}";
+				chatFrameSrc+="&targetId={targetId}&targetName={targetName}&temp={temp}";
+				chatFrameSrc=chatFrameSrc.replace("{temp}",Math.random());
+				chatFrameSrc=chatFrameSrc.replace("{loginUserId}",loginUserId);
+				chatFrameSrc=chatFrameSrc.replace("{loginUserName}",loginUserName);
+				chatFrameSrc=chatFrameSrc.replace("{targetId}",targetId);
+				chatFrameSrc=chatFrameSrc.replace("{targetName}",targetName);		
+				effect.addChat(loginUserId,targetId,targetName,encodeURI(chatFrameSrc));
+		});		
+	}}
+
+function clear_blink(oldTitle) {
+  clearInterval(g_timeout_id);
+  g_timeout_id = null;
+  window.top.document.title = oldTitle;
+  window.top.document.onmousemove = null;
+  window.top.document.onkeydown = null;
+}
+/**消息提醒**/
+function blink_info(msg) {
+  var oldTitle = window.top.document.title;
+  if (typeof(g_timeout_id) != "undefined" && g_timeout_id) {
+    clearInterval(g_timeout_id);
+  }
+  g_timeout_id = setInterval(function() {
+      window.top.document.title = window.top.document.title == msg ? ' ' : msg;
+    }, 1000);
+  window.top.document.onmousemove = function() { clear_blink(oldTitle); };
+  window.top.document.onkeydown = function() { clear_blink(oldTitle); };
+}

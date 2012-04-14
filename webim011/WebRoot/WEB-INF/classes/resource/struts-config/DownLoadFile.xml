@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<!DOCTYPE struts PUBLIC   
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"  
+        "http://struts.apache.org/dtds/struts-2.0.dtd">   
+<struts>   
+    <package name="im-downloadfile" namespace="/download" extends="struts-default">             
+      <!-- 文件下载，支持中文附件名 -->    
+      <action name="download"  
+        class="downLoadAction">   
+      	 <result name="success" type="stream">   
+            <param name="contentType">   
+                application/octet-stream;charset=ISO8859-1  
+            </param>   
+            <param name="inputName">inputStream</param>   
+            <!-- 使用经过转码的文件名作为下载文件名，downloadFileName属性   
+                对应action类中的方法 getDownloadFileName() -->   
+            <param name="contentDisposition">   
+                attachment;filename="${downloadFileName}"  
+            </param>   
+            <param name="bufferSize">4096</param>   
+        </result>   
+      </action>    
+    </package>   
+</struts>  

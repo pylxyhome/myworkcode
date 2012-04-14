@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<InitDatas>
+	<!-- 初始化数据 -->
+	 <Groups>
+		<Group name="人事部"  orderNo="1" >
+			<User username="cl" password="123456">
+				<UserInfo realName="陈六" headpath="img/default.jpg" phone="123456"/>
+			</User>
+			<User username="zs" password="123456">
+				<UserInfo realName="张三" headpath="img/default.jpg" phone="123456"/>
+			</User>
+		</Group>
+		<Group name="财政部"  orderNo="2" >
+			<User username="zw" password="123456">
+				<UserInfo realName="郑五" headpath="img/default.jpg" phone="123456"/>
+			</User>
+			<User username="wl" password="123456">
+				<UserInfo realName="王六" headpath="img/default.jpg" phone="123456"/>
+			</User>
+			<User username="pyl" password="123456">
+				<UserInfo realName="潘一六" headpath="img/default.jpg" phone="123456"/>
+			</User>
+			<User username="hlw" password="123456">
+				<UserInfo realName="王老五" headpath="img/default.jpg" phone="123456"/>
+			</User>
+			<User username="cle" password="123456">
+				<UserInfo realName="陈老二" headpath="img/default.jpg" phone="123456"/>
+			</User>
+		</Group>
+		<Group name="后勤部"  orderNo="3" >
+			<User username="hyw" password="123456" >
+				<UserInfo realName="何一五" headpath="img/default.jpg" phone="123456"/>
+			</User>
+			<User username="yyl" password="123456" >
+				<UserInfo realName="杨一六" headpath="img/default.jpg" phone="123456"/>
+			</User>
+		</Group>
+		<Group name="软件开发部"  orderNo="4">
+			<User username="qe" password="123456">
+				<UserInfo realName="钱二" headpath="img/default.jpg" phone="123456"/>
+			</User>
+			<User username="pyw" password="123456">
+				<UserInfo realName="潘一五" headpath="img/default.jpg" phone="123456"/>
+			</User>
+				<User username="qe2" password="123456">
+				<UserInfo realName="钱二2" headpath="img/default.jpg" phone="123456"/>
+			</User>
+			<User username="pyw2" password="123456">
+				<UserInfo realName="潘一五2" headpath="img/default.jpg" phone="123456"/>
+			</User>
+			<User username="zw2" password="123456">
+				<UserInfo realName="郑五2" headpath="img/default.jpg" phone="123456"/>
+			</User>
+			<User username="wl2" password="123456">
+				<UserInfo realName="王六2" headpath="img/default.jpg" phone="123456"/>
+			</User>
+			<User username="pyl2" password="123456">
+				<UserInfo realName="潘一六2" headpath="img/default.jpg" phone="123456"/>
+			</User>
+			<User username="hlw2" password="123456">
+				<UserInfo realName="王老五2" headpath="img/default.jpg" phone="123456"/>
+			</User>
+			<User username="cle2" password="123456">
+				<UserInfo realName="陈老二2" headpath="img/default.jpg" phone="123456"/>
+			</User>
+			<User username="cl2" password="123456">
+				<UserInfo realName="陈六2" headpath="img/default.jpg" phone="123456"/>
+			</User>
+			<User username="zs2" password="123456">
+				<UserInfo realName="张三2" headpath="img/default.jpg" phone="123456"/>
+			</User>
+			<User username="hyw2" password="123456" >
+				<UserInfo realName="何一五2" headpath="img/default.jpg" phone="123456"/>
+			</User>
+			<User username="yyl2" password="123456" >
+				<UserInfo realName="杨一六2" headpath="img/default.jpg" phone="123456"/>
+			</User>
+		</Group>
+		<Group name="总裁"  orderNo="5" >
+			<User username="ylgw" password="123456">
+				<UserInfo realName="羽龙共舞" headpath="img/default.jpg" phone="123456"/>
+			</User>
+		</Group>
+	</Groups>
+</InitDatas>

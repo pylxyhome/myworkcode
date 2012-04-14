@@ -1,0 +1,355 @@
+@CHARSET "utf-8";
+* {margin: 0; padding: 0; outline: none;}
+img {border: none;}
+.imfont{
+	font-size: 12px;
+	FONT-FAMILY: 宋体;
+	width: 177px;
+	height: 30px;
+}
+
+#footpanel {
+	font: 10px normal Verdana, Arial, Helvetica, sans-serif;
+	position: fixed;
+	bottom: 0; left: 0;
+	z-index: 9999; /*--Keeps the panel on top of all other elements--*/
+	background: #e3e2e2;
+	border: 1px solid #c3c3c3;
+	border-bottom: none;
+	width: 94%;
+	margin: 0 3%;
+}
+
+*html #footpanel { /*--IE6 Hack - Fixed Positioning to the Bottom--*/
+	margin-top: -1px; /*--prevents IE6 from having an infinity scroll bar - due to 1px border on #footpanel--*/
+	position: absolute;
+	top:expression(eval(document.compatMode &&document.compatMode=='CSS1Compat') ?documentElement.scrollTop+(documentElement.clientHeight-
+
+this.clientHeight) : document.body.scrollTop +(document.body.clientHeight-this.clientHeight));
+}
+
+#footpanel ul {
+	padding: 0; margin: 0;
+	float: left;
+	width: 100%;
+	list-style: none;
+	border-top: 1px solid #fff; /*--Gives the bevel feel on the panel--*/
+	font-size: 1.1em;
+}
+#footpanel ul li{
+	padding: 0; margin: 0;
+	float: left;
+	position: relative;
+}
+#footpanel ul li a{
+	padding: 5px;
+	float: left;
+	text-indent: -9999px;
+	height: 16px; width: 16px;
+	text-decoration: none;
+	color: #333;
+	position: relative;    
+}
+html #footpanel ul li a:hover{	background-color: #fff; }
+html #footpanel ul li a.active { /*--Active state when subpanel is open--*/
+	height: 17px;
+	background-color: #fff;
+	margin-top: -2px; /*--Push it up 2px to attach the active button to subpanel--*/
+	border: 1px solid #555;
+	border-top: none;
+	z-index: 200; /*--Keeps the active area on top of the subpanel--*/
+	position: relative;
+}
+#footpanel a.home{	
+	background: url(../images/home.png) no-repeat 15px center;
+	width: 50px;
+	padding-left: 40px;
+	border-right: 1px solid #bbb;
+	text-indent: 0; /*--Reset text indent--*/
+}
+a.profile{	background: url(../images/user.png) no-repeat center center;  }
+a.contacts{	background: url(../images/address_book.png) no-repeat center center; }
+a.playlist{	background: url(../images/document_music_playlist.png) no-repeat center center; }
+a.videos{	background: url(../images/film.png) no-repeat center center; }
+a.messages{	background: url(../images/mail.png) no-repeat center center; }
+a.editprofile{	background: url(../images/wrench_screwdriver.png) no-repeat center center; }
+#footpanel a.chat{	
+	background: url(../images/balloon.png) no-repeat 15px center;
+	width: 126px;
+	border-left: 1px solid #bbb;
+	border-right: 1px solid #bbb;
+	padding-left: 40px;
+	text-indent: 0; /*--Reset text indent--*/
+}
+#regionIcon a.region{	
+	background: url(../images/balloon.png) no-repeat 15px center;
+	width: 60px;
+	border-left: 1px solid #bbb;
+	border-right: 1px solid #bbb;
+	padding-left: 40px;
+	text-indent: 0; /*--Reset text indent--*/
+}
+a.alerts{	background: url(../images/newspaper.png) no-repeat center center;	 }
+
+#footpanel li#chatpanel,#footpanel li#customerChatpanel, #footpanel li#alertpanel ,#footpanel li#chatingpanel{	float: right; }  /*--Right align the chat and alert panels--*/
+
+#footpanel li#chatingpanel{	float: left; }
+
+#footpanel a small {  /*--panel tool tip styles--*/
+	text-align: center;
+	width: 70px;
+	background: url(../images/pop_arrow.gif) no-repeat center bottom;
+	padding: 5px 5px 11px;
+	display: none; /*--Hide by default--*/
+	color: #fff;
+	font-size: 1em;
+	text-indent: 0;
+}
+#footpanel a:hover small{
+	display: block; /*--Show on hover--*/
+	position: absolute;
+	top: -35px; /*--Position tooltip 35px above the list item--*/
+	left: 50%; 
+	margin-left: -40px; /*--Center the tooltip--*/
+	z-index: 9999;
+}
+
+.showSmall{
+	display: block; /*--Show on hover--*/
+	position: absolute;
+	top: -35px; /*--Position tooltip 35px above the list item--*/
+	left: 50%; 
+	margin-left: -40px; /*--Center the tooltip--*/
+	z-index: 9999;
+}
+.hideSmall{
+	text-align: center;
+	width: 70px;
+	background: url(../images/pop_arrow.gif) no-repeat center bottom;
+	padding: 5px 5px 11px;
+	display: none; /*--Hide by default--*/
+	color: #fff;
+	font-size: 1em;
+	text-indent: 0;
+}
+
+
+
+
+#footpanel ul li div a { /*--Reset link style for subpanel links--*/
+	text-indent: 0;
+	width: auto;
+	height: auto;
+	padding: 0;
+	float: none;
+	color: #00629a;
+	position: static;
+}
+#footpanel ul li div a:hover {	text-decoration: underline; } /*--Reset link style for subpanel links--*/
+
+#footpanel .subpanel {
+	position: absolute;
+	left: 0; bottom: 27px;
+	display: none;	/*--Hide by default--*/
+	width: 226px;
+	border: 1px solid #555;
+	background: #fff;
+	overflow: hidden;
+	padding-bottom: 2px;
+}
+#footpanel h3 {
+	background:url(../images/titlebg.jpg) repeat-x;
+	padding: 5px 10px;
+	color: #fff;
+	font-size: 1.1em;
+	cursor: pointer;
+}
+#footpanel h3 span { 
+	font-size: 1.5em;
+	float: right;
+	line-height: 0.6em;	
+	font-weight: normal;
+}
+#footpanel .subpanel ul{
+	padding: 0; margin: 0;
+	background: #fff;
+	width: 100%;
+	overflow: auto;
+}
+#footpanel .subpanel li{ 
+	float: none; /*--Reset float--*/
+	display: block;
+	padding: 0; margin: 0;
+	overflow: hidden;
+	clear: both;
+	background: #fff;
+	position: static;  /*--Reset relative positioning--*/
+	font-size: 0.9em;
+}
+/* li 里的中间虚线样式*/
+#chatpanel .subpanel li {cursor:hand;background:url(../images/menubg.jpg);background-repeat:repeat-x; width:100%;}
+#chatpanel .subpanel li:hover { background:url(../images/libg.jpg);background-repeat:repeat-x; width:100%;}
+#customerChatpanel .subpanel li { } 
+#customerChatpanel .subpanel li:hover { background:url(../images/libg.jpg);background-repeat:repeat-x; width:100%;}
+.chatpanel_spanfont{
+	padding: 5px;
+	color: #777;
+	float: left;
+	margin-left:5px;
+	font-size:12px;
+}
+#chatpanel .subpanel li a img,#customerChatpanel .subpanel li a img{
+	float: left;
+	margin: 0 5px;
+}
+#chatpanel .subpanel li a{
+	padding: 3px 0;	margin: 0;
+	line-height: 26px;
+	height: 26px;
+	background: #fff;
+	display: block;
+}
+
+/*鼠标停留时的背景颜色*/
+#chatpanel .subpanel li a:hover {
+	background: #c1e1f8;
+	color: #fff;
+	text-decoration: none;
+}
+/*当用户被点击后即被选择后a 的样式
+*/
+#chatpanel .subpanel li a:active {
+	background: #fcecab;
+	color: #fff;
+	text-decoration: none;
+}
+
+#alertpanel .subpanel { right: 0; left: auto; /*--Reset left positioning and make it right positioned--*/ }
+#alertpanel .subpanel li {
+	border-top: 1px solid #f0f0f0;
+	display: block;
+}
+#alertpanel .subpanel li p {padding: 5px 10px;}
+#alertpanel .subpanel li a.delete{
+	background: url(../images/delete_x.gif) no-repeat;
+	float: right;
+	width: 13px; height: 14px;
+	margin: 5px;
+	text-indent: -9999px;
+	visibility: hidden; /*--Hides by default but still takes up space (not completely gone like display:none;)--*/
+}
+#alertpanel .subpanel li a.delete:hover { background-position: left bottom; }
+#footpanel #alertpanel li.view {
+	text-align: right;
+	padding: 5px 10px 5px 0;
+}
+.subchatpanel {
+	position: absolute;
+	left: 0; bottom: 27px;
+	display: none;	/*--Hide by default--*/
+	width: 398px;
+	height:auto;
+	border: 1px solid #555;
+	background: #fff;
+	overflow: hidden;
+}
+
+
+.shakeUserItem{
+	background-color: #FFCC00;
+}
+.empty20{
+	width:100%;
+	height:0px;
+	overflow:hidden;
+	display:block;
+}
+
+.grouptextfont{
+	font-size:12px;
+	color:#3887c7;
+}
+.chatNamefontdiv{
+	float:left;
+	width:150px;
+	overflow:hidden;
+}
+.chatNamefontdiv_span{
+	width:150px;
+	height:20px;
+	line-height:20px;
+	vertical-align:middle;
+	text-align:left;
+	font-size:12px;
+	overflow:hidden;
+}
+.chatNamefontdiv_span2{
+	width:150px;
+	height:20px;
+	line-height:20px;
+	vertical-align:middle;
+	text-align:left;
+	font-size:12px;
+	color:#808080;
+	overflow:hidden;
+}
+.searchpattern{
+	background:url(../images/searchpattern.gif);
+	width:16px;
+	height:16px;
+	border-top:1px solid #e3e3e3;
+	border-right:1px solid #e3e3e3;
+	border-bottom:1px solid #e3e3e3;
+	border-left:0;
+	float:left;
+	padding-top:2px;
+	padding-bottom:2px;
+	padding-left:0;
+	padding-right:0;
+	margin-top:4px;
+}
+.closedialoge{
+	background:url(../images/close.gif);
+	width:12px;
+	height:12px;
+	float:right;
+	margin:1px;
+	overflow:hidden;
+	border:0px;
+	background-color:transparent;
+	margin-left:10px;
+}
+.mindialoge{
+	background:url(../images/min.gif);
+	width:12px;
+	height:12px;
+	float:right;
+	margin:1px;
+	overflow:hidden;
+	margin-left:10px;
+	border:0px;
+	background-color:transparent;
+}
+.closedialoge:hover{
+	background:url(../images/close.png);
+	background-color:transparent;
+	border:0px;
+	margin-left:10px;
+}
+.mindialoge:hover{
+	background:url(../images/min.png);
+	margin-left:10px;
+	background-color:transparent;
+	border:0px;
+}
+.talkwith{
+	font-size:12px;
+	color:#fff;
+	float:left;
+	margin-left:5px;
+}
+.dialogwindow{
+	width:100%;
+	height:24px;
+	background-color:#526ea6;
+}
