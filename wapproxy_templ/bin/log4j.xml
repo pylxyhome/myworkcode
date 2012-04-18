@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration >
+
+<configuration xmlns='http://logging.apache.org/'>
+
+  <appender name="Dateroller" class="org.apache.log4j.rolling.RollingFileAppender">
+    <rollingPolicy class="org.apache.log4j.rolling.TimeBasedRollingPolicy">
+      <param name="FileNamePattern" value="logs/%d{yyyyMMddHH}.txt"/>
+    </rollingPolicy>
+    <layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%5p[%d{MM-dd HH:mm:ss}] %c{1}->%M: %m%n"/>
+    </layout>  
+  </appender>
+
+  <appender name="console" class="org.apache.log4j.ConsoleAppender">
+  	<layout class="org.apache.log4j.PatternLayout">
+      <param name="ConversionPattern" value="%5p[%d{MM-dd HH:mm:ss}] %c{1}->%M: %m%n"/>
+    </layout>
+  </appender>
+	
+  <root>
+  	<level value="debug"/>
+		<!--<appender-ref ref="console"/>-->
+		<appender-ref ref="Dateroller"/>
+  </root>
+ 
+</configuration>
