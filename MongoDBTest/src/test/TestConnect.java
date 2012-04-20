@@ -65,8 +65,8 @@ public class TestConnect {
 			// showCollectionNames();
 			//insertTest();
 			//prepareMorphia();
-			morphiaFind();
-			//findHote();
+			//morphiaFind();
+			findHote();
 			//prepareMorphia();
 			System.out.println(Integer.toHexString(14) );
 		} catch (MongoException e) {
@@ -106,18 +106,33 @@ public class TestConnect {
 	}
 	public static void findHote()throws UnknownHostException,
 	MongoException{
-		Mongo mongo = new Mongo("localhost", 27017);
-		Morphia morphia = new Morphia();
-		HotelDAO hotelDAO=new HotelDAO(morphia,mongo);
+//		Mongo mongo = new Mongo("localhost", 27017);
+//		Morphia morphia = new Morphia();
+		HotelDAO hotelDAO=new HotelDAO(getMorphiaInstance(),getMongo());
 		Hotel hotel=hotelDAO.findOne("name", "My Hotel");  
 		System.out.println(hotel);
+	}
+	private static Morphia morphia=new Morphia();
+	private static Mongo mongo ;
+	static{
+		morphia.mapPackage("test");
+	}
+	public static Morphia getMorphiaInstance(){
+		return morphia;
+	}
+	public synchronized static Mongo getMongo() throws UnknownHostException, MongoException{
+		if(mongo==null){
+			mongo= new Mongo("localhost", 27017);
+		}
+		return mongo;
+	}
+	public synchronized static DB getDB(String dbName) throws UnknownHostException, MongoException{
+		return getMongo().getDB(dbName);
 	}
 	public static void morphiaFind()throws UnknownHostException,
 	MongoException {
 		long startTime=System.currentTimeMillis();
-		Mongo mongo = new Mongo("localhost", 27017);
-		Morphia morphia = new Morphia();
-		morphia.map(Users.class);
+		
 		Datastore ds = morphia.createDatastore(mongo, "mongotest");
 		int i=0;
 		long queryUserTime=0l;
@@ -126,6 +141,7 @@ public class TestConnect {
 //		Hotel hotel=hotelDAO.findOne("name", "My Hotel");  
 //		System.out.println("hotel:"+hotel.getName());
 		Query<Users> q=ds.createQuery(Users.class).filter("age >", 11).limit(100); 
+		//q=ds.find(Users.class, "age >", 11).limit(100); 
 //		UsersDAO usersDAO=new UsersDAO(morphia,mongo);
 //		QueryResults<Users> result=usersDAO.find(q);
 		List<Users> userList=q.asList();
@@ -144,15 +160,15 @@ public class TestConnect {
 //			i++;
 //			System.out.println(users);
 //		}
-		Gson gson = new Gson();
-		String userJson=gson.toJson(userList);
-		Map<String, String> parmas=new HashMap<String,String>();
-		parmas.put("users", userJson);
-		try {
-			NetTool.getContent("http://localhost/SmsServlet", parmas, "utf-8");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+//		Gson gson = new Gson();
+//		String userJson=gson.toJson(userList);
+//		Map<String, String> parmas=new HashMap<String,String>();
+//		parmas.put("users", userJson);
+//		try {
+//			NetTool.getContent("http://localhost/SmsServlet", parmas, "utf-8");
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
 		//System.out.println("userJson："+userJson);
 		System.out.println("记录数："+userList.size());
 		long endTime2=System.currentTimeMillis();
@@ -163,13 +179,13 @@ public class TestConnect {
 
 	public static void prepareMorphia() throws UnknownHostException,
 			MongoException {
-		for(int i=0;i<1000000;i++){
+		for(int i=0;i<1;i++){
 			Mongo mongo = new Mongo("localhost", 27017);
 			Morphia morphia = new Morphia();
-			morphia.map(Hotel.class).map(Address.class);
+			//morphia.map(Hotel.class).map(Address.class);
 			Datastore ds = morphia.createDatastore(mongo, "mongotest");
 			Hotel hotel = new Hotel();
-			hotel.setName("My Hotel"+i);
+			hotel.setName("yulon"+i);
 			hotel.setStars(4);
 			Address address = new Address();
 			address.setStreet("123 Some street"+i);
