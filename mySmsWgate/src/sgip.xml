@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<messages package-name="cn.gzjp.push2.sgip.message"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="sms.xsd">
+	<message id="1" class-name="BindMessage">
+		<int name="messageLength" value="0" />
+		<int name="commandId" value="1"/>
+		<array name="flowId" type="int" array-length="3" data-length="4"/>
+		<byte name="loginType" value="1"/>
+		<string name="loginName" value="BLOG_WBC" length="16"/>
+		<string name="loginPassword" value="BLOG_WBC" length="16"/>
+		<string name="reserve" length="8" value=""/>
+	</message>
+	<message id="-2147483647" class-name="BindResponseMessage">
+		<int name="messageLength" value="0" />
+		<int name="commandId" value="-2147483647"/>
+		<array name="flowId" type="int" array-length="3" data-length="4"/>
+		<byte name="result" value="0"/>
+		<string name="reserve" length="8" value=""/>
+	</message>
+	<message id="2" class-name="UnbindMessage">
+		<int name="messageLength" value="0" />
+		<int name="commandId" value="2"/>
+		<array name="flowId" type="int" array-length="3" data-length="4"/>
+	</message>
+	<message id="-2147483646" class-name="UnbindResponseMessage">
+		<int name="messageLength" value="0" />
+		<int name="commandId" value="-2147483646"/>
+		<array name="flowId" type="int" array-length="3" data-length="4"></array>
+	</message>
+	<message id="3" class-name="SubmitMessage">
+		<int name="messageLength" value="0" />
+		<int name="commandId" value="3"/>
+		<array name="flowId" type="int" array-length="3" data-length="4"/>
+		<string name="spNumber" length="21" value="1303"/>
+		<string name="chargeNumber" length="21" value="000000000000000000000"/>
+		<varray name="usernumbers" vtype="byte" data-type="String" data-length="21"/>
+		<string name="corpId" length="5" value="23780"/>
+		<string name="serviceType" length="10" value="ffff"/>
+		<byte name="feeType" value="1"/>
+		<string name="feeValue" length="6" value="0"/>
+		<string name="givenValue" length="6" value="0"/>
+		<byte name="agentFlag" value="1"></byte>
+		<byte name="morelatetoMTFlag" value="0"/>
+		<byte name="priority" value="1"/>
+		<string name="expireTime" length="16" value=""/>
+		<string name="scheduleTime" length="16" value=""/>
+		<byte name="reportFlag" value="1"/>
+		<byte name="tppid" value="0"/>
+		<byte name="tpudhi" value="0"/>
+		<byte name="messageCoding" value="4"/>
+		<byte name="messageType" value="0"/>
+		<vbyte name="messageContent" vtype="int"/>
+		<string name="reserve" length="8" value=""/>
+	</message>
+	<message id="-2147483645" class-name="SubmitResponseMessage">
+		<int name="messageLength" value="0" />
+		<int name="commandId" value="-2147483645"/>
+		<array name="flowId" type="int" array-length="3" data-length="4"/>
+		<byte name="result"/>
+		<string name="reserve" length="8" value=""/>
+	</message>
+	<message id="4" class-name="DeliverMessage">
+		<int name="messageLength" value="0" />
+		<int name="commandId" value="4"/>
+		<array name="flowId" type="int" array-length="3" data-length="4"/>
+		<string name="usernumber" length="21"/>
+		<string name="spNumber" length="21"/>
+		<byte name="tppid"/>
+		<byte name="tpudhi"/>
+		<byte name="messageCoding"/>
+		<vstring name="messageContent" vtype="int"/>
+		<string name="reserve" length="8" value=""/>	
+	</message>
+	<message id="-2147483644" class-name="DeliverResponseMessage">
+		<int name="messageLength" value="0" />
+		<int name="commandId" value="-2147483644"/>
+		<array name="flowId" type="int" array-length="3" data-length="4"/>
+		<byte name="result"/>
+		<string name="reserve" length="8" value=""/>
+	</message>
+	<message id="5" class-name="ReportMessage">
+		<int name="messageLength" value="0" />
+		<int name="commandId" value="5"/>
+		<array name="flowId" type="int" array-length="3" data-length="4"/>
+		<array name="submitFlowId" type="int" array-length="3" data-length="4"/>
+		<byte name="reportType"/>
+		<string name="usernumber" length="21"/>
+		<byte name="state"/>
+		<byte name="errorCode"/>
+		<string name="reserve" length="8" value=""/>
+	</message>
+	<message id="-2147483643" class-name="ReportResponseMessage">
+		<int name="messageLength" value="0" />
+		<int name="commandId" value="-2147483643"/>
+		<array name="flowId" type="int" array-length="3" data-length="4"/>
+		<byte name="result"/>
+		<string name="reserve" length="8" value=""/>
+	</message>
+</messages>

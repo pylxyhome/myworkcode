@@ -1,0 +1,1106 @@
+DEBUG[02-22 16:51:30] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:30] c.g.s.Handler->read: read length=61
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.BindMessage
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: bindMessage username=BLOG_WBC pwdBLOG_WBC
+DEBUG[02-22 16:51:31] c.g.s.Handler->write: write message data to socket...
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: SubmitMessage mdn=8613101449527 flow=-1235843516_222165130_2_
+DEBUG[02-22 16:51:31] c.g.s.Handler->add: flowsQ add length=1
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165130_2_ srm.result=0
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: SubmitMessage mdn=8613101449310 flow=-1235843516_222165131_4_
+DEBUG[02-22 16:51:31] c.g.s.Handler->add: flowsQ add length=2
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: j==1
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165131_4_ srm.result=0
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: SubmitMessage mdn=8613101449230 flow=-1235843516_222165131_5_
+DEBUG[02-22 16:51:31] c.g.s.Handler->add: flowsQ add length=3
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: j==2
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165131_5_ srm.result=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: j==3
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: SubmitMessage mdn=8613101449165 flow=-1235843516_222165131_6_
+DEBUG[02-22 16:51:31] c.g.s.Handler->add: flowsQ add length=4
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165131_6_ srm.result=0
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: j==4
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: SubmitMessage mdn=8613101448959 flow=-1235843516_222165131_7_
+DEBUG[02-22 16:51:31] c.g.s.Handler->add: flowsQ add length=5
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165131_7_ srm.result=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: j==5
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: SubmitMessage mdn=8613101448929 flow=-1235843516_222165131_8_
+DEBUG[02-22 16:51:31] c.g.s.Handler->add: flowsQ add length=6
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165131_8_ srm.result=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: j==6
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: SubmitMessage mdn=8613101448796 flow=-1235843516_222165131_9_
+DEBUG[02-22 16:51:31] c.g.s.Handler->add: flowsQ add length=7
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165131_9_ srm.result=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: j==7
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: SubmitMessage mdn=8613101448751 flow=-1235843516_222165131_10_
+DEBUG[02-22 16:51:31] c.g.s.Handler->add: flowsQ add length=8
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165131_10_ srm.result=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: j==8
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: SubmitMessage mdn=8613101448603 flow=-1235843516_222165131_11_
+DEBUG[02-22 16:51:31] c.g.s.Handler->add: flowsQ add length=9
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165131_11_ srm.result=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: j==9
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: SubmitMessage mdn=8613101448525 flow=-1235843516_222165131_12_
+DEBUG[02-22 16:51:31] c.g.s.Handler->add: flowsQ add length=10
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165131_12_ srm.result=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: j==10
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: SubmitMessage mdn=8613101448215 flow=-1235843516_222165131_13_
+DEBUG[02-22 16:51:31] c.g.s.Handler->add: flowsQ add length=11
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165131_13_ srm.result=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: j==11
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: SubmitMessage mdn=8613101448211 flow=-1235843516_222165131_14_
+DEBUG[02-22 16:51:31] c.g.s.Handler->add: flowsQ add length=12
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165131_14_ srm.result=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: j==12
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: SubmitMessage mdn=8613101448200 flow=-1235843516_222165131_15_
+DEBUG[02-22 16:51:31] c.g.s.Handler->add: flowsQ add length=13
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165131_15_ srm.result=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: j==13
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: SubmitMessage mdn=8613101448108 flow=-1235843516_222165131_16_
+DEBUG[02-22 16:51:31] c.g.s.Handler->add: flowsQ add length=14
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165131_16_ srm.result=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: j==14
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: SubmitMessage mdn=8613101447957 flow=-1235843516_222165131_17_
+DEBUG[02-22 16:51:31] c.g.s.Handler->add: flowsQ add length=15
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165131_17_ srm.result=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: j==15
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: SubmitMessage mdn=8613101447880 flow=-1235843516_222165131_18_
+DEBUG[02-22 16:51:31] c.g.s.Handler->add: flowsQ add length=16
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165131_18_ srm.result=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: j==16
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: SubmitMessage mdn=8613101447686 flow=-1235843516_222165131_19_
+DEBUG[02-22 16:51:31] c.g.s.Handler->add: flowsQ add length=17
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165131_19_ srm.result=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: j==17
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: SubmitMessage mdn=8613101447681 flow=-1235843516_222165131_20_
+DEBUG[02-22 16:51:31] c.g.s.Handler->add: flowsQ add length=18
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165131_20_ srm.result=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: j==18
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: SubmitMessage mdn=8613101447513 flow=-1235843516_222165131_21_
+DEBUG[02-22 16:51:31] c.g.s.Handler->add: flowsQ add length=19
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165131_21_ srm.result=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: j==19
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: SubmitMessage mdn=8613101447389 flow=-1235843516_222165131_22_
+DEBUG[02-22 16:51:31] c.g.s.Handler->add: flowsQ add length=20
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165131_22_ srm.result=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: j==20
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: SubmitMessage mdn=8613101447333 flow=-1235843516_222165131_23_
+DEBUG[02-22 16:51:31] c.g.s.Handler->add: flowsQ add length=21
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165131_23_ srm.result=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: j==21
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: SubmitMessage mdn=8613101447259 flow=-1235843516_222165131_24_
+DEBUG[02-22 16:51:31] c.g.s.Handler->add: flowsQ add length=22
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165131_24_ srm.result=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: j==22
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: SubmitMessage mdn=8613101447058 flow=-1235843516_222165131_25_
+DEBUG[02-22 16:51:31] c.g.s.Handler->add: flowsQ add length=23
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165131_25_ srm.result=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: j==23
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: SubmitMessage mdn=8613101447035 flow=-1235843516_222165131_26_
+DEBUG[02-22 16:51:31] c.g.s.Handler->add: flowsQ add length=24
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165131_26_ srm.result=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: j==24
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: SubmitMessage mdn=8613101447020 flow=-1235843516_222165131_27_
+DEBUG[02-22 16:51:31] c.g.s.Handler->add: flowsQ add length=25
+DEBUG[02-22 16:51:31] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:31] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165131_27_ srm.result=0
+DEBUG[02-22 16:51:31] c.g.s.ResponsHandle->run: j==25
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: SubmitMessage mdn=8613101446859 flow=-1235843516_222165132_28_
+DEBUG[02-22 16:51:32] c.g.s.Handler->add: flowsQ add length=26
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165132_28_ srm.result=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: j==26
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: SubmitMessage mdn=8613101446693 flow=-1235843516_222165132_29_
+DEBUG[02-22 16:51:32] c.g.s.Handler->add: flowsQ add length=27
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165132_29_ srm.result=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: j==27
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: SubmitMessage mdn=8613101446672 flow=-1235843516_222165132_30_
+DEBUG[02-22 16:51:32] c.g.s.Handler->add: flowsQ add length=28
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165132_30_ srm.result=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: j==28
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: SubmitMessage mdn=8613101446500 flow=-1235843516_222165132_31_
+DEBUG[02-22 16:51:32] c.g.s.Handler->add: flowsQ add length=29
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165132_31_ srm.result=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: j==29
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: SubmitMessage mdn=8613101446449 flow=-1235843516_222165132_32_
+DEBUG[02-22 16:51:32] c.g.s.Handler->add: flowsQ add length=30
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165132_32_ srm.result=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: j==30
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: SubmitMessage mdn=8613101446422 flow=-1235843516_222165132_33_
+DEBUG[02-22 16:51:32] c.g.s.Handler->add: flowsQ add length=31
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165132_33_ srm.result=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: j==31
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: SubmitMessage mdn=8613101446307 flow=-1235843516_222165132_34_
+DEBUG[02-22 16:51:32] c.g.s.Handler->add: flowsQ add length=32
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165132_34_ srm.result=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: j==32
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: SubmitMessage mdn=8613101446066 flow=-1235843516_222165132_35_
+DEBUG[02-22 16:51:32] c.g.s.Handler->add: flowsQ add length=33
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165132_35_ srm.result=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: j==33
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: SubmitMessage mdn=8613101445967 flow=-1235843516_222165132_36_
+DEBUG[02-22 16:51:32] c.g.s.Handler->add: flowsQ add length=34
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: resps add length=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165132_36_ srm.result=0
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: j==34
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: SubmitMessage mdn=8613101445857 flow=-1235843516_222165132_37_
+DEBUG[02-22 16:51:32] c.g.s.Handler->add: flowsQ add length=35
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165132_37_ srm.result=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: j==35
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: SubmitMessage mdn=8613101445723 flow=-1235843516_222165132_38_
+DEBUG[02-22 16:51:32] c.g.s.Handler->add: flowsQ add length=36
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: resps add length=0
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165132_38_ srm.result=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: j==36
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: SubmitMessage mdn=8613101445552 flow=-1235843516_222165132_39_
+DEBUG[02-22 16:51:32] c.g.s.Handler->add: flowsQ add length=37
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: resps add length=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165132_39_ srm.result=0
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: j==37
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: SubmitMessage mdn=8613101445358 flow=-1235843516_222165132_40_
+DEBUG[02-22 16:51:32] c.g.s.Handler->add: flowsQ add length=38
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165132_40_ srm.result=0
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: j==38
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: SubmitMessage mdn=8613101445197 flow=-1235843516_222165132_41_
+DEBUG[02-22 16:51:32] c.g.s.Handler->add: flowsQ add length=39
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: resps add length=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165132_41_ srm.result=0
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: j==39
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: SubmitMessage mdn=8613101445106 flow=-1235843516_222165132_42_
+DEBUG[02-22 16:51:32] c.g.s.Handler->add: flowsQ add length=40
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165132_42_ srm.result=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: j==40
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: SubmitMessage mdn=8613101444965 flow=-1235843516_222165132_43_
+DEBUG[02-22 16:51:32] c.g.s.Handler->add: flowsQ add length=41
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165132_43_ srm.result=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: j==41
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: SubmitMessage mdn=8613101444960 flow=-1235843516_222165132_44_
+DEBUG[02-22 16:51:32] c.g.s.Handler->add: flowsQ add length=42
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165132_44_ srm.result=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: j==42
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: SubmitMessage mdn=8613101444958 flow=-1235843516_222165132_45_
+DEBUG[02-22 16:51:32] c.g.s.Handler->add: flowsQ add length=43
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165132_45_ srm.result=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: j==43
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: resps add length=0
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: SubmitMessage mdn=8613101444876 flow=-1235843516_222165132_46_
+DEBUG[02-22 16:51:32] c.g.s.Handler->add: flowsQ add length=44
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165132_46_ srm.result=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: j==44
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: SubmitMessage mdn=8613101444742 flow=-1235843516_222165132_47_
+DEBUG[02-22 16:51:32] c.g.s.Handler->add: flowsQ add length=45
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165132_47_ srm.result=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: j==45
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: SubmitMessage mdn=8613101444629 flow=-1235843516_222165132_48_
+DEBUG[02-22 16:51:32] c.g.s.Handler->add: flowsQ add length=46
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165132_48_ srm.result=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: j==46
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: SubmitMessage mdn=8613101444573 flow=-1235843516_222165132_49_
+DEBUG[02-22 16:51:32] c.g.s.Handler->add: flowsQ add length=47
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165132_49_ srm.result=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: j==47
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: resps add length=0
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: SubmitMessage mdn=8613101444570 flow=-1235843516_222165132_50_
+DEBUG[02-22 16:51:32] c.g.s.Handler->add: flowsQ add length=48
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165132_50_ srm.result=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: j==48
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: SubmitMessage mdn=8613101444532 flow=-1235843516_222165132_51_
+DEBUG[02-22 16:51:32] c.g.s.Handler->add: flowsQ add length=49
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165132_51_ srm.result=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: j==49
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: SubmitMessage mdn=8613101444501 flow=-1235843516_222165132_52_
+DEBUG[02-22 16:51:32] c.g.s.Handler->add: flowsQ add length=50
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165132_52_ srm.result=0
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: resps add length=0
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: j==50
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: SubmitMessage mdn=8613101444468 flow=-1235843516_222165132_53_
+DEBUG[02-22 16:51:32] c.g.s.Handler->add: flowsQ add length=51
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: resps add length=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165132_53_ srm.result=0
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: j==51
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: SubmitMessage mdn=8613101444435 flow=-1235843516_222165132_54_
+DEBUG[02-22 16:51:32] c.g.s.Handler->add: flowsQ add length=52
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165132_54_ srm.result=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: j==52
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: resps add length=0
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: SubmitMessage mdn=8613101444423 flow=-1235843516_222165132_55_
+DEBUG[02-22 16:51:32] c.g.s.Handler->add: flowsQ add length=53
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165132_55_ srm.result=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: j==53
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: SubmitMessage mdn=8613101444387 flow=-1235843516_222165132_56_
+DEBUG[02-22 16:51:32] c.g.s.Handler->add: flowsQ add length=54
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165132_56_ srm.result=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: j==54
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: SubmitMessage mdn=8613101444303 flow=-1235843516_222165132_57_
+DEBUG[02-22 16:51:32] c.g.s.Handler->add: flowsQ add length=55
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165132_57_ srm.result=0
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: j==55
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: SubmitMessage mdn=8613101444092 flow=-1235843516_222165132_58_
+DEBUG[02-22 16:51:32] c.g.s.Handler->add: flowsQ add length=56
+DEBUG[02-22 16:51:32] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:32] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165132_58_ srm.result=0
+DEBUG[02-22 16:51:32] c.g.s.ResponsHandle->run: j==56
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: SubmitMessage mdn=8613101444037 flow=-1235843516_222165133_59_
+DEBUG[02-22 16:51:33] c.g.s.Handler->add: flowsQ add length=57
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165133_59_ srm.result=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: j==57
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: SubmitMessage mdn=8613101444011 flow=-1235843516_222165133_60_
+DEBUG[02-22 16:51:33] c.g.s.Handler->add: flowsQ add length=58
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165133_60_ srm.result=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: j==58
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: SubmitMessage mdn=8613101443778 flow=-1235843516_222165133_61_
+DEBUG[02-22 16:51:33] c.g.s.Handler->add: flowsQ add length=59
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165133_61_ srm.result=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: j==59
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: SubmitMessage mdn=8613101443627 flow=-1235843516_222165133_62_
+DEBUG[02-22 16:51:33] c.g.s.Handler->add: flowsQ add length=60
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165133_62_ srm.result=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: j==60
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: SubmitMessage mdn=8613101443492 flow=-1235843516_222165133_63_
+DEBUG[02-22 16:51:33] c.g.s.Handler->add: flowsQ add length=61
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165133_63_ srm.result=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: j==61
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: SubmitMessage mdn=8613101443491 flow=-1235843516_222165133_64_
+DEBUG[02-22 16:51:33] c.g.s.Handler->add: flowsQ add length=62
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165133_64_ srm.result=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: j==62
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: SubmitMessage mdn=8613101443375 flow=-1235843516_222165133_65_
+DEBUG[02-22 16:51:33] c.g.s.Handler->add: flowsQ add length=63
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165133_65_ srm.result=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: j==63
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: SubmitMessage mdn=8613101443358 flow=-1235843516_222165133_66_
+DEBUG[02-22 16:51:33] c.g.s.Handler->add: flowsQ add length=64
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165133_66_ srm.result=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: j==64
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: SubmitMessage mdn=8613101443352 flow=-1235843516_222165133_67_
+DEBUG[02-22 16:51:33] c.g.s.Handler->add: flowsQ add length=65
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165133_67_ srm.result=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: j==65
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: SubmitMessage mdn=8613101443331 flow=-1235843516_222165133_68_
+DEBUG[02-22 16:51:33] c.g.s.Handler->add: flowsQ add length=66
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165133_68_ srm.result=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: j==66
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: SubmitMessage mdn=8613101443226 flow=-1235843516_222165133_69_
+DEBUG[02-22 16:51:33] c.g.s.Handler->add: flowsQ add length=67
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165133_69_ srm.result=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: j==67
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: SubmitMessage mdn=8613101443220 flow=-1235843516_222165133_70_
+DEBUG[02-22 16:51:33] c.g.s.Handler->add: flowsQ add length=68
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165133_70_ srm.result=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: j==68
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: SubmitMessage mdn=8613101443193 flow=-1235843516_222165133_71_
+DEBUG[02-22 16:51:33] c.g.s.Handler->add: flowsQ add length=69
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165133_71_ srm.result=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: j==69
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: SubmitMessage mdn=8613101443132 flow=-1235843516_222165133_72_
+DEBUG[02-22 16:51:33] c.g.s.Handler->add: flowsQ add length=70
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165133_72_ srm.result=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: j==70
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: SubmitMessage mdn=8613101442961 flow=-1235843516_222165133_73_
+DEBUG[02-22 16:51:33] c.g.s.Handler->add: flowsQ add length=71
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165133_73_ srm.result=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: j==71
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: SubmitMessage mdn=8613101442865 flow=-1235843516_222165133_74_
+DEBUG[02-22 16:51:33] c.g.s.Handler->add: flowsQ add length=72
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165133_74_ srm.result=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: j==72
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: SubmitMessage mdn=8613101442827 flow=-1235843516_222165133_75_
+DEBUG[02-22 16:51:33] c.g.s.Handler->add: flowsQ add length=73
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165133_75_ srm.result=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: j==73
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: SubmitMessage mdn=8613101442772 flow=-1235843516_222165133_76_
+DEBUG[02-22 16:51:33] c.g.s.Handler->add: flowsQ add length=74
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165133_76_ srm.result=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: j==74
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: SubmitMessage mdn=8613101442722 flow=-1235843516_222165133_77_
+DEBUG[02-22 16:51:33] c.g.s.Handler->add: flowsQ add length=75
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165133_77_ srm.result=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: j==75
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: SubmitMessage mdn=8613101442651 flow=-1235843516_222165133_78_
+DEBUG[02-22 16:51:33] c.g.s.Handler->add: flowsQ add length=76
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165133_78_ srm.result=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: j==76
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: SubmitMessage mdn=8613101442620 flow=-1235843516_222165133_79_
+DEBUG[02-22 16:51:33] c.g.s.Handler->add: flowsQ add length=77
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165133_79_ srm.result=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: j==77
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: SubmitMessage mdn=8613101442590 flow=-1235843516_222165133_80_
+DEBUG[02-22 16:51:33] c.g.s.Handler->add: flowsQ add length=78
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165133_80_ srm.result=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: j==78
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: SubmitMessage mdn=8613101442528 flow=-1235843516_222165133_81_
+DEBUG[02-22 16:51:33] c.g.s.Handler->add: flowsQ add length=79
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165133_81_ srm.result=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: j==79
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: SubmitMessage mdn=8613101442227 flow=-1235843516_222165133_82_
+DEBUG[02-22 16:51:33] c.g.s.Handler->add: flowsQ add length=80
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: resps add length=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165133_82_ srm.result=0
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: j==80
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: SubmitMessage mdn=8613101442226 flow=-1235843516_222165133_83_
+DEBUG[02-22 16:51:33] c.g.s.Handler->add: flowsQ add length=81
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165133_83_ srm.result=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: j==81
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: SubmitMessage mdn=8613101442024 flow=-1235843516_222165133_84_
+DEBUG[02-22 16:51:33] c.g.s.Handler->add: flowsQ add length=82
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165133_84_ srm.result=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: j==82
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: SubmitMessage mdn=8613101441771 flow=-1235843516_222165133_85_
+DEBUG[02-22 16:51:33] c.g.s.Handler->add: flowsQ add length=83
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165133_85_ srm.result=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: j==83
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: resps add length=0
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: SubmitMessage mdn=8613101441735 flow=-1235843516_222165133_86_
+DEBUG[02-22 16:51:33] c.g.s.Handler->add: flowsQ add length=84
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165133_86_ srm.result=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: j==84
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: SubmitMessage mdn=8613101441698 flow=-1235843516_222165133_87_
+DEBUG[02-22 16:51:33] c.g.s.Handler->add: flowsQ add length=85
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165133_87_ srm.result=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: j==85
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: SubmitMessage mdn=8613101441665 flow=-1235843516_222165133_88_
+DEBUG[02-22 16:51:33] c.g.s.Handler->add: flowsQ add length=86
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165133_88_ srm.result=0
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: resps add length=0
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: j==86
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: SubmitMessage mdn=8613101441543 flow=-1235843516_222165133_89_
+DEBUG[02-22 16:51:33] c.g.s.Handler->add: flowsQ add length=87
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165133_89_ srm.result=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: j==87
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: SubmitMessage mdn=8613101441528 flow=-1235843516_222165133_90_
+DEBUG[02-22 16:51:33] c.g.s.Handler->add: flowsQ add length=88
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:33] c.g.s.Handler->r1: resps add length=0
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165133_90_ srm.result=0
+DEBUG[02-22 16:51:33] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:33] c.g.s.ResponsHandle->run: j==88
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: SubmitMessage mdn=8613101441410 flow=-1235843516_222165134_91_
+DEBUG[02-22 16:51:34] c.g.s.Handler->add: flowsQ add length=89
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165134_91_ srm.result=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: j==89
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: resps add length=0
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: SubmitMessage mdn=8613101441376 flow=-1235843516_222165134_92_
+DEBUG[02-22 16:51:34] c.g.s.Handler->add: flowsQ add length=90
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165134_92_ srm.result=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: j==90
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: SubmitMessage mdn=8613101441305 flow=-1235843516_222165134_93_
+DEBUG[02-22 16:51:34] c.g.s.Handler->add: flowsQ add length=91
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165134_93_ srm.result=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: j==91
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: SubmitMessage mdn=8613101441287 flow=-1235843516_222165134_94_
+DEBUG[02-22 16:51:34] c.g.s.Handler->add: flowsQ add length=92
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165134_94_ srm.result=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: j==92
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: SubmitMessage mdn=8613101441228 flow=-1235843516_222165134_95_
+DEBUG[02-22 16:51:34] c.g.s.Handler->add: flowsQ add length=93
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165134_95_ srm.result=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: j==93
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: resps add length=0
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: SubmitMessage mdn=8613101441208 flow=-1235843516_222165134_96_
+DEBUG[02-22 16:51:34] c.g.s.Handler->add: flowsQ add length=94
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165134_96_ srm.result=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: j==94
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: SubmitMessage mdn=8613101441068 flow=-1235843516_222165134_97_
+DEBUG[02-22 16:51:34] c.g.s.Handler->add: flowsQ add length=95
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165134_97_ srm.result=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: j==95
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: SubmitMessage mdn=8613101440745 flow=-1235843516_222165134_98_
+DEBUG[02-22 16:51:34] c.g.s.Handler->add: flowsQ add length=96
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165134_98_ srm.result=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: j==96
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: SubmitMessage mdn=8613101440492 flow=-1235843516_222165134_99_
+DEBUG[02-22 16:51:34] c.g.s.Handler->add: flowsQ add length=97
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165134_99_ srm.result=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: j==97
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: resps add length=0
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: SubmitMessage mdn=8613101440483 flow=-1235843516_222165134_100_
+DEBUG[02-22 16:51:34] c.g.s.Handler->add: flowsQ add length=98
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165134_100_ srm.result=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: j==98
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: SubmitMessage mdn=8613101440268 flow=-1235843516_222165134_101_
+DEBUG[02-22 16:51:34] c.g.s.Handler->add: flowsQ add length=99
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: resps add length=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165134_101_ srm.result=0
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: j==99
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: SubmitMessage mdn=8613101440223 flow=-1235843516_222165134_102_
+DEBUG[02-22 16:51:34] c.g.s.Handler->add: flowsQ add length=100
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: resps add length=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165134_102_ srm.result=0
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: j==100
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: SubmitMessage mdn=8613101440222 flow=-1235843516_222165134_103_
+DEBUG[02-22 16:51:34] c.g.s.Handler->add: flowsQ add length=101
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165134_103_ srm.result=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: j==101
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: SubmitMessage mdn=8613101440121 flow=-1235843516_222165134_104_
+DEBUG[02-22 16:51:34] c.g.s.Handler->add: flowsQ add length=102
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: resps add length=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165134_104_ srm.result=0
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: j==102
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: SubmitMessage mdn=8613101440058 flow=-1235843516_222165134_105_
+DEBUG[02-22 16:51:34] c.g.s.Handler->add: flowsQ add length=103
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165134_105_ srm.result=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: j==103
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: SubmitMessage mdn=8613101440045 flow=-1235843516_222165134_106_
+DEBUG[02-22 16:51:34] c.g.s.Handler->add: flowsQ add length=104
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165134_106_ srm.result=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: j==104
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: resps add length=0
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: SubmitMessage mdn=8613101439941 flow=-1235843516_222165134_107_
+DEBUG[02-22 16:51:34] c.g.s.Handler->add: flowsQ add length=105
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165134_107_ srm.result=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: j==105
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: SubmitMessage mdn=8613101439800 flow=-1235843516_222165134_108_
+DEBUG[02-22 16:51:34] c.g.s.Handler->add: flowsQ add length=106
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165134_108_ srm.result=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: j==106
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: SubmitMessage mdn=8613101439306 flow=-1235843516_222165134_109_
+DEBUG[02-22 16:51:34] c.g.s.Handler->add: flowsQ add length=107
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165134_109_ srm.result=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: j==107
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: SubmitMessage mdn=8613101439216 flow=-1235843516_222165134_110_
+DEBUG[02-22 16:51:34] c.g.s.Handler->add: flowsQ add length=108
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165134_110_ srm.result=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: j==108
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: SubmitMessage mdn=8613101439208 flow=-1235843516_222165134_111_
+DEBUG[02-22 16:51:34] c.g.s.Handler->add: flowsQ add length=109
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165134_111_ srm.result=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: j==109
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: SubmitMessage mdn=8613101439167 flow=-1235843516_222165134_112_
+DEBUG[02-22 16:51:34] c.g.s.Handler->add: flowsQ add length=110
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165134_112_ srm.result=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: j==110
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: SubmitMessage mdn=8613101439102 flow=-1235843516_222165134_113_
+DEBUG[02-22 16:51:34] c.g.s.Handler->add: flowsQ add length=111
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165134_113_ srm.result=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: j==111
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: SubmitMessage mdn=8613101438885 flow=-1235843516_222165134_114_
+DEBUG[02-22 16:51:34] c.g.s.Handler->add: flowsQ add length=112
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165134_114_ srm.result=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: j==112
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: SubmitMessage mdn=8613101438859 flow=-1235843516_222165134_115_
+DEBUG[02-22 16:51:34] c.g.s.Handler->add: flowsQ add length=113
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165134_115_ srm.result=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: j==113
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: SubmitMessage mdn=8613101438775 flow=-1235843516_222165134_116_
+DEBUG[02-22 16:51:34] c.g.s.Handler->add: flowsQ add length=114
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165134_116_ srm.result=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: j==114
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: SubmitMessage mdn=8613101438296 flow=-1235843516_222165134_117_
+DEBUG[02-22 16:51:34] c.g.s.Handler->add: flowsQ add length=115
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165134_117_ srm.result=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: j==115
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: SubmitMessage mdn=8613101438281 flow=-1235843516_222165134_118_
+DEBUG[02-22 16:51:34] c.g.s.Handler->add: flowsQ add length=116
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165134_118_ srm.result=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: j==116
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: SubmitMessage mdn=8613101438161 flow=-1235843516_222165134_119_
+DEBUG[02-22 16:51:34] c.g.s.Handler->add: flowsQ add length=117
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: resps add length=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165134_119_ srm.result=0
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: j==117
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: SubmitMessage mdn=8613101438095 flow=-1235843516_222165134_120_
+DEBUG[02-22 16:51:34] c.g.s.Handler->add: flowsQ add length=118
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165134_120_ srm.result=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: j==118
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: SubmitMessage mdn=8613101438059 flow=-1235843516_222165134_121_
+DEBUG[02-22 16:51:34] c.g.s.Handler->add: flowsQ add length=119
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165134_121_ srm.result=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: j==119
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: SubmitMessage mdn=8613101437938 flow=-1235843516_222165134_122_
+DEBUG[02-22 16:51:34] c.g.s.Handler->add: flowsQ add length=120
+DEBUG[02-22 16:51:34] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165134_122_ srm.result=0
+DEBUG[02-22 16:51:34] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:34] c.g.s.ResponsHandle->run: j==120
+DEBUG[02-22 16:51:35] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:35] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:35] c.g.s.Handler->r1: SubmitMessage mdn=8613101437707 flow=-1235843516_222165135_123_
+DEBUG[02-22 16:51:35] c.g.s.Handler->add: flowsQ add length=121
+DEBUG[02-22 16:51:35] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:35] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:35] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:35] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165135_123_ srm.result=0
+DEBUG[02-22 16:51:35] c.g.s.ResponsHandle->run: j==121
+DEBUG[02-22 16:51:35] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:35] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
+DEBUG[02-22 16:51:35] c.g.s.Handler->r1: SubmitMessage mdn=8613101437686 flow=-1235843516_222165135_124_
+DEBUG[02-22 16:51:35] c.g.s.Handler->add: flowsQ add length=122
+DEBUG[02-22 16:51:35] c.g.s.Handler->r1: resps add length=1
+DEBUG[02-22 16:51:35] c.g.s.Handler->read: read message data from socket...
+DEBUG[02-22 16:51:35] c.g.s.ResponsHandle->getResp: resps take length=0
+DEBUG[02-22 16:51:35] c.g.s.ResponsHandle->run: submitResponseAsy data.length=29 srm.flow=-1235843516_222165135_124_ srm.result=0
+DEBUG[02-22 16:51:35] c.g.s.ResponsHandle->run: j==122
+DEBUG[02-22 16:51:35] c.g.s.Handler->read: read length=231
+DEBUG[02-22 16:51:35] c.g.s.Handler->r1: request request.className=cn.gzjp.push2.sgip.message.SubmitMessage
