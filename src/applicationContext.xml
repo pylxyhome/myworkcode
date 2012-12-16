@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:aop="http://www.springframework.org/schema/aop"
+              xmlns:tx="http://www.springframework.org/schema/tx"
+               xmlns:context="http://www.springframework.org/schema/context"
+               xmlns:p="http://www.springframework.org/schema/p"  
+            xmlns:cache="http://www.springframework.org/schema/cache"  
+               xsi:schemaLocation="
+                    http://www.springframework.org/schema/beans
+                    http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                    http://www.springframework.org/schema/tx 
+                    http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+                    http://www.springframework.org/schema/aop 
+                    http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+                    http://www.springframework.org/schema/context      
+                       http://www.springframework.org/schema/context/spring-context-3.1.xsd
+                       http://www.springframework.org/schema/cache 
+                     http://www.springframework.org/schema/cache/spring-cache-3.1.xsd">  
+        
+      <!-- 定义组件扫描，配置需要扫描的包-->
+      <context:component-scan base-package="com.ylon.dao.base" />
+      <context:component-scan base-package="com.ylon.mail.biz,com.ylon.mail.web.controller,com.ylon.mail.factory" /> 
+      <!-- 定义实体管理器工厂 -->
+      <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">  
+                   <property name="persistenceUnitName" value="iwebmail"/>
+      </bean>
+ 
+      <!-- 配置事务管理器 -->  
+      <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">  
+           <property name="entityManagerFactory" ref="entityManagerFactory" />  
+      </bean>  
+      	<!-- mailer -->
+	<bean id="javaMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+	    <property name="host" value="smtp.126.com"/>
+	    <property name="port" value="25"/>
+	    <property name="username" value="andyevenyulong"/>
+	    <property name="password" value="www.0202402"/>
+	    <property name="javaMailProperties">
+	        <props>
+	            <!-- Use SMTP-AUTH to authenticate to SMTP server -->
+	            <prop key="mail.smtp.auth">true</prop>
+	            <!-- Use TLS to encrypt communication with SMTP server -->
+	            <prop key="mail.smtp.starttls.enable">true</prop>
+	        </props>
+	    </property>
+	</bean>
+	<bean id="freemarkerConfig" lazy-init="true" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+		<property name="defaultEncoding" value="UTF-8" />
+		<property name="templateLoaderPath" value="templates"/> <!-- 模板加载路径 -->
+	</bean>
+      <!-- 启用 annotation事务--> 
+      <tx:annotation-driven transaction-manager="transactionManager"/>
+</beans>
