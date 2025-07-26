@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>神秘仓库的冒险 - 推箱子</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .game-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .story-panel {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #ffd700;
+        }
+        
+        .character {
+            font-weight: bold;
+            color: #ffd700;
+        }
+        
+        .dialogue {
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 5px;
+            font-style: italic;
+        }
+        
+        .game-board {
+            display: grid;
+            gap: 2px;
+            background: #333;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 20px 0;
+            justify-content: center;
+        }
+        
+        .cell {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            background: #f0f0f0;
+            border-radius: 3px;
+        }
+        
+        .wall { background: #8B4513; }
+        .floor { background: #F5DEB3; }
+        .target { background: #FFD700; }
+        .box { background: #8B4513; color: white; }
+        .box-on-target { background: #32CD32; color: white; }
+        .player { background: #FF6B6B; color: white; }
+        
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .controls button {
+            background: #ffd700;
+            color: #333;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .controls button:hover {
+            background: #ffed4e;
+            transform: translateY(-2px);
+        }
+        
+        .info-panel {
+            display: flex;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        
+        .level-info {
+            font-weight: bold;
+            color: #ffd700;
+        }
+        
+        .instructions {
+            text-align: center;
+            margin: 15px 0;
+            color: #ccc;
+        }
+        
+        .victory-message {
+            background: rgba(50, 205, 50, 0.3);
+            border: 2px solid #32CD32;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 20px 0;
+            display: none;
+        }
+        
+        .story-dialogue {
+            display: none;
+            background: rgba(0, 0, 0, 0.9);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .dialogue-box {
+            background: rgba(255, 255, 255, 0.95);
+            color: #333;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+        
+        .dialogue-box button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1 style="text-align: center; color: #ffd700; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">
+            🏰 神秘仓库的冒险 📦
+        </h1>
+        
+        <div class="story-panel">
+            <div class="character">📜 背景故事:</div>
+            <div class="dialogue">
+                你是一名年轻的考古学家艾莉克斯，在探索一座古老城堡时发现了一个神秘的仓库。
+                传说这里隐藏着古代智者留下的宝藏，但只有通过巧妙地移动古老的石箱，
+                才能解开谜题，获得宝藏的线索...
+            </div>
+        </div>
+        
+        <div class="info-panel">
+            <div class="level-info">关卡: <span id="currentLevel">1</span> / <span id="totalLevels">5</span></div>
+            <div>步数: <span id="moveCount">0</span></div>
+            <div>推箱次数: <span id="pushCount">0</span></div>
+        </div>
+        
+        <div id="gameBoard" class="game-board"></div>
+        
+        <div class="instructions">
+            使用 ↑↓←→ 方向键或 WASD 键移动 | 🎯 将所有箱子推到目标位置
+        </div>
+        
+        <div class="controls">
+            <button onclick="resetLevel()">🔄 重置关卡</button>
+            <button onclick="showStory()">📖 查看剧情</button>
+            <button onclick="showControls()">❓ 帮助</button>
+        </div>
+        
+        <div id="victoryMessage" class="victory-message">
+            <h3>🎉 恭喜过关！</h3>
+            <p id="victoryText"></p>
+            <button onclick="nextLevel()">继续冒险 ➡️</button>
+        </div>
+        
+        <div id="storyDialogue" class="story-dialogue">
+            <div class="dialogue-box">
+                <div id="storyContent"></div>
+                <button onclick="closeStory()">继续游戏</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 游戏状态
+        let currentLevel = 1;
+        let playerPos = { x: 0, y: 0 };
+        let boxes = [];
+        let targets = [];
+        let walls = [];
+        let moveCount = 0;
+        let pushCount = 0;
+        
+        // 关卡数据和剧情
+        const levels = [
+            {
+                name: "初入仓库",
+                story: "🚪 艾莉克斯推开厚重的木门，踏入了神秘的仓库。昏暗的光线中，你看到了第一个谜题...",
+                map: [
+                    "######",
+                    "#    #",
+                    "#  $ #",
+                    "#  . #",
+                    "#  @ #",
+                    "######"
+                ],
+                hint: "这里只有一个箱子和一个目标位置，试着推动箱子到金色的目标点上！"
+            },
+            {
+                name: "古老的机关",
+                story: "🔧 当第一个箱子到位时，地面微微震动。艾莉克斯意识到这些不是普通的箱子，而是古老的机关装置！",
+                map: [
+                    "#######",
+                    "#     #",
+                    "# $   #",
+                    "# . . #",
+                    "#   $ #",
+                    "#  @  #",
+                    "#######"
+                ],
+                hint: "两个箱子，两个目标。小心规划路线，不要把箱子推到角落里！"
+            },
+            {
+                name: "智者的考验",
+                story: "📚 墙上浮现出古老的文字：'智慧不在于力量，而在于巧思。只有懂得迂回的人，才能到达目标。'",
+                map: [
+                    "########",
+                    "#   .  #",
+                    "#   $  #",
+                    "## ### #",
+                    "#  $   #",
+                    "#  . @ #",
+                    "########"
+                ],
+                hint: "这个关卡需要你绕路。记住，有时候后退一步是为了更好地前进！"
+            },
+            {
+                name: "迷宫之心",
+                story: "🌟 仓库的中央出现了一个复杂的迷宫。艾莉克斯感觉到宝藏就在附近，但这个谜题比之前的都要困难...",
+                map: [
+                    "##########",
+                    "#        #",
+                    "# $$ ##  #",
+                    "# $  ##  #",
+                    "##       #",
+                    "# .. .. ##",
+                    "#    @   #",
+                    "##########"
+                ],
+                hint: "四个箱子的挑战！仔细观察，找出正确的推动顺序。"
+            },
+            {
+                name: "宝藏密室",
+                story: "💎 最后的考验！仓库深处的密室门缓缓打开，里面金光闪闪。但要获得宝藏，你必须解开这最后的谜题...",
+                map: [
+                    "###########",
+                    "#         #",
+                    "# $$   $$ #",
+                    "#  .   .  #",
+                    "#    $    #",
+                    "#  .   .  #",
+                    "# $$   $$ #",
+                    "#    @    #",
+                    "###########"
+                ],
+                hint: "终极挑战！七个箱子需要精确的布局。这是对你所有技巧的终极考验！"
+            }
+        ];
+        
+        // 胜利信息
+        const victoryMessages = [
+            "🎊 太棒了！你学会了基本的推箱技巧。古老的机关发出了满意的声音...",
+            "⚡ 机关激活了！仓库的某处传来了神秘的响声。你感觉离真相更近了一步。",
+            "🔮 智者的考验通过了！墙上的文字开始发光，指向仓库的更深处...",
+            "🌟 迷宫的力量觉醒了！整个仓库都在轻微地震动，你感受到了古老魔法的波动。",
+            "🏆 恭喜！你成功解开了所有谜题！艾莉克斯在宝藏箱中发现了一张古老的地图，这只是更大冒险的开始..."
+        ];
+        
+        // 初始化游戏
+        function initGame() {
+            loadLevel(currentLevel);
+            updateDisplay();
+        }
+        
+        // 加载关卡
+        function loadLevel(level) {
+            const levelData = levels[level - 1];
+            const map = levelData.map;
+            
+            // 重置游戏状态
+            boxes = [];
+            targets = [];
+            walls = [];
+            moveCount = 0;
+            pushCount = 0;
+            
+            // 解析地图
+            for (let y = 0; y < map.length; y++) {
+                for (let x = 0; x < map[y].length; x++) {
+                    const char = map[y][x];
+                    switch (char) {
+                        case '@':
+                            playerPos = { x, y };
+                            break;
+                        case '$':
+                            boxes.push({ x, y });
+                            break;
+                        case '.':
+                            targets.push({ x, y });
+                            break;
+                        case '#':
+                            walls.push({ x, y });
+                            break;
+                    }
+                }
+            }
+            
+            // 设置游戏板大小
+            const gameBoard = document.getElementById('gameBoard');
+            gameBoard.style.gridTemplateColumns = `repeat(${map[0].length}, 40px)`;
+            
+            renderGame();
+            updateDisplay();
+        }
+        
+        // 渲染游戏
+        function renderGame() {
+            const gameBoard = document.getElementById('gameBoard');
+            const levelData = levels[currentLevel - 1];
+            const map = levelData.map;
+            
+            gameBoard.innerHTML = '';
+            
+            for (let y = 0; y < map.length; y++) {
+                for (let x = 0; x < map[y].length; x++) {
+                    const cell = document.createElement('div');
+                    cell.className = 'cell';
+                    
+                    // 检查是否是墙
+                    if (walls.some(w => w.x === x && w.y === y)) {
+                        cell.className += ' wall';
+                        cell.textContent = '🧱';
+                    }
+                    // 检查是否是目标位置
+                    else if (targets.some(t => t.x === x && t.y === y)) {
+                        cell.className += ' target';
+                        cell.textContent = '🎯';
+                    }
+                    // 普通地面
+                    else {
+                        cell.className += ' floor';
+                    }
+                    
+                    // 检查是否有箱子
+                    const box = boxes.find(b => b.x === x && b.y === y);
+                    if (box) {
+                        const isOnTarget = targets.some(t => t.x === x && t.y === y);
+                        cell.className = 'cell ' + (isOnTarget ? 'box-on-target' : 'box');
+                        cell.textContent = '📦';
+                    }
+                    
+                    // 检查是否是玩家位置
+                    if (playerPos.x === x && playerPos.y === y) {
+                        cell.className = 'cell player';
+                        cell.textContent = '🧑‍💼';
+                    }
+                    
+                    gameBoard.appendChild(cell);
+                }
+            }
+        }
+        
+        // 移动玩家
+        function movePlayer(dx, dy) {
+            const newX = playerPos.x + dx;
+            const newY = playerPos.y + dy;
+            
+            // 检查是否撞墙
+            if (walls.some(w => w.x === newX && w.y === newY)) {
+                return;
+            }
+            
+            // 检查是否有箱子
+            const boxIndex = boxes.findIndex(b => b.x === newX && b.y === newY);
+            if (boxIndex !== -1) {
+                // 计算箱子的新位置
+                const boxNewX = newX + dx;
+                const boxNewY = newY + dy;
+                
+                // 检查箱子新位置是否有效
+                if (walls.some(w => w.x === boxNewX && w.y === boxNewY) ||
+                    boxes.some(b => b.x === boxNewX && b.y === boxNewY)) {
+                    return; // 箱子无法移动
+                }
+                
+                // 移动箱子
+                boxes[boxIndex].x = boxNewX;
+                boxes[boxIndex].y = boxNewY;
+                pushCount++;
+            }
+            
+            // 移动玩家
+            playerPos.x = newX;
+            playerPos.y = newY;
+            moveCount++;
+            
+            renderGame();
+            updateDisplay();
+            checkVictory();
+        }
+        
+        // 检查胜利条件
+        function checkVictory() {
+            const allBoxesOnTargets = targets.every(target =>
+                boxes.some(box => box.x === target.x && box.y === target.y)
+            );
+            
+            if (allBoxesOnTargets) {
+                setTimeout(() => {
+                    const victoryMsg = document.getElementById('victoryMessage');
+                    const victoryText = document.getElementById('victoryText');
+                    victoryText.textContent = victoryMessages[currentLevel - 1];
+                    victoryMsg.style.display = 'block';
+                }, 500);
+            }
+        }
+        
+        // 下一关
+        function nextLevel() {
+            document.getElementById('victoryMessage').style.display = 'none';
+            
+            if (currentLevel < levels.length) {
+                currentLevel++;
+                loadLevel(currentLevel);
+                
+                // 显示新关卡剧情
+                setTimeout(() => {
+                    showLevelStory();
+                }, 500);
+            } else {
+                alert('🎉 恭喜！你已经完成了所有关卡！艾莉克斯的冒险还将继续...');
+            }
+        }
+        
+        // 重置关卡
+        function resetLevel() {
+            loadLevel(currentLevel);
+        }
+        
+        // 显示剧情
+        function showStory() {
+            showLevelStory();
+        }
+        
+        function showLevelStory() {
+            const levelData = levels[currentLevel - 1];
+            const storyContent = document.getElementById('storyContent');
+            storyContent.innerHTML = `
+                <h3>${levelData.name}</h3>
+                <p style="margin: 15px 0;">${levelData.story}</p>
+                <p style="color: #666; font-style: italic;">💡 提示: ${levelData.hint}</p>
+            `;
+            document.getElementById('storyDialogue').style.display = 'flex';
+        }
+        
+        // 关闭剧情对话
+        function closeStory() {
+            document.getElementById('storyDialogue').style.display = 'none';
+        }
+        
+        // 显示控制说明
+        function showControls() {
+            alert(`🎮 游戏控制：
+            
+📱 移动：
+• 方向键 ↑↓←→
+• WASD 键
+• 点击按钮
+
+🎯 目标：
+• 将所有 📦 箱子推到 🎯 目标位置上
+• 箱子在目标位置上会变成绿色
+
+⚠️ 注意：
+• 不能拉箱子，只能推
+• 不要把箱子推到角落
+• 合理规划移动路线
+
+🏆 挑战自己：
+• 用最少的步数完成关卡
+• 用最少的推箱次数过关`);
+        }
+        
+        // 更新显示信息
+        function updateDisplay() {
+            document.getElementById('currentLevel').textContent = currentLevel;
+            document.getElementById('totalLevels').textContent = levels.length;
+            document.getElementById('moveCount').textContent = moveCount;
+            document.getElementById('pushCount').textContent = pushCount;
+        }
+        
+        // 键盘事件监听
+        document.addEventListener('keydown', (e) => {
+            switch (e.key) {
+                case 'ArrowUp':
+                case 'w':
+                case 'W':
+                    e.preventDefault();
+                    movePlayer(0, -1);
+                    break;
+                case 'ArrowDown':
+                case 's':
+                case 'S':
+                    e.preventDefault();
+                    movePlayer(0, 1);
+                    break;
+                case 'ArrowLeft':
+                case 'a':
+                case 'A':
+                    e.preventDefault();
+                    movePlayer(-1, 0);
+                    break;
+                case 'ArrowRight':
+                case 'd':
+                case 'D':
+                    e.preventDefault();
+                    movePlayer(1, 0);
+                    break;
+                case 'r':
+                case 'R':
+                    resetLevel();
+                    break;
+            }
+        });
+        
+        // 初始化游戏
+        initGame();
+        
+        // 显示开场剧情
+        setTimeout(() => {
+            showLevelStory();
+        }, 1000);
+    </script>
+</body>
+</html>
